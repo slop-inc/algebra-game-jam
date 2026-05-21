@@ -4,8 +4,8 @@ extends CharacterBody3D
 var SPEED = 0.0
 var MAXSPEED = 5.0
 var JUMP_VELOCITY = 4.
-var DECEL = 0.80
-var ACCEL = 0.20
+var DECEL = 2.0
+var ACCEL = 0.80
 var SENSITIVITY = 0.008
 
 

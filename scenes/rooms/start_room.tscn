@@ -4,6 +4,9 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_mshv5"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f8a4q"]
+size = Vector3(6, 0.2, 6)
+
 [node name="StartRoom" type="Node3D" unique_id=1380908902]
 script = ExtResource("1_f8a4q")
 
@@ -13,6 +16,12 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.08
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=1646835019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=510773452]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=909659431]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=510773452]
 transform = Transform3D(6, 0, 0, 0, 0.2, 0, 0, 0, 6, 0, -0.1, 0)
 mesh = SubResource("BoxMesh_mshv5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=725723422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999964, 0)
+shape = SubResource("BoxShape3D_f8a4q")
