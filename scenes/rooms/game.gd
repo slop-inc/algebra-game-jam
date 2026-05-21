@@ -8,6 +8,7 @@ var rooms_dir = "res://scenes/rooms/"
 var playground = preload("res://scenes/rooms/special_rooms/straight_playground.tscn")
 
 @onready var newest_room = $Rooms/StartRoom
+@onready var rooms = $Rooms
 @onready var bend = 0
 
 # Generate random room of specified level
@@ -46,7 +47,6 @@ func _generate_room(area: String) -> void:
 	# Spawning the room
 	var scene = load(room_path)
 	_spawn_room(scene)
-	pass
 
 func _spawn_room(r: PackedScene) -> void:
 	var about_to_be_room = r.instantiate()
@@ -54,22 +54,23 @@ func _spawn_room(r: PackedScene) -> void:
 	print(newest_room.room_marker)
 	newest_room.room_marker.add_child(about_to_be_room)
 	newest_room = about_to_be_room
-	pass
+	newest_room.reparent(rooms)
+
+func _del_oldest_room():
+	rooms.get_child(0).queue_free()
 
 func _ready() -> void:
 	_spawn_room(playground)
-	_generate_room("catacomb")
-	_generate_room("catacomb")
-	_generate_room("catacomb")
-	_generate_room("catacomb")
-	_generate_room("catacomb")
-	_generate_room("catacomb")
-	_generate_room("catacomb")
-	_generate_room("catacomb")
-	_generate_room("catacomb")
-	_generate_room("catacomb")
-	pass
+	for i in range(50):
+		_generate_room("catacomb")
 
 
 func _process(_delta: float) -> void:
 	pass
+
+
+func _on_button_pressed() -> void:
+	_generate_room("catacomb")
+
+func _on_button_2_pressed() -> void:
+	_del_oldest_room()

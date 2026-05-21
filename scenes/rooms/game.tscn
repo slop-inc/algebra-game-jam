@@ -16,8 +16,12 @@ sky = SubResource("Sky_qbjnx")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="Root2" type="Node3D" unique_id=6052931]
+[node name="Root" type="Node3D" unique_id=6052931]
 script = ExtResource("1_8fg17")
+
+[node name="Rooms" type="Node" parent="." unique_id=1804828507]
+
+[node name="StartRoom" parent="Rooms" unique_id=1380908902 instance=ExtResource("2_15nd6")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=894557397]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -26,13 +30,27 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2011192145]
 environment = SubResource("Environment_53i6v")
 
-[node name="Rooms" type="Node" parent="." unique_id=1804828507]
-
-[node name="StartRoom" parent="Rooms" unique_id=1380908902 instance=ExtResource("2_15nd6")]
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=2081366607]
-transform = Transform3D(0.8660253, 0.25000006, -0.43301278, -5.4542024e-09, 0.8660254, 0.50000006, 0.50000006, -0.4330127, 0.75, -68.600006, 43.5, 53.8)
-
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1805504260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 omni_range = 27.9
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=183354025]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 549.4, -381.1)
+
+[node name="Button" type="Button" parent="Camera3D2" unique_id=980248442]
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 176.0
+offset_bottom = 128.0
+text = "new room"
+
+[node name="Button2" type="Button" parent="Camera3D2" unique_id=1319968129]
+offset_left = 192.0
+offset_top = 56.0
+offset_right = 304.0
+offset_bottom = 128.0
+text = "unload old
+room"
+
+[connection signal="pressed" from="Camera3D2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Camera3D2/Button2" to="." method="_on_button_2_pressed"]
