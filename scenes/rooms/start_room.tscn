@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dqvumgfhvml37"]
+
+[ext_resource type="Script" uid="uid://uwokpwujva4q" path="res://scenes/rooms/start_room.gd" id="1_f8a4q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eb4r6"]
+
+[node name="Node3D" type="Node3D" unique_id=6052931]
+script = ExtResource("1_f8a4q")
+
+[node name="room_marker" type="Marker3D" parent="." unique_id=1737073873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1549915565]
+transform = Transform3D(5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, -0.1, 0)
+mesh = SubResource("BoxMesh_eb4r6")
