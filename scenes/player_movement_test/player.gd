@@ -1,9 +1,12 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
-const SENSITIVITY = 0.005
+var SPEED = 0.0
+var MAXSPEED = 5.0
+var JUMP_VELOCITY = 4.
+var DECEL = 0.80
+var ACCEL = 0.20
+var SENSITIVITY = 0.008
 
 
 @onready var head = $Head
@@ -51,16 +54,27 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left_move", "right_move", "up_move", "down_move")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
 	if is_on_floor():
-		
 		if direction:
+			# Speed up acceleration
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
+			if SPEED < MAXSPEED:
+				SPEED = SPEED + ACCEL
+			print("SPEED:",SPEED)
+		elif SPEED > 0:
+			# Slow down
+			SPEED = SPEED - DECEL
+			velocity.x = move_toward(velocity.x, SPEED, 0)
+			velocity.z = move_toward(velocity.z, SPEED, 0)
+			print("SPEED:",SPEED)
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			velocity.z = move_toward(velocity.z, 0, SPEED)
+			# Stop
+			SPEED = 0
+			velocity.x = move_toward(velocity.x, 0, MAXSPEED)
+			velocity.z = move_toward(velocity.z, 0, MAXSPEED)
 	else:
 		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0)
 		velocity.y = lerp(velocity.y, direction.y * SPEED, delta * 2.0)
-
 	move_and_slide()
