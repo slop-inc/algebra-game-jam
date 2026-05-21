@@ -1,25 +1,66 @@
 [gd_scene format=3 uid="uid://dnjgt52dldwdb"]
 
+[ext_resource type="Script" uid="uid://br8rqe0gw6l5u" path="res://scenes/player_movement_test/player.gd" id="1_4xogm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xogm"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_rmv2p"]
+sky_material = SubResource("ProceduralSkyMaterial_4xogm")
+
+[sub_resource type="Environment" id="Environment_7pbky"]
+background_mode = 2
+sky = SubResource("Sky_rmv2p")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_iyhm7"]
 size = Vector3(2.0864258, 0.001, 2.034607)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4xogm"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rmv2p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7pbky"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_iyhm7"]
 
 [node name="PlayerMovementTest" type="Node3D" unique_id=1837405598]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=696212417]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1454797822]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1637526420]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2087544846]
+environment = SubResource("Environment_7pbky")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=836771456]
+transform = Transform3D(15, 0, 0, 0, 1.04, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1637526420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019003391, 0.009265631, 0.014801025)
 shape = SubResource("BoxShape3D_iyhm7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=647770078]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=647770078]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00019431114, 5.9604645e-08, 0.0023902059)
 mesh = SubResource("PlaneMesh_4xogm")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1885071176]
+transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 0, 0.90320444, 0)
+script = ExtResource("1_4xogm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=429797074]
+mesh = SubResource("CapsuleMesh_rmv2p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=747666202]
+shape = SubResource("CapsuleShape3D_7pbky")
+
+[node name="Head" type="Node3D" parent="CharacterBody3D" unique_id=1211833362]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head" unique_id=108415474]
+transform = Transform3D(-5.463923e-08, 0, -1.2499999, 0, 1.25, 0, 1.2499999, 0, -5.463923e-08, 0, 0, 0)
+fov = 72.8149
 
 [node name="1x2mDoor" type="MeshInstance3D" parent="." unique_id=1680496020]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.2, -2.5, 1, 0)
