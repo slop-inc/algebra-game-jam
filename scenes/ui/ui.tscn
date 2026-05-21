@@ -1,5 +1,13 @@
 [gd_scene format=3 uid="uid://jh1j6acxviwf"]
 
+[ext_resource type="Shader" uid="uid://dpe7vmd11xuck" path="res://scenes/ui/vignette.gdshader" id="1_u7n8c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7n8c"]
+shader = ExtResource("1_u7n8c")
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.0
+shader_parameter/vignette_rgb = Vector4(1, 0, 0, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=1616747875]
 
 [node name="Control" type="Control" parent="." unique_id=372426446]
@@ -55,3 +63,13 @@ offset_bottom = 80.0
 theme_override_font_sizes/font_size = 32
 text = "bullllshit"
 vertical_alignment = 1
+
+[node name="Vignette" type="ColorRect" parent="Control" unique_id=1561337620]
+material = SubResource("ShaderMaterial_u7n8c")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_right = -160.0
+color = Color(0.2, 0, 0, 1)
