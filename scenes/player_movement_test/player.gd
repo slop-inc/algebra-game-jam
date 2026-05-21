@@ -4,9 +4,15 @@ extends CharacterBody3D
 var SPEED = 0.0
 var MAXSPEED = 5.0
 var JUMP_VELOCITY = 4.
-var DECEL = 2.0
+var DECEL = 1
 var ACCEL = 0.80
-var SENSITIVITY = 0.008
+var SENSITIVITY = 0.006
+var dashed_bool = false
+var dash_time = 0
+
+var bob_frequency = 1.5
+var bob_amplitude = 0.05
+var t_bob = 0.0 
 
 
 @onready var head = $Head
@@ -36,12 +42,23 @@ func _input(event):
 	
 func _dash():
 	print("Dashed")
+	dashed_bool = true
 	#self.global_position = dash_point.global_position
 	var direction = camera.global_basis * Vector3.FORWARD
-	velocity.x = direction.x * 10
-	velocity.z = direction.z * 10
+	velocity.x = direction.x * 15
+	velocity.z = direction.z * 15
+	print(dashed_bool)
 
 func _physics_process(delta: float) -> void:
+	
+	if dashed_bool:
+		dash_time += 1 * delta 
+		print(dash_time)
+		if dash_time >= 0.3:
+			dash_time = 0
+			dashed_bool= false
+			print("undashed")
+			
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -55,7 +72,14 @@ func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("left_move", "right_move", "up_move", "down_move")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
-	if is_on_floor():
+	if input_dir.x < 0:
+		camera.rotation.z = lerp_angle(camera.rotation.z, deg_to_rad(4), 0.02)
+	if input_dir.x > 0:
+		camera.rotation.z = lerp_angle(camera.rotation.z, deg_to_rad(-4), 0.02)
+	if input_dir.x == 0:
+		camera.rotation.z = lerp_angle(camera.rotation.z, deg_to_rad(0), 0.02)
+	
+	if is_on_floor() and !dashed_bool:
 		if direction:
 			# Speed up acceleration
 			velocity.x = direction.x * SPEED
@@ -63,18 +87,37 @@ func _physics_process(delta: float) -> void:
 			if SPEED < MAXSPEED:
 				SPEED = SPEED + ACCEL
 			print("SPEED:",SPEED)
-		elif SPEED > 0:
+		#elif SPEED > 0:
 			# Slow down
-			SPEED = SPEED - DECEL
-			velocity.x = move_toward(velocity.x, SPEED, 0)
-			velocity.z = move_toward(velocity.z, SPEED, 0)
-			print("SPEED:",SPEED)
+			#SPEED = SPEED - DECEL
+			#velocity.x = move_toward(velocity.x, SPEED, delta)
+			#velocity.z = move_toward(velocity.z, SPEED, delta)
+			
+			#print("SPEED:",SPEED)
+
 		else:
 			# Stop
 			SPEED = 0
 			velocity.x = move_toward(velocity.x, 0, MAXSPEED)
 			velocity.z = move_toward(velocity.z, 0, MAXSPEED)
-	else:
-		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0)
-		velocity.y = lerp(velocity.y, direction.y * SPEED, delta * 2.0)
+	elif !dashed_bool:
+		if direction:
+			# Speed up acceleration
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+			if SPEED < MAXSPEED:
+				SPEED = SPEED + ACCEL
+			print("SPEED:",SPEED)
+		else:
+			velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0)
+			velocity.y = lerp(velocity.y, direction.y * SPEED, delta * 2.0)
 	move_and_slide()
+	
+	# Head Bob
+	t_bob += delta * velocity.length() * float(is_on_floor())
+	camera.transform.origin = _headbob(t_bob)
+	
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * bob_frequency) * bob_amplitude
+	return(pos)
