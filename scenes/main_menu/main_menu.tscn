@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://c6lrj3qt72cja"]
 
+[ext_resource type="Script" uid="uid://mmwdvftot43k" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_vho56"]
 
 [node name="Root" type="Node3D" unique_id=792507597]
+script = ExtResource("1_fsom3")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1955861]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1)
@@ -27,13 +30,14 @@ anchor_bottom = 1.0
 offset_left = -227.84
 offset_top = -400.0
 offset_right = 228.16
-offset_bottom = -80.0
+offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Start" type="Button" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=1223283938]
 layout_mode = 2
 size_flags_vertical = 3
+text = "START"
 
 [node name="BoxContainer" type="BoxContainer" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=1441489614]
 layout_mode = 2
@@ -43,6 +47,7 @@ size_flags_stretch_ratio = 0.5
 [node name="Options" type="Button" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=184331877]
 layout_mode = 2
 size_flags_vertical = 3
+text = "OPTIONS"
 
 [node name="BoxContainer2" type="BoxContainer" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=1445831555]
 layout_mode = 2
@@ -52,6 +57,7 @@ size_flags_stretch_ratio = 0.5
 [node name="Quit" type="Button" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=1168930658]
 layout_mode = 2
 size_flags_vertical = 3
+text = "QUIT"
 
 [node name="Label" type="Label" parent="Camera3D/CanvasLayer/Control" unique_id=1757630669]
 layout_mode = 1
@@ -59,15 +65,29 @@ anchors_preset = -1
 anchor_left = 0.504
 anchor_right = 0.504
 offset_left = -227.84
-offset_top = 104.0
+offset_top = 64.0
 offset_right = 228.16
-offset_bottom = 192.0
+offset_bottom = 256.0
 theme_override_font_sizes/font_size = 64
-text = "videogame"
+text = "Gruel
+by Slop"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fade" type="ColorRect" parent="Camera3D/CanvasLayer/Control" unique_id=25500866]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.14901961, 0, 0, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=975434608]
-transform = Transform3D(0.75, -0.5, -0.4330127, 0.4330127, 0.8660254, -0.25, 0.5, 0, 0.8660254, -0.8, 0, -4.2000003)
+transform = Transform3D(0.75, -0.5, -0.4330127, 0.4330127, 0.8660254, -0.25, 0.5, 0, 0.8660254, -2.6000001, 0, -4.2000003)
+mesh = SubResource("BoxMesh_vho56")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=398983371]
+transform = Transform3D(0.03068909, -0.32199532, -0.9462435, 0.8152642, 0.5557691, -0.1626805, 0.5782753, -0.7664463, 0.27956715, 2.1499999, -1.9, -2.554551)
 mesh = SubResource("BoxMesh_vho56")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2107355075]
