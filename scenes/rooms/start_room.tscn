@@ -1,15 +1,18 @@
-[gd_scene format=3 uid="uid://dqvumgfhvml37"]
+[gd_scene format=3 uid="uid://c44iiifu0ij7x"]
 
-[ext_resource type="Script" uid="uid://uwokpwujva4q" path="res://scenes/rooms/start_room.gd" id="1_f8a4q"]
+[ext_resource type="Script" uid="uid://dxxp3mtiwjh8l" path="res://scenes/rooms/start_room.gd" id="1_f8a4q"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_eb4r6"]
+[sub_resource type="BoxMesh" id="BoxMesh_mshv5"]
 
-[node name="Node3D" type="Node3D" unique_id=6052931]
+[node name="StartRoom" type="Node3D" unique_id=1380908902]
 script = ExtResource("1_f8a4q")
 
-[node name="room_marker" type="Marker3D" parent="." unique_id=1737073873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+[node name="RoomMarker" type="Marker3D" parent="." unique_id=2035750139]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.0897083e-07, 0, -3.000001)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1549915565]
-transform = Transform3D(5, 0, 0, 0, 0.2, 0, 0, 0, 5, 0, -0.1, 0)
-mesh = SubResource("BoxMesh_eb4r6")
+[node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=1646835019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=510773452]
+transform = Transform3D(6, 0, 0, 0, 0.2, 0, 0, 0, 6, 0, -0.1, 0)
+mesh = SubResource("BoxMesh_mshv5")
