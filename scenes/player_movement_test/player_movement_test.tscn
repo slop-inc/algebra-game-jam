@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dnjgt52dldwdb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iyhm7"]
+size = Vector3(2.0864258, 0.001, 2.034607)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4xogm"]
+
+[node name="PlayerMovementTest" type="Node3D" unique_id=1837405598]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=696212417]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1637526420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019003391, 0.009265631, 0.014801025)
+shape = SubResource("BoxShape3D_iyhm7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=647770078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00019431114, 5.9604645e-08, 0.0023902059)
+mesh = SubResource("PlaneMesh_4xogm")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1885071176]
