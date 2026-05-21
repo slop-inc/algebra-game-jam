@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnjgt52dldwdb"]
 
-[ext_resource type="PackedScene" path="res://scenes/player_movement_test/player.tscn" id="1_4xogm"]
+[ext_resource type="PackedScene" uid="uid://dhqh4lhawx71j" path="res://scenes/player_movement_test/player.tscn" id="1_4xogm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xogm"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -14,6 +14,9 @@ background_mode = 2
 sky = SubResource("Sky_rmv2p")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4xogm"]
+friction = 4.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iyhm7"]
 size = Vector3(2.0864258, 0.001, 2.034607)
@@ -35,6 +38,7 @@ environment = SubResource("Environment_7pbky")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=836771456]
 transform = Transform3D(15, 0, 0, 0, 1.04, 0, 0, 0, 15, 0, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_4xogm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1637526420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019003391, 0.009265631, 0.014801025)

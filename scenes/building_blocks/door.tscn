@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://xrdjdkok86pc"]
+
+[ext_resource type="Script" uid="uid://dvcljq17otay1" path="res://scenes/building_blocks/door.gd" id="1_hgf7s"]
+[ext_resource type="ArrayMesh" uid="uid://dh2145loy0e63" path="res://assets/grueldoorkick.obj" id="2_5d5yt"]
+[ext_resource type="ArrayMesh" uid="uid://cqtm3eag3vpn1" path="res://assets/grueldoor.obj" id="3_mhiaw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5d5yt"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mhiaw"]
+size = Vector3(1, 2, 0.1)
+
+[node name="Door" type="Node3D" unique_id=1497648598]
+script = ExtResource("1_hgf7s")
+
+[node name="PhysicsDoor" type="RigidBody3D" parent="." unique_id=1068996962]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PhysicsDoor" unique_id=454398957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("2_5d5yt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicsDoor" unique_id=2041099743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.6077032e-08)
+shape = SubResource("BoxShape3D_5d5yt")
+
+[node name="StaticDoor" type="StaticBody3D" parent="." unique_id=264348285]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticDoor" unique_id=1088100474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("3_mhiaw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticDoor" unique_id=1683745071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.6077032e-08)
+shape = SubResource("BoxShape3D_mhiaw")

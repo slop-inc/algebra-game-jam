@@ -48,12 +48,12 @@ func _generate_room(area: String) -> void:
 	var scene = load(room_path)
 	_spawn_room(scene)
 
-func _spawn_room(r: PackedScene) -> void:
-	var about_to_be_room = r.instantiate()
+func _spawn_room(room: PackedScene) -> void:
+	var future_room = room.instantiate()
 	print(newest_room.position)
 	print(newest_room.room_marker)
-	newest_room.room_marker.add_child(about_to_be_room)
-	newest_room = about_to_be_room
+	newest_room.room_marker.add_child(future_room)
+	newest_room = future_room
 	newest_room.reparent(rooms)
 
 func _del_oldest_room():
@@ -63,7 +63,6 @@ func _ready() -> void:
 	_spawn_room(playground)
 	for i in range(50):
 		_generate_room("catacomb")
-
 
 func _process(_delta: float) -> void:
 	pass

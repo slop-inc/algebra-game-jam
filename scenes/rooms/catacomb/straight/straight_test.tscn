@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://4usondslk2mn"]
 
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_eg8no"]
-[ext_resource type="PackedScene" uid="uid://33br0irlvgxy" path="res://scenes/the_door.tscn" id="1_is21x"]
+[ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/door.tscn" id="2_eg8no"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_xsqdx"]
+[sub_resource type="BoxMesh" id="BoxMesh_eg8no"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iu74h"]
+size = Vector3(10, 0.2, 10)
 
 [node name="Root" type="Node3D" unique_id=1133836879]
 script = ExtResource("1_eg8no")
@@ -14,8 +17,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30.000002)
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=197962252]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2115676677]
-transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 30, 0, -0.1, -15)
-mesh = SubResource("BoxMesh_xsqdx")
+[node name="Door2" parent="." unique_id=1497648598 instance=ExtResource("2_eg8no")]
 
-[node name="Door" parent="." unique_id=1956734646 instance=ExtResource("1_is21x")]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=969167029]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=333948071]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, -0.1, -4.999999)
+mesh = SubResource("BoxMesh_eg8no")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2144287767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, -5)
+shape = SubResource("BoxShape3D_iu74h")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1938746941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=524117533]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, -0.1, -4.999999)
+mesh = SubResource("BoxMesh_eg8no")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1755039135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, -5)
+shape = SubResource("BoxShape3D_iu74h")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1637555644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3" unique_id=1846047376]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, -0.1, -4.999999)
+mesh = SubResource("BoxMesh_eg8no")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=25302536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, -5)
+shape = SubResource("BoxShape3D_iu74h")
