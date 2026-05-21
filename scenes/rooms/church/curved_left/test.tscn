@@ -5,13 +5,13 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_xsqdx"]
 
-[node name="Node3D" type="Node3D" unique_id=1133836879]
+[node name="Root" type="Node3D" unique_id=1133836879]
 script = ExtResource("1_wriee")
 
-[node name="room_marker" type="Marker3D" parent="." unique_id=1263662154]
+[node name="RoomMarker" type="Marker3D" parent="." unique_id=1263662154]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.900001, 0, -15.000001)
 
-[node name="Marker3D" type="Marker3D" parent="room_marker" unique_id=578743990]
+[node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=578743990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2115676677]

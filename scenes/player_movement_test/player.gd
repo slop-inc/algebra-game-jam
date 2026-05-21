@@ -8,7 +8,7 @@ const SENSITIVITY = 0.005
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-
+@onready var dash_point = $Head/Camera3D/SpringArm3D/DashPoint
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -22,10 +22,21 @@ func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+			
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.double_click:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			
+func _input(event):
+	if Input.is_action_just_pressed("dash"):
+		_dash()
+	
+func _dash():
+	print("Dashed")
+	#self.global_position = dash_point.global_position
+	var direction = camera.global_basis * Vector3.FORWARD
+	velocity.x = direction.x * 10
+	velocity.z = direction.z * 10
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

@@ -1,7 +1,9 @@
 extends Node3D
 
+@onready var room_marker = $RoomMarker
+
 func _ready() -> void:
-	var room_marker = $room_marker
+	pass
 
 func _process(delta: float) -> void:
 	pass

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bxjag3giwo5nv"]
+
+[ext_resource type="Script" uid="uid://s0wvsvgml26h" path="res://scenes/rooms/catacomb/curved_right/test.gd" id="1_4q4dt"]
+[ext_resource type="PackedScene" uid="uid://33br0irlvgxy" path="res://scenes/the_door.tscn" id="1_uvw5e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xsqdx"]
+
+[node name="Root" type="Node3D" unique_id=1133836879]
+script = ExtResource("1_4q4dt")
+
+[node name="RoomMarker" type="Marker3D" parent="." unique_id=1263662154]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 15.000001, 0, -15.000001)
+
+[node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=578743990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2115676677]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, -0.1, -9.999999)
+mesh = SubResource("BoxMesh_xsqdx")
+
+[node name="Door" parent="." unique_id=1956734646 instance=ExtResource("1_uvw5e")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=157669577]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 10, 5, -0.1, -15)
+mesh = SubResource("BoxMesh_xsqdx")
