@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6lrj3qt72cja"]
 
 [ext_resource type="Script" uid="uid://mmwdvftot43k" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+[ext_resource type="PackedScene" uid="uid://jh1j6acxviwf" path="res://scenes/ui/ui.tscn" id="2_0ebjn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vho56"]
 
@@ -9,6 +10,8 @@ script = ExtResource("1_fsom3")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1955861]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1)
+
+[node name="UI" parent="Camera3D" unique_id=1616747875 instance=ExtResource("2_0ebjn")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera3D" unique_id=1856141841]
 
@@ -92,3 +95,6 @@ mesh = SubResource("BoxMesh_vho56")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2107355075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -3.2)
+
+[connection signal="pressed" from="Camera3D/CanvasLayer/Control/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Camera3D/CanvasLayer/Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://jh1j6acxviwf"]
+
+[node name="UI" type="CanvasLayer" unique_id=1616747875]
+
+[node name="Control" type="Control" parent="." unique_id=372426446]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=2106662913]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1120.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control" unique_id=481465426]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1120.0
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="Control" unique_id=718036268]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_right = -160.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Control" unique_id=803339612]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.16700001
+anchor_right = 1.167
+anchor_bottom = 1.0
+offset_left = 160.32
+offset_top = 592.0
+offset_right = -160.32007
+
+[node name="Label" type="Label" parent="Control/Control" unique_id=828835505]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 32
+text = "bullllshit"
+vertical_alignment = 1
