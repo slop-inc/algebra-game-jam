@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c44iiifu0ij7x"]
 
-[ext_resource type="Script" uid="uid://dxxp3mtiwjh8l" path="res://scenes/rooms/start_room.gd" id="1_f8a4q"]
+[ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_f8a4q"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_mshv5"]
 

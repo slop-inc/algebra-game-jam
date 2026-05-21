@@ -1,8 +1,11 @@
 extends Node3D
 
+# dep
 var rng = RandomNumberGenerator.new()
-
 var rooms_dir = "res://scenes/rooms/"
+
+# Special rooms
+var playground = preload("res://scenes/rooms/special_rooms/straight_playground.tscn")
 
 @onready var newest_room = $Rooms/StartRoom
 @onready var bend = 0
@@ -11,22 +14,24 @@ var rooms_dir = "res://scenes/rooms/"
 # Pass "catacomb" / "church" / "forest"
 func _generate_room(area: String) -> void:
 	# 50% chance for straight, 25% for each curve
-	var room_type = "straight"
 	var random = rng.randf_range(0.0, 1.0)
-	if random < 0.33:
-		room_type = "curved_left"
-		bend -= 1
-	elif random < 0.66:
-		room_type = "curved_right"
-		bend += 1
-	
-	# Hack at making rooms not clip into each other.
-	if bend == -1 and room_type == "curved_left":
-		room_type = "straight"
-		bend = -1
-	if bend == 1 and room_type == "curved_right":
-		room_type = "straight"
-		bend = 1
+	var room_type = "straight"
+	match bend:
+		-1:
+			if random < 0.5:
+				room_type = "curved_right"
+				bend += 1
+		0:
+			if random < 0.33:
+				room_type = "curved_left"
+				bend -= 1
+			elif random < 0.66:
+				room_type = "curved_right"
+				bend += 1
+		1:
+			if random < 0.5:
+				room_type = "curved_left"
+				bend -= 1
 	
 	# Selecting random room from [area > type]
 	var selected_room_dir = rooms_dir + area + "/" + room_type + "/"
@@ -52,6 +57,7 @@ func _spawn_room(r: PackedScene) -> void:
 	pass
 
 func _ready() -> void:
+	_spawn_room(playground)
 	_generate_room("catacomb")
 	_generate_room("catacomb")
 	_generate_room("catacomb")
@@ -65,5 +71,5 @@ func _ready() -> void:
 	pass
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

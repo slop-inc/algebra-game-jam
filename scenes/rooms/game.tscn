@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bn82iho835qop"]
+[gd_scene format=3 uid="uid://dqvumgfhvml37"]
 
 [ext_resource type="Script" uid="uid://uwokpwujva4q" path="res://scenes/rooms/game.gd" id="1_8fg17"]
 [ext_resource type="PackedScene" uid="uid://c44iiifu0ij7x" path="res://scenes/rooms/start_room.tscn" id="2_15nd6"]
@@ -16,7 +16,7 @@ sky = SubResource("Sky_qbjnx")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="Root" type="Node3D" unique_id=6052931]
+[node name="Root2" type="Node3D" unique_id=6052931]
 script = ExtResource("1_8fg17")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=894557397]
