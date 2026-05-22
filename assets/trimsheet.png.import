@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tb1j0fqe1an6"
-path="res://.godot/imported/Paper doll 1.png-0532a356e7e239ebccb366392a3fa242.ctex"
+uid="uid://by76f28br26ft"
+path="res://.godot/imported/trimsheet.png-4cb1021d2fefe5c798b8163157735332.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Paper doll 1.png"
-dest_files=["res://.godot/imported/Paper doll 1.png-0532a356e7e239ebccb366392a3fa242.ctex"]
+source_file="res://assets/trimsheet.png"
+dest_files=["res://.godot/imported/trimsheet.png-4cb1021d2fefe5c798b8163157735332.ctex"]
 
 [params]
 
