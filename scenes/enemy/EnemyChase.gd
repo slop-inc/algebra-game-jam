@@ -14,18 +14,21 @@ func Enter():
 	print(nav_agent)
 
 func Physics_Update(delta: float):	
-	print("fuck")
 	player = get_tree().get_first_node_in_group("player")
-	if player:
+	if player and !agent.is_stunned and agent.is_on_floor():
 		update_target_location(player.global_position)
 		var current_location = agent.global_position
 		var next_location = nav_agent.get_next_path_position()
 		var new_velocity = (next_location - current_location).normalized() * speed
 		agent.velocity = new_velocity
-		agent.move_and_slide()
-	else:
+	elif player and agent.is_stunned:
+		print("stunned")
+	elif !player and !agent.is_stunned:
 		print("No player Located")
 		Transitioned.emit(self,"idle")
+	agent.move_and_slide()
+	
+	
 	
 	
 	

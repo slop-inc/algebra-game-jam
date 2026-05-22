@@ -69,6 +69,9 @@ func _input(event):
 	# Punch Input
 	if Input.is_action_just_pressed("punch"):
 		_punch()
+		
+	if Input.is_action_just_pressed("kick"):
+		_kick()
 			
 	
 # Dash Function
@@ -104,6 +107,17 @@ func _punch():
 	if hit:
 		if hit.is_in_group("enemy"):
 			hit._takeDamage(10)
+			
+func _kick():
+	# I am ChatGPT and i wrote this code, uggggghhh im jorking it ughhhhhhh
+	print("Kicked")
+	var hit = hit_ray.get_collider()
+	var sway = randf_range(0,10)
+	
+	if hit:
+		var direction = camera.global_basis * Vector3.FORWARD
+		if hit.is_in_group("enemy"):
+			hit._getKicked(10, direction)
 			
 func _walljump():
 	wall_jump_bool = true
@@ -171,7 +185,6 @@ func _physics_process(delta: float) -> void:
 			velocity.z = direction.z * speed
 			if speed < max_speed:
 				speed = speed + accel
-			print("SPEED:",speed)
 		#elif SPEED > 0:
 			# Slow down
 			#SPEED = SPEED - DECEL

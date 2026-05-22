@@ -38,3 +38,7 @@ func on_child_transition(state, new_state_name):
 		
 	new_state.Enter()
 	current_state = new_state
+
+
+func _on_instakill_detector_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
