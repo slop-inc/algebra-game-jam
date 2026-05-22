@@ -58,6 +58,9 @@ data = PackedVector3Array(-0.1822, -0.9181, 1.1134, 0.4603, -0.88809997, 1.0703,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwuyb"]
 albedo_texture = ExtResource("10_wc2ru")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wc2ru"]
+points = PackedVector3Array(-2.8578515, 0.7946832, 1.46378, -2.7696636, 0.78732324, 1.4058937, -2.8578515, 0.7946832, -1.46378, -2.960636, 0.068516016, 1.46378, 3.252652, -0.07172918, 1.46378, 3.1650722, -0.053738594, 1.4058937, -2.7696636, 0.78732324, -1.4061803, -2.960636, 0.068516016, -1.46378, 3.1650722, -0.053738594, -1.4061803, 3.252652, -0.07172918, -1.46378, -2.552539, -3.382414, 1.2637569, -2.552539, -3.3431618, 1.3182045, -2.552539, -3.2793767, 1.3388373, 3.1492593, -0.7974875, 1.46378, -2.552539, -3.2793767, -1.4207951, -2.552539, -3.3431618, -1.4001623, -2.552539, -3.382414, -1.3457148, 3.1492593, -0.7974875, -1.46378, 2.5520146, -3.382414, 1.2637569, 2.5520146, -3.3431618, 1.3182045, 2.489371, -3.2830567, 1.3388373, 2.5520146, -3.2793767, 1.3388373, 2.489371, -3.2830567, -1.4207951, 2.5520146, -3.3431618, -1.4001623, 2.5520146, -3.382414, -1.3457148, 2.5520146, -3.2793767, -1.4207951)
+
 [node name="Root" type="Node3D" unique_id=1133836879]
 script = ExtResource("1_lqffh")
 
@@ -410,6 +413,11 @@ mesh = ExtResource("11_3c0qq")
 transform = Transform3D(-0.04283455, 0, -0.19535914, 0, 0.2, 0, 0.19535914, 0, -0.04283455, -12.959761, 6.249446, -22.756395)
 material_override = SubResource("StandardMaterial3D_lwuyb")
 mesh = ExtResource("11_3c0qq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Decorations/MedBed2" unique_id=1734277528]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Decorations/MedBed2/StaticBody3D" unique_id=1120803390]
+shape = SubResource("ConvexPolygonShape3D_wc2ru")
 
 [node name="CatBascancskaPloca2" type="MeshInstance3D" parent="Room/Decorations" unique_id=1902241858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.858448, 6.381521, -22.734617)
