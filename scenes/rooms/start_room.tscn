@@ -1,27 +1,17 @@
 [gd_scene format=3 uid="uid://c44iiifu0ij7x"]
 
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_f8a4q"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_mshv5"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f8a4q"]
-size = Vector3(6, 0.2, 6)
+[ext_resource type="PackedScene" uid="uid://w7x78dd1ok0m" path="res://scenes/building_blocks/catacombs/horizontal/horizontal4.tscn" id="2_kbl62"]
 
 [node name="StartRoom" type="Node3D" unique_id=1380908902]
 script = ExtResource("1_f8a4q")
 
 [node name="RoomMarker" type="Marker3D" parent="." unique_id=2035750139]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.0897083e-07, 0, -3.000001)
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.0897083e-07, 0, -8.000001)
 
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=1646835019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=909659431]
+[node name="Room" type="Node3D" parent="." unique_id=235440140]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=510773452]
-transform = Transform3D(6, 0, 0, 0, 0.2, 0, 0, 0, 6, 0, -0.1, 0)
-mesh = SubResource("BoxMesh_mshv5")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=725723422]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999964, 0)
-shape = SubResource("BoxShape3D_f8a4q")
+[node name="Horizontal^4" parent="Room" unique_id=465483348 instance=ExtResource("2_kbl62")]

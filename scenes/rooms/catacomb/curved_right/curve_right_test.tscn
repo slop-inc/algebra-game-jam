@@ -2,51 +2,33 @@
 
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_m62u0"]
 [ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/door.tscn" id="2_m62u0"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_xsqdx"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_m62u0"]
-size = Vector3(10, 0.2, 10)
+[ext_resource type="PackedScene" uid="uid://djmyg8t203j48" path="res://scenes/building_blocks/catacombs/horizontal/horizontal3.tscn" id="3_jrf78"]
+[ext_resource type="PackedScene" uid="uid://w7x78dd1ok0m" path="res://scenes/building_blocks/catacombs/horizontal/horizontal4.tscn" id="4_57jfc"]
 
 [node name="Root" type="Node3D" unique_id=1133836879]
 script = ExtResource("1_m62u0")
 
 [node name="RoomMarker" type="Marker3D" parent="." unique_id=1263662154]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 15.000001, 0, -15.000001)
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16, 0, -16)
 
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=578743990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1517608520]
+[node name="Door" parent="." unique_id=1497648598 instance=ExtResource("2_m62u0")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2115676677]
-transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, -0.1, -4.999999)
-mesh = SubResource("BoxMesh_xsqdx")
+[node name="Room" type="Node3D" parent="." unique_id=627971117]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=662176131]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, -5)
-shape = SubResource("BoxShape3D_m62u0")
+[node name="Horizontal^3" parent="Room" unique_id=465483348 instance=ExtResource("3_jrf78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1611102537]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+[node name="Horizontal^4" parent="Room" unique_id=1726666556 instance=ExtResource("3_jrf78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1926905450]
-transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, -0.1, -4.999999)
-mesh = SubResource("BoxMesh_xsqdx")
+[node name="Horizontal^5" parent="Room" unique_id=914672073 instance=ExtResource("4_57jfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=623495318]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, -5)
-shape = SubResource("BoxShape3D_m62u0")
+[node name="Horizontal^6" parent="Room" unique_id=1338926560 instance=ExtResource("3_jrf78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -12)
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=199319650]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3" unique_id=300599813]
-transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, -0.1, -4.999999)
-mesh = SubResource("BoxMesh_xsqdx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=772310081]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, -5)
-shape = SubResource("BoxShape3D_m62u0")
-
-[node name="Door2" parent="." unique_id=1497648598 instance=ExtResource("2_m62u0")]
+[node name="Horizontal^7" parent="Room" unique_id=638086606 instance=ExtResource("3_jrf78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -20)
