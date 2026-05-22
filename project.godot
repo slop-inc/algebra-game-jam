@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="AlgebraGameJam"
-run/main_scene="uid://dnjgt52dldwdb"
+run/main_scene="uid://c6lrj3qt72cja"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

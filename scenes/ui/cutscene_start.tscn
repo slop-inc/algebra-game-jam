@@ -55,42 +55,21 @@ offset_bottom = -64.0
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "The first text."
+text = "I am the evil fucking demon of doom."
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Control/Control/VBoxContainer" unique_id=1101790777]
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "The second text."
+text = "I am gonna kill you and shit."
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Control/Control/VBoxContainer" unique_id=537156822]
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "The third text."
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="Control/Control/VBoxContainer" unique_id=1561102685]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "The fourth text."
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="Control/Control/VBoxContainer" unique_id=931882066]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "The fifth text."
-horizontal_alignment = 1
-
-[node name="Label6" type="Label" parent="Control/Control/VBoxContainer" unique_id=70126968]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "The sixth text."
+text = "My little chudling vessel."
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Control" unique_id=749008062]

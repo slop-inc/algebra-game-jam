@@ -1,5 +1,14 @@
 extends Node3D
 
+### ### #### ##### ###### ##### #### ### ###
+### CHANGE ORDER OF GENERATED ROOMS HERE ###
+### ### #### ##### ###### ##### #### ### ###
+# 1. Spawn room
+# 2. Tutorial room, then:
+var room_generation = [ "catacomb", "catacomb", "catacomb", "catacomb",
+						"church", "church", "church", "church", "church",
+						"forest", "forest", "forest", "forest", "forest" ]
+
 # dep
 var rng = RandomNumberGenerator.new()
 var rooms_dir = "res://scenes/rooms/"
@@ -10,10 +19,11 @@ var playground = preload("res://scenes/rooms/special_rooms/straight_playground.t
 @onready var newest_room = $Rooms/StartRoom
 @onready var rooms = $Rooms
 @onready var bend = 0
+var doors_kicked = 0
 
 # Generate random room of specified level
 # Pass "catacomb" / "church" / "forest"
-func _generate_room(area: String) -> void:
+func _generate_room() -> void:
 	# 50% chance for straight, 25% for each curve
 	var random = rng.randf_range(0.0, 1.0)
 	var room_type = "straight"
@@ -35,6 +45,10 @@ func _generate_room(area: String) -> void:
 				bend -= 1
 	
 	# Selecting random room from [area > type]
+	var area = room_generation[0]
+	room_generation.pop_front()
+	print(area)
+	print(room_generation)
 	var selected_room_dir = rooms_dir + area + "/" + room_type + "/"
 	var room_scenes = [ ]
 	for room in DirAccess.get_files_at(selected_room_dir):
@@ -59,10 +73,16 @@ func _spawn_room(room: PackedScene) -> void:
 func _del_oldest_room():
 	rooms.get_child(0).queue_free()
 
+func advance():
+	if doors_kicked > 2:
+		_generate_room()
+		_del_oldest_room()
+	
+
 func _ready() -> void:
 	_spawn_room(playground)
-	for i in range(50):
-		_generate_room("catacomb")
+	for i in range(1):
+		_generate_room()
 
 func _process(_delta: float) -> void:
 	pass

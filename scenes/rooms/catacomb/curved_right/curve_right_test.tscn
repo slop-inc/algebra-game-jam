@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dn8rwqydvwu35"]
+
+[ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_m62u0"]
+[ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="2_m62u0"]
+[ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="3_jrf78"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrf78"]
+albedo_texture = ExtResource("3_jrf78")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_lenio"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_jrf78")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1xae1"]
+size = Vector3(16, 0.2, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2jby"]
+size = Vector3(8, 0.2, 16)
+
+[node name="Root" type="Node3D" unique_id=1133836879]
+script = ExtResource("1_m62u0")
+
+[node name="RoomMarker" type="Marker3D" parent="." unique_id=1263662154]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16, 0, -16)
+
+[node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=578743990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
+
+[node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("2_m62u0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, -16)
+
+[node name="Room" type="Node3D" parent="." unique_id=627971117]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room" unique_id=1836367018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/StaticBody3D" unique_id=1301823741]
+transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 24, -9.685755e-08, 0, -12)
+mesh = SubResource("BoxMesh_lenio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/StaticBody3D" unique_id=179166417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9802322e-08, -11.999999)
+shape = SubResource("BoxShape3D_1xae1")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Room" unique_id=1592037985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3, -0.1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/StaticBody3D2" unique_id=951351935]
+transform = Transform3D(8, 0, 0, 0, 0.2, 0, 0, 0, 16, 1.6999998, 0, -16)
+mesh = SubResource("BoxMesh_lenio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/StaticBody3D2" unique_id=1957539442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6999998, -2.9802322e-08, -15.999999)
+shape = SubResource("BoxShape3D_u2jby")
