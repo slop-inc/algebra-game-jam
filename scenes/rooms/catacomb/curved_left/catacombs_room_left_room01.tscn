@@ -15,13 +15,13 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_c02sl"]
 size = Vector3(1.9, 3.4, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c02sl"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc2ru"]
 albedo_texture = ExtResource("5_a6gik")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_pocp4"]
-material = SubResource("StandardMaterial3D_c02sl")
+material = SubResource("StandardMaterial3D_wc2ru")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k588r"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
