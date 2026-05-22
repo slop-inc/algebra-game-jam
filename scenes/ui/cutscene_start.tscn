@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://dbxsiowyytltq"]
+
+[ext_resource type="Script" uid="uid://hxb4p8fdakef" path="res://scenes/ui/cutscene_start.gd" id="1_7a4cy"]
+
+[node name="Node2D" type="CanvasLayer" unique_id=1879991073]
+script = ExtResource("1_7a4cy")
+
+[node name="Control" type="Control" parent="." unique_id=2092615684]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=784303608]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.006
+anchor_bottom = 1.0
+offset_right = -7.6800537
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="Control" unique_id=2027285625]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_right = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control" unique_id=206933219]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.16700001
+anchor_right = 1.167
+anchor_bottom = 1.0
+offset_left = 160.32
+offset_right = -160.32007
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Control" unique_id=810046998]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.16700001
+anchor_right = 1.167
+anchor_bottom = 1.0
+offset_left = 256.32
+offset_top = 128.0
+offset_right = -256.32007
+offset_bottom = -64.0
+
+[node name="Label" type="Label" parent="Control/Control/VBoxContainer" unique_id=1296173814]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "The first text."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Control/VBoxContainer" unique_id=1101790777]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "The second text."
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Control/VBoxContainer" unique_id=537156822]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "The third text."
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Control/VBoxContainer" unique_id=1561102685]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "The fourth text."
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Control/VBoxContainer" unique_id=931882066]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "The fifth text."
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Control/Control/VBoxContainer" unique_id=70126968]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "The sixth text."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Control" unique_id=749008062]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 384.0
+offset_top = 640.0
+offset_right = -384.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "next"
+
+[connection signal="pressed" from="Control/Button" to="." method="_advance"]
