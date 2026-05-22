@@ -2,14 +2,18 @@ extends State
 class_name EnemyAttack
 
 @onready var attack_area = $"../../AttackArea"
+@onready var anim = $"../../cultist"
+@onready var agent = self.get_parent().get_parent()
 var has_attacked = false
 
 func Enter():
 	print("Entered Attack")
 	has_attacked = false
+	anim._attack()
 	_attack()
 	
 func _attack():
+	await get_tree().create_timer(0.5).timeout
 	print("attacked")
 	var hits = attack_area.get_overlapping_bodies()
 	var player
@@ -29,8 +33,9 @@ func _attack():
 	
 
 func Physics_Update(_delta: float):
-	if has_attacked:
+	if anim.attack_is_done:
 		Transitioned.emit(self, "chase")
+	agent.move_and_slide()
 
 func Exit():
 	print("Exited Attack")

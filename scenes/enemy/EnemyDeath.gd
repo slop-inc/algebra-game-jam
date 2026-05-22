@@ -1,6 +1,6 @@
 extends State
 class_name EnemyDeath
-
+@onready var anim = $"../../cultist"
 @onready var agent = self.get_parent().get_parent()
 const blood_explosion = preload("res://scenes/enemy/BloodExplosion.tscn")
 
@@ -17,4 +17,6 @@ func _die():
 		blood_instance.global_position = agent.global_position
 		agent.queue_free()
 	else:
+		anim._die()
+		anim.reparent(get_tree().root.get_child(0))
 		agent.queue_free()

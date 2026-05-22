@@ -7,15 +7,19 @@ var speed = 3
 @onready var agent = self.get_parent().get_parent()
 @onready var nav_agent = self.get_parent().get_parent().get_child(0)
 @onready var player = null
+@onready var anim = $"../../cultist"
 
 func Enter():
 	print("Entered Chase")
 	print(agent)
 	print(nav_agent)
+	anim._run()
 
 func Update(_delta: float):
-	var target = Vector3 (player.position.x, agent.position.y, player.position.z)
-	agent.look_at(target)
+	player = get_tree().get_first_node_in_group("player")
+	if player and !agent.is_stunned and agent.is_on_floor():
+		var target = Vector3 (player.position.x, agent.position.y, player.position.z)
+		agent.look_at(target)
 
 func Physics_Update(delta: float):	
 	player = get_tree().get_first_node_in_group("player")
