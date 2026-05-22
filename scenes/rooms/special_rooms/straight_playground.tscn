@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1rwp0fw5swbn"]
 
 [ext_resource type="Script" uid="uid://bphbv45avbhcc" path="res://scenes/rooms/forest/straight/test.gd" id="1_russy"]
-[ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/door.tscn" id="2_ss5yp"]
+[ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="2_ss5yp"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="3_btmrk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xsqdx"]
@@ -26,7 +26,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=197962252]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
-[node name="Door" parent="." unique_id=1497648598 instance=ExtResource("2_ss5yp")]
+[node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("2_ss5yp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 
 [node name="Map" type="Node3D" parent="." unique_id=1742374590]
 

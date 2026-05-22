@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://26hovlkqyeow"
+=======
+uid="uid://c2dpfgilvof2i"
+>>>>>>> 732e249080a74d7856c1decda764da89eb1a93fc
 path.s3tc="res://.godot/imported/cultist_0.png-daea77dfa4adf0f37c2690af3256097f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
