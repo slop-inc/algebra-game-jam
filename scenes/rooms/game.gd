@@ -3,11 +3,16 @@ extends Node3D
 ### ### #### ##### ###### ##### #### ### ###
 ### CHANGE ORDER OF GENERATED ROOMS HERE ###
 ### ### #### ##### ###### ##### #### ### ###
+# "catacomb"
+# other names load rooms from special_rooms
 # 1. Spawn room
 # 2. Tutorial room, then:
-var room_generation = [ "catacomb", "catacomb", "catacomb", "catacomb",
-						"church", "church", "church", "church", "church",
-						"forest", "forest", "forest", "forest", "forest" ]
+var room_generation = [ "straight_playground",
+						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb",
+#						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb",
+#						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb", 
+#						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb"
+						]
 
 # dep
 var rng = RandomNumberGenerator.new()
@@ -22,8 +27,18 @@ var playground = preload("res://scenes/rooms/special_rooms/straight_playground.t
 var doors_kicked = 0
 
 # Generate random room of specified level
-# Pass "catacomb" / "church" / "forest"
 func _generate_room() -> void:
+	if len(room_generation) == 0:
+		return
+	var area = room_generation[0]
+	room_generation.pop_front()
+	print(area)
+	print(room_generation)
+	
+	if area != "catacomb" and area != "church" and area != "forest":
+		_spawn_room(load(rooms_dir + "special_rooms/" + area + ".tscn"))
+		return
+	
 	# 50% chance for straight, 25% for each curve
 	var random = rng.randf_range(0.0, 1.0)
 	var room_type = "straight"
@@ -45,10 +60,6 @@ func _generate_room() -> void:
 				bend -= 1
 	
 	# Selecting random room from [area > type]
-	var area = room_generation[0]
-	room_generation.pop_front()
-	print(area)
-	print(room_generation)
 	var selected_room_dir = rooms_dir + area + "/" + room_type + "/"
 	var room_scenes = [ ]
 	for room in DirAccess.get_files_at(selected_room_dir):
@@ -62,6 +73,7 @@ func _generate_room() -> void:
 	var scene = load(room_path)
 	_spawn_room(scene)
 
+# Pass loaded PackedScene
 func _spawn_room(room: PackedScene) -> void:
 	var future_room = room.instantiate()
 	print(newest_room.position)
@@ -75,13 +87,13 @@ func _del_oldest_room():
 
 func advance():
 	if doors_kicked > 2:
+		print("doing the thing")
 		_generate_room()
 		_del_oldest_room()
-	
+	doors_kicked += 1
 
 func _ready() -> void:
-	_spawn_room(playground)
-	for i in range(5):
+	for i in range(4):
 		_generate_room()
 
 func _process(_delta: float) -> void:

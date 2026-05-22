@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://diteybb4kaiwy" path="res://assets/CatWallTxt.png" id="6_lqpea"]
 [ext_resource type="ArrayMesh" uid="uid://emvn7fwfc2vy" path="res://assets/CatCoffin.obj" id="7_yd17y"]
 [ext_resource type="ArrayMesh" uid="uid://c3v6sx2uypqcu" path="res://assets/CatBascancskaPloca.obj" id="8_pkxpk"]
+[ext_resource type="ArrayMesh" uid="uid://djf6dfyc7e0xy" path="res://assets/CultPlate.obj" id="9_pbmr3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_320ii"]
 size = Vector3(1.9, 3.4, 1)
@@ -357,3 +358,11 @@ shape = SubResource("ConcavePolygonShape3D_dbjug")
 [node name="CatBascancskaPloca" type="MeshInstance3D" parent="Room/Decorations" unique_id=593669622]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.4, 0.45, -6.05)
 mesh = ExtResource("8_pkxpk")
+
+[node name="CultPlate" type="MeshInstance3D" parent="." unique_id=542342452]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3500001, 0.70000005, -5.1)
+mesh = ExtResource("9_pbmr3")
+
+[node name="CultPlate2" type="MeshInstance3D" parent="." unique_id=757566434]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.049999952, 2.2, -31.9)
+mesh = ExtResource("9_pbmr3")
