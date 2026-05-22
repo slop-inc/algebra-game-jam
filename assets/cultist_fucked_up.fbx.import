@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://h5vsl2wrfhxp"
-path="res://.godot/imported/cultist fucked up.fbx-6afd69d4f577bf841578bdb7ea4d1869.scn"
+path="res://.godot/imported/cultist_fucked_up.fbx-21fe0afd290299244f5f330a908b6168.scn"
 
 [deps]
 
-source_file="res://assets/cultist fucked up.fbx"
-dest_files=["res://.godot/imported/cultist fucked up.fbx-6afd69d4f577bf841578bdb7ea4d1869.scn"]
+source_file="res://assets/cultist_fucked_up.fbx"
+dest_files=["res://.godot/imported/cultist_fucked_up.fbx-21fe0afd290299244f5f330a908b6168.scn"]
 
 [params]
 

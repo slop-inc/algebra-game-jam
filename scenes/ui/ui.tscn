@@ -21,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control" unique_id=2106662913]
 layout_mode = 1
@@ -28,6 +29,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1120.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="Control" unique_id=481465426]
@@ -36,6 +38,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1120.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control" parent="Control" unique_id=718036268]
@@ -47,6 +50,7 @@ offset_left = 160.0
 offset_right = -160.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/Control" unique_id=803339612]
 layout_mode = 1
@@ -57,6 +61,7 @@ anchor_bottom = 1.0
 offset_left = 160.32
 offset_top = 592.0
 offset_right = -160.32007
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="Control/Control" unique_id=828835505]
 layout_mode = 0
@@ -76,6 +81,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 160.0
 offset_right = -160.0
+mouse_filter = 2
 color = Color(0.2, 0, 0, 1)
 
 [node name="TopBar" type="TextureRect" parent="Control" unique_id=1242669465]
@@ -89,6 +95,7 @@ offset_right = -160.0
 offset_bottom = -416.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_aac20")
 expand_mode = 5
 
@@ -103,22 +110,6 @@ offset_right = -160.0
 offset_bottom = 424.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_g5kmx")
 expand_mode = 5
-
-[node name="Button" type="Button" parent="." unique_id=1521034894]
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 112.0
-offset_bottom = 96.0
-text = "max"
-
-[node name="Button2" type="Button" parent="." unique_id=869543767]
-offset_left = 32.0
-offset_top = 136.0
-offset_right = 120.0
-offset_bottom = 208.0
-text = "min"
-
-[connection signal="pressed" from="Button" to="." method="set_bar_percentage" binds= [1.0]]
-[connection signal="pressed" from="Button2" to="." method="set_bar_percentage" binds= [0.0]]

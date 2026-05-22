@@ -137,7 +137,7 @@ func _walljump():
 	
 	velocity_on_jump = velocity
 
-func _process():
+func _process(float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
