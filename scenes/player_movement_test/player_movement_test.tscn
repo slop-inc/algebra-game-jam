@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dnjgt52dldwdb"]
 
 [ext_resource type="PackedScene" uid="uid://dhqh4lhawx71j" path="res://scenes/player_movement_test/player.tscn" id="1_4xogm"]
+[ext_resource type="PackedScene" uid="uid://njf4w6xcqe3f" path="res://scenes/player_movement_test/emeny_dummy.tscn" id="2_rmv2p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xogm"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,6 +25,7 @@ size = Vector3(2.0864258, 0.001, 2.034607)
 [sub_resource type="PlaneMesh" id="PlaneMesh_4xogm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rmv2p"]
+size = Vector3(4.001892, 1.6948242, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_iyhm7"]
 
@@ -55,9 +57,12 @@ transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6569333, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door" unique_id=1814788330]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.2, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.2, 0.0057678223, 1.1040039, 0)
 shape = SubResource("BoxShape3D_rmv2p")
 
 [node name="1x2mDoor" type="MeshInstance3D" parent="Door" unique_id=1680496020]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.2, 0, 1, 0)
+transform = Transform3D(4.0155663, 0, 0, 0, 3.6275282, 0, 0, 0, 0.2, 0, 1, 0)
 mesh = SubResource("BoxMesh_iyhm7")
+
+[node name="EmenyDummy" parent="." unique_id=1318146514 instance=ExtResource("2_rmv2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7078606, 0, -2.423198)
