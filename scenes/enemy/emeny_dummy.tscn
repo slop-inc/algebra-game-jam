@@ -5,11 +5,14 @@
 [ext_resource type="Script" uid="uid://bmw7y1bfxxxav" path="res://scenes/enemy/StateMachine.gd" id="3_6lrki"]
 [ext_resource type="Script" uid="uid://dog6bixt1x20u" path="res://scenes/enemy/EnemyIdle.gd" id="4_vv7ir"]
 [ext_resource type="Script" uid="uid://d107fi78qxqc3" path="res://scenes/enemy/EnemyAsleep.gd" id="5_1stba"]
+[ext_resource type="Script" uid="uid://bnqjoibwbkp8y" path="res://scenes/enemy/EnemyChase.gd" id="6_xid22"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ca4xg"]
 
-[node name="EmenyDummy" type="StaticBody3D" unique_id=1318146514 groups=["enemy"]]
+[node name="EnemyDummy" type="CharacterBody3D" unique_id=1073975167 groups=["enemy"]]
 script = ExtResource("1_mxlf7")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1319839874]
 
 [node name="cultist" parent="." unique_id=103616958 instance=ExtResource("2_6k1ey")]
 transform = Transform3D(0.82900006, 0, 0, 0, 0.77053684, 0, 0, 0, 0.8273579, 0, 0, 0)
@@ -18,13 +21,18 @@ transform = Transform3D(0.82900006, 0, 0, 0, 0.77053684, 0, 0, 0, 0.8273579, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97109747, -0.2512362)
 shape = SubResource("CapsuleShape3D_ca4xg")
 
-[node name="StateMachine" type="Node" parent="." unique_id=1460263048]
+[node name="StateMachine" type="Node" parent="." unique_id=1460263048 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_6lrki")
+initial_state = NodePath("Sleep")
+
+[node name="Sleep" type="Node" parent="StateMachine" unique_id=1202453455]
+script = ExtResource("5_1stba")
+metadata/_custom_type_script = "uid://d107fi78qxqc3"
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=351667329]
 script = ExtResource("4_vv7ir")
 metadata/_custom_type_script = "uid://dog6bixt1x20u"
 
-[node name="Sleep" type="Node" parent="StateMachine" unique_id=1202453455]
-script = ExtResource("5_1stba")
-metadata/_custom_type_script = "uid://d107fi78qxqc3"
+[node name="Chase" type="Node" parent="StateMachine" unique_id=1524620161]
+script = ExtResource("6_xid22")
+metadata/_custom_type_script = "uid://bnqjoibwbkp8y"
