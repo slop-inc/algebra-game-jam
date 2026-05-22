@@ -5,12 +5,17 @@ var SPEED = 0.0
 var MAXSPEED = 5.0
 var JUMP_VELOCITY = 4.
 var DECEL = 1
-var ACCEL = 0.80
+var ACCEL = 0.30
 var SENSITIVITY = 0.001
 
 # Dash vars
 var dashed_bool = false
 var dash_time = 0
+var dash_strength = 15
+
+# Slam vars
+var slamed_bool = false
+var slam_strength = 15
 
 # Fluf vars
 var bob_frequency = 1.5
@@ -49,6 +54,10 @@ func _input(event):
 	# Dash Input
 	if Input.is_action_just_pressed("dash"):
 		_dash()
+		
+	if Input.is_action_just_pressed("slam"):
+		if !is_on_floor():
+			_slam()
 	
 # Dash Function
 func _dash():
@@ -56,9 +65,17 @@ func _dash():
 	dashed_bool = true
 	#self.global_position = dash_point.global_position
 	var direction = camera.global_basis * Vector3.FORWARD
-	velocity.x = direction.x * 15
-	velocity.z = direction.z * 15
+	velocity.x = direction.x * dash_strength
+	velocity.z = direction.z * dash_strength
+	velocity.y = direction.y * dash_strength
 	print(dashed_bool)
+	
+func _slam():
+	print("Slamed")
+	slamed_bool = true
+	velocity.x = 0
+	velocity.z = 0
+	velocity.y = -slam_strength
 
 func _physics_process(delta: float) -> void:
 	
@@ -68,8 +85,12 @@ func _physics_process(delta: float) -> void:
 		if dash_time >= 0.3:
 			dash_time = 0
 			dashed_bool= false
-			print("undashed")
+			print("Dash Done")
 			
+	if slamed_bool and is_on_floor():
+		slamed_bool = false
+		print("Slam Done")
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -90,7 +111,7 @@ func _physics_process(delta: float) -> void:
 	if input_dir.x == 0:
 		neck.rotation.x = lerp_angle(neck.rotation.x, deg_to_rad(0), 0.02)
 	
-	if is_on_floor() and !dashed_bool:
+	if is_on_floor() and !dashed_bool and !slamed_bool:
 		if direction:
 			# Speed up acceleration
 			velocity.x = direction.x * SPEED
@@ -111,7 +132,7 @@ func _physics_process(delta: float) -> void:
 			SPEED = 0
 			velocity.x = move_toward(velocity.x, 0, MAXSPEED)
 			velocity.z = move_toward(velocity.z, 0, MAXSPEED)
-	elif !dashed_bool:
+	elif !dashed_bool and !slamed_bool:
 		if direction:
 			# Speed up acceleration
 			velocity.x = direction.x * SPEED
