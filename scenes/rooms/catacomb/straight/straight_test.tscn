@@ -2,7 +2,18 @@
 
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_eg8no"]
 [ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/door.tscn" id="2_eg8no"]
-[ext_resource type="PackedScene" uid="uid://w7x78dd1ok0m" path="res://scenes/building_blocks/catacombs/horizontal/horizontal4.tscn" id="3_iu74h"]
+[ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="3_iu74h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhneh"]
+albedo_texture = ExtResource("3_iu74h")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ubwfd"]
+material = SubResource("StandardMaterial3D_mhneh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_db6lq"]
+size = Vector3(16, 0.2, 32)
 
 [node name="Root" type="Node3D" unique_id=1133836879]
 script = ExtResource("1_eg8no")
@@ -17,8 +28,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
 [node name="Room" type="Node3D" parent="." unique_id=1918957510]
 
-[node name="Horizontal^4" parent="Room" unique_id=465483348 instance=ExtResource("3_iu74h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+[node name="StaticBody3D" type="StaticBody3D" parent="Room" unique_id=1539930033]
 
-[node name="Horizontal^5" parent="Room" unique_id=1789647857 instance=ExtResource("3_iu74h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/StaticBody3D" unique_id=1776658310]
+transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 32, 0, -0.1, -16)
+mesh = SubResource("BoxMesh_ubwfd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/StaticBody3D" unique_id=393378736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9802322e-08, -16)
+shape = SubResource("BoxShape3D_db6lq")

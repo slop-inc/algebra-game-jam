@@ -6,11 +6,6 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7pbky"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xogm"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_rmv2p"]
-material = SubResource("StandardMaterial3D_4xogm")
-
 [node name="Player" type="CharacterBody3D" unique_id=2017426151]
 transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 0, 0, 0)
 script = ExtResource("1_ou55v")
@@ -30,13 +25,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52799296, 0)
 transform = Transform3D(-5.4639234e-08, 0, -1.25, 0, 1.25, 0, 1.25, 0, -5.4639234e-08, 0, 0, 0)
 fov = 72.8149
 
-[node name="SpringArm3D" type="SpringArm3D" parent="Head/Neck/Camera3D" unique_id=1226474976]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
-spring_length = 3.0
-
-[node name="DashPoint" type="Node3D" parent="Head/Neck/Camera3D/SpringArm3D" unique_id=796801964]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Neck/Camera3D/SpringArm3D/DashPoint" unique_id=1439566421]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-mesh = SubResource("SphereMesh_rmv2p")
+[node name="RayCast3D" type="RayCast3D" parent="Head/Neck/Camera3D" unique_id=1029934374]
+target_position = Vector3(0, 0, -2)
