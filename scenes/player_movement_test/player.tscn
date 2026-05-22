@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7pbky"]
 
-[node name="Player" type="CharacterBody3D" unique_id=2017426151]
+[node name="Player" type="CharacterBody3D" unique_id=2017426151 groups=["player"]]
 transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 0, 0, 0)
 script = ExtResource("1_ou55v")
 
