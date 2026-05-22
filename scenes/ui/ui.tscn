@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://jh1j6acxviwf"]
 
+[ext_resource type="Script" uid="uid://evh0iagnavdw" path="res://scenes/ui/ui.gd" id="1_g5kmx"]
 [ext_resource type="Shader" uid="uid://dpe7vmd11xuck" path="res://scenes/ui/vignette.gdshader" id="1_u7n8c"]
+[ext_resource type="Texture2D" uid="uid://07q4e0uqdj4y" path="res://assets/TopEvilBar.png" id="2_aac20"]
+[ext_resource type="Texture2D" uid="uid://cd6ibxr210s2r" path="res://assets/BottomEvilBar.png" id="3_g5kmx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u7n8c"]
 shader = ExtResource("1_u7n8c")
@@ -9,6 +12,7 @@ shader_parameter/vignette_opacity = 0.0
 shader_parameter/vignette_rgb = Vector4(1, 0, 0, 1)
 
 [node name="UI" type="CanvasLayer" unique_id=1616747875]
+script = ExtResource("1_g5kmx")
 
 [node name="Control" type="Control" parent="." unique_id=372426446]
 layout_mode = 3
@@ -73,3 +77,48 @@ anchor_bottom = 1.0
 offset_left = 160.0
 offset_right = -160.0
 color = Color(0.2, 0, 0, 1)
+
+[node name="TopBar" type="TextureRect" parent="Control" unique_id=1242669465]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = -420.0
+offset_right = -160.0
+offset_bottom = -416.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aac20")
+expand_mode = 5
+
+[node name="Bottombar" type="TextureRect" parent="Control" unique_id=1124942216]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 420.0
+offset_right = -160.0
+offset_bottom = 424.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g5kmx")
+expand_mode = 5
+
+[node name="Button" type="Button" parent="." unique_id=1521034894]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 112.0
+offset_bottom = 96.0
+text = "max"
+
+[node name="Button2" type="Button" parent="." unique_id=869543767]
+offset_left = 32.0
+offset_top = 136.0
+offset_right = 120.0
+offset_bottom = 208.0
+text = "min"
+
+[connection signal="pressed" from="Button" to="." method="set_bar_percentage" binds= [1.0]]
+[connection signal="pressed" from="Button2" to="." method="set_bar_percentage" binds= [0.0]]

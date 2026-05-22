@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqvumgfhvml37"]
 
 [ext_resource type="Script" uid="uid://uwokpwujva4q" path="res://scenes/rooms/game.gd" id="1_8fg17"]
-[ext_resource type="PackedScene" uid="uid://c44iiifu0ij7x" path="res://scenes/rooms/start_room.tscn" id="2_15nd6"]
+[ext_resource type="PackedScene" uid="uid://c44iiifu0ij7x" path="res://scenes/rooms/special_rooms/start_room.tscn" id="2_15nd6"]
 [ext_resource type="PackedScene" uid="uid://dhqh4lhawx71j" path="res://scenes/player_movement_test/player.tscn" id="3_qbjnx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_15nd6"]
@@ -19,6 +19,8 @@ glow_enabled = true
 
 [node name="Root" type="Node3D" unique_id=6052931]
 script = ExtResource("1_8fg17")
+
+[node name="Enemies" type="Node" parent="." unique_id=576965145]
 
 [node name="Rooms" type="Node" parent="." unique_id=1804828507]
 

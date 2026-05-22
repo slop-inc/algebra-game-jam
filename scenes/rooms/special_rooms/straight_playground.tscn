@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://d1rwp0fw5swbn"]
 
 [ext_resource type="Script" uid="uid://bphbv45avbhcc" path="res://scenes/rooms/forest/straight/test.gd" id="1_russy"]
+[ext_resource type="PackedScene" uid="uid://drvashnbmyti1" path="res://scenes/building_blocks/entrance_area.tscn" id="2_a5qy3"]
 [ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="2_ss5yp"]
+[ext_resource type="ArrayMesh" uid="uid://chef4clg2816l" path="res://assets/RockPile.obj" id="2_x0w66"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="3_btmrk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v6rpr"]
+size = Vector3(1.9, 3.4, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xsqdx"]
 
@@ -26,8 +31,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=197962252]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
+[node name="EntranceArea" parent="." unique_id=598252848 instance=ExtResource("2_a5qy3")]
+
+[node name="Rocks" type="StaticBody3D" parent="." unique_id=656325823]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks" unique_id=1287446892]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.90000004, -0.1)
+mesh = ExtResource("2_x0w66")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks" unique_id=510573718]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0.15000007, 1.3062178, 0.15000002)
+shape = SubResource("BoxShape3D_v6rpr")
+disabled = true
+
 [node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("2_ss5yp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+
+[node name="Enemies" type="Node" parent="." unique_id=56804263]
 
 [node name="Map" type="Node3D" parent="." unique_id=1742374590]
 

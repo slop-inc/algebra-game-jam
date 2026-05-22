@@ -69,21 +69,24 @@ func _input(event):
 	# Punch Input
 	if Input.is_action_just_pressed("punch"):
 		_punch()
+		
+	if Input.is_action_just_pressed("kick"):
+		_kick()
 			
 	
 # Dash Function
 func _dash():
-	print("Dashed")
+	#print("Dashed")
 	dashed_bool = true
 	#self.global_position = dash_point.global_position
 	var direction = camera.global_basis * Vector3.FORWARD
 	velocity.x = direction.x * dash_strength
 	velocity.z = direction.z * dash_strength
 	velocity.y = direction.y * dash_strength
-	print(dashed_bool)
+	#print(dashed_bool)
 	
 func _slam():
-	print("Slamed")
+	#print("Slamed")
 	slamed_bool = true
 	velocity.x = 0
 	velocity.z = 0
@@ -91,7 +94,7 @@ func _slam():
 	
 func _punch():
 	# I am ChatGPT and i wrote this code, uggggghhh im jorking it ughhhhhhh
-	print("Punched")
+	#print("Punched")
 	var hit = hit_ray.get_collider()
 	var sway = randf_range(0,10)
 	
@@ -104,6 +107,19 @@ func _punch():
 	if hit:
 		if hit.is_in_group("enemy"):
 			hit._takeDamage(10)
+			
+func _kick():
+	# I am ChatGPT and i wrote this code, uggggghhh im jorking it ughhhhhhh
+	#print("Kicked")
+	var hit = hit_ray.get_collider()
+	var sway = randf_range(0,10)
+	
+	if hit:
+		var direction = camera.global_basis * Vector3.FORWARD
+		if hit.is_in_group("enemy"):
+			hit._getKicked(10, direction)
+		elif hit.get_parent().is_in_group("door"):
+			hit.get_parent().kick()
 			
 func _walljump():
 	wall_jump_bool = true
@@ -122,23 +138,23 @@ func _physics_process(delta: float) -> void:
 	
 	if dashed_bool:
 		dash_time += 1 * delta 
-		print(dash_time)
+		#print(dash_time)
 		if dash_time >= 0.3:
 			dash_time = 0
 			dashed_bool= false
-			print("Dash Done")
+			#print("Dash Done")
 			
 	if wall_jump_bool:
 		wall_jump_time += 1 * delta 
-		print(wall_jump_time)
+		#print(wall_jump_time)
 		if wall_jump_time >= 0.3:
 			wall_jump_time = 0
 			wall_jump_bool= false
-			print("WallJump Done")
+			#print("WallJump Done")
 			
 	if slamed_bool and is_on_floor():
 		slamed_bool = false
-		print("Slam Done")
+		#print("Slam Done")
 		
 	# Add the gravity.
 	if not is_on_floor():
@@ -171,7 +187,6 @@ func _physics_process(delta: float) -> void:
 			velocity.z = direction.z * speed
 			if speed < max_speed:
 				speed = speed + accel
-			print("SPEED:",speed)
 		#elif SPEED > 0:
 			# Slow down
 			#SPEED = SPEED - DECEL
@@ -192,7 +207,7 @@ func _physics_process(delta: float) -> void:
 			velocity.z = direction.z * speed
 			if speed < max_speed:
 				speed = speed + accel
-			print("SPEED:",speed)
+			#print("SPEED:",speed)
 		else:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 2.0)
 			velocity.y = lerp(velocity.y, direction.y * speed, delta * 2.0)
