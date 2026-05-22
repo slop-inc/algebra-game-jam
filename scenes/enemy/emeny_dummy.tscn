@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://8lltg4uh3ei2" path="res://assets/cultist.fbx" id="2_6k1ey"]
 [ext_resource type="Script" uid="uid://bmw7y1bfxxxav" path="res://scenes/enemy/StateMachine.gd" id="3_6lrki"]
 [ext_resource type="Script" uid="uid://dog6bixt1x20u" path="res://scenes/enemy/EnemyIdle.gd" id="4_vv7ir"]
+[ext_resource type="Script" uid="uid://d107fi78qxqc3" path="res://scenes/enemy/EnemyAsleep.gd" id="5_1stba"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ca4xg"]
 
@@ -20,6 +21,10 @@ shape = SubResource("CapsuleShape3D_ca4xg")
 [node name="StateMachine" type="Node" parent="." unique_id=1460263048]
 script = ExtResource("3_6lrki")
 
-[node name="EnemyIdle" type="Node" parent="StateMachine" unique_id=351667329]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=351667329]
 script = ExtResource("4_vv7ir")
 metadata/_custom_type_script = "uid://dog6bixt1x20u"
+
+[node name="Sleep" type="Node" parent="StateMachine" unique_id=1202453455]
+script = ExtResource("5_1stba")
+metadata/_custom_type_script = "uid://d107fi78qxqc3"
