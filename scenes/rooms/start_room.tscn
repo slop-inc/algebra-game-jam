@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_f8a4q"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="2_kbl62"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr66m"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbl62"]
 albedo_texture = ExtResource("2_kbl62")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_86g8l"]
-material = SubResource("StandardMaterial3D_qr66m")
+material = SubResource("StandardMaterial3D_kbl62")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kbl62"]
 size = Vector3(16, 0.2, 16)
