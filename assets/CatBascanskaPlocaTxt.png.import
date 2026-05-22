@@ -2,24 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://b83v26tf5po5g"
-=======
-uid="uid://br7brfwxxf1d2"
->>>>>>> 26bd0d8049f48c567505c0f8302f30a89e7ec24d
-path.s3tc="res://.godot/imported/cultist fucked up_0.png-7f7412174a581e0539f16653c0da564a.s3tc.ctex"
+uid="uid://bmm1hre1nilht"
+path.s3tc="res://.godot/imported/CatBascanskaPlocaTxt.png-f42fe60c6dad20621e69fd9317eef038.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "26dd6e2a10e02c24873a990e0cdfac8f"
-}
 
 [deps]
 
-source_file="res://assets/cultist fucked up_0.png"
-dest_files=["res://.godot/imported/cultist fucked up_0.png-7f7412174a581e0539f16653c0da564a.s3tc.ctex"]
+source_file="res://assets/CatBascanskaPlocaTxt.png"
+dest_files=["res://.godot/imported/CatBascanskaPlocaTxt.png-f42fe60c6dad20621e69fd9317eef038.s3tc.ctex"]
 
 [params]
 
