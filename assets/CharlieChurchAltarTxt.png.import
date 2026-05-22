@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq6qdwwh0k5av"
-path.s3tc="res://.godot/imported/cultist fucked up_0.png-7f7412174a581e0539f16653c0da564a.s3tc.ctex"
+uid="uid://dplbp25k1tllr"
+path.s3tc="res://.godot/imported/CharlieChurchAltarTxt.png-903d7f2fa76baad631950c2b8f55d029.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/cultist fucked up_0.png"
-dest_files=["res://.godot/imported/cultist fucked up_0.png-7f7412174a581e0539f16653c0da564a.s3tc.ctex"]
+source_file="res://assets/CharlieChurchAltarTxt.png"
+dest_files=["res://.godot/imported/CharlieChurchAltarTxt.png-903d7f2fa76baad631950c2b8f55d029.s3tc.ctex"]
 
 [params]
 
