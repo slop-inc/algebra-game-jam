@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4i8m5r4ln6up"
-path.s3tc="res://.godot/imported/MedBedTxt.png-cd00a5c02e353d63f9863d7f11efd6fc.s3tc.ctex"
+uid="uid://dplbp25k1tllr"
+path.s3tc="res://.godot/imported/CharlieChurchAltarTxt.png-903d7f2fa76baad631950c2b8f55d029.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/MedBedTxt.png"
-dest_files=["res://.godot/imported/MedBedTxt.png-cd00a5c02e353d63f9863d7f11efd6fc.s3tc.ctex"]
+source_file="res://assets/CharlieChurchAltarTxt.png"
+dest_files=["res://.godot/imported/CharlieChurchAltarTxt.png-903d7f2fa76baad631950c2b8f55d029.s3tc.ctex"]
 
 [params]
 
