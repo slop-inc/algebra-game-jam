@@ -6,9 +6,7 @@ var is_stunned = false
 var stun_time = 0
 var explode = false
 
-var state_machine = self.get_child(1)
 
-signal GotKicked 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 

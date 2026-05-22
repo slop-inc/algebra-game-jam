@@ -7,13 +7,17 @@
 [ext_resource type="Script" uid="uid://bnqjoibwbkp8y" path="res://scenes/enemy/EnemyChase.gd" id="5_6ynje"]
 [ext_resource type="Script" uid="uid://co4dy6kh6yqkj" path="res://scenes/enemy/EnemyDeath.gd" id="6_437bq"]
 [ext_resource type="PackedScene" uid="uid://vtwp1xir82q3" path="res://scenes/enemy/cultist2.tscn" id="6_xm4fq"]
+[ext_resource type="Script" uid="uid://yikwchdxkj0h" path="res://scenes/enemy/EnemyAttack.gd" id="7_ajul1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ca4xg"]
 radius = 0.5078125
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajul1"]
+size = Vector3(1, 0.81347656, 0.80410767)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm4fq"]
-radius = 0.6699219
-height = 2.2956543
+radius = 0.93115234
+height = 2.5587769
 
 [node name="EnemyDummy" type="CharacterBody3D" unique_id=1073975167 groups=["enemy"]]
 script = ExtResource("1_xm4fq")
@@ -40,17 +44,30 @@ metadata/_custom_type_script = "uid://bnqjoibwbkp8y"
 script = ExtResource("6_437bq")
 metadata/_custom_type_script = "uid://co4dy6kh6yqkj"
 
+[node name="Attack" type="Node" parent="StateMachine" unique_id=933228501]
+script = ExtResource("7_ajul1")
+metadata/_custom_type_script = "uid://yikwchdxkj0h"
+
 [node name="cultist" parent="." unique_id=1115433254 instance=ExtResource("6_xm4fq")]
+transform = Transform3D(-0.7, 0, 6.119594e-08, 0, 0.7, 0, -6.119594e-08, 0, -0.7, -1.3892524e-08, 0, -0.00074246526)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1314594796]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.3892524e-08, 0.971, -0.00074246526)
 shape = SubResource("CapsuleShape3D_ca4xg")
 
+[node name="AttackArea" type="Area3D" parent="." unique_id=853703591]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.167757e-08, 1.129, -0.6363902)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea" unique_id=1312497936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09326172, -0.097946405)
+shape = SubResource("BoxShape3D_ajul1")
+
 [node name="InstakillDetector" type="Area3D" parent="." unique_id=334715000]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.129, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.3892524e-08, 1.129, -0.00074246526)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InstakillDetector" unique_id=2026960550]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.052856445, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18441772, 0)
 shape = SubResource("CapsuleShape3D_xm4fq")
 
+[connection signal="body_entered" from="AttackArea" to="StateMachine/Chase" method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="InstakillDetector" to="." method="_on_instakill_detector_body_entered"]
