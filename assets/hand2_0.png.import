@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ilsqcxurf76o"
-path.s3tc="res://.godot/imported/GruelDoorTxt.png-4b9b278dcebf232e66c52f2f002327d2.s3tc.ctex"
+uid="uid://bj0ulpfw32nvn"
+path.s3tc="res://.godot/imported/hand2_0.png-9ba13d1aa16378133670438a0668128f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "549424e203ae024520ec1a8d3dd4607f"
+}
 
 [deps]
 
-source_file="res://assets/GruelDoorTxt.png"
-dest_files=["res://.godot/imported/GruelDoorTxt.png-4b9b278dcebf232e66c52f2f002327d2.s3tc.ctex"]
+source_file="res://assets/hand2_0.png"
+dest_files=["res://.godot/imported/hand2_0.png-9ba13d1aa16378133670438a0668128f.s3tc.ctex"]
 
 [params]
 

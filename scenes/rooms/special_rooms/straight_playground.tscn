@@ -2,9 +2,20 @@
 
 [ext_resource type="Script" uid="uid://bphbv45avbhcc" path="res://scenes/rooms/forest/straight/test.gd" id="1_russy"]
 [ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/door.tscn" id="2_ss5yp"]
-[ext_resource type="PackedScene" uid="uid://cv084gor3gxjj" path="res://scenes/building_blocks/catacombs/horizontal/horizontal5.tscn" id="3_btmrk"]
+[ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="3_btmrk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xsqdx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr66m"]
+albedo_texture = ExtResource("3_btmrk")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_x0w66"]
+material = SubResource("StandardMaterial3D_qr66m")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a5qy3"]
+size = Vector3(32, 0.2, 32)
 
 [node name="Root" type="Node3D" unique_id=1133836879]
 script = ExtResource("1_russy")
@@ -31,5 +42,12 @@ mesh = SubResource("BoxMesh_xsqdx")
 transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 10, -10, 2.5000002, -5.0000005)
 mesh = SubResource("BoxMesh_xsqdx")
 
-[node name="HorizontalMaximum" parent="Map" unique_id=465483348 instance=ExtResource("3_btmrk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+[node name="StaticBody3D" type="StaticBody3D" parent="Map" unique_id=432477374]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/StaticBody3D" unique_id=177050036]
+transform = Transform3D(32, 0, 0, 0, 0.2, 0, 0, 0, 32, 0, -0.1, -16)
+mesh = SubResource("BoxMesh_x0w66")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/StaticBody3D" unique_id=1100698130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, -16)
+shape = SubResource("BoxShape3D_a5qy3")
