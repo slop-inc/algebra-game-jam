@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var root = $".."
+@onready var game = get_tree().root.get_child(0)
 @onready var static_door = $StaticDoor
 @onready var physics_door = $PhysicsDoor
 @onready var sound_player = $PhysicsDoor/AudioStreamPlayer3D
@@ -8,7 +9,7 @@ var door_kick_sounds_dir = "res://assets/sound/door_kick_sounds/"
 var kick_sounds = [ ]
 var is_kicked = false
 
-func _kick() -> void:
+func kick() -> void:
 	if is_kicked:
 		return
 	is_kicked = true
@@ -18,7 +19,7 @@ func _kick() -> void:
 	physics_door.freeze = false
 	physics_door.apply_force(Vector3(-500, 250, -600))
 	sound_player.play()
-	root.advance()
+	game.advance()
 
 func _ready() -> void:
 	for i in DirAccess.get_files_at(door_kick_sounds_dir):

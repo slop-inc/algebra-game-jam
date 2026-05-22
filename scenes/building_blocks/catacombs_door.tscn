@@ -17,7 +17,7 @@ size = Vector3(1, 2, 0.1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2upx"]
 albedo_texture = ExtResource("3_wavaa")
 
-[node name="CatacombsDoor" type="Node3D" unique_id=1497648598]
+[node name="CatacombsDoor" type="Node3D" unique_id=1497648598 groups=["door"]]
 script = ExtResource("1_aaaup")
 
 [node name="PhysicsDoor" type="RigidBody3D" parent="." unique_id=1068996962]

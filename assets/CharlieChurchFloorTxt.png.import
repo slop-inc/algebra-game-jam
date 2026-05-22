@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq6qdwwh0k5av"
-path="res://.godot/imported/cultist fucked up_0.png-7f7412174a581e0539f16653c0da564a.ctex"
+uid="uid://ddjfidp64otw2"
+path="res://.godot/imported/CharlieChurchFloorTxt.png-a7bc7533dcb93a10772b15a09c7a0ca9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cultist fucked up_0.png"
-dest_files=["res://.godot/imported/cultist fucked up_0.png-7f7412174a581e0539f16653c0da564a.ctex"]
+source_file="res://assets/CharlieChurchFloorTxt.png"
+dest_files=["res://.godot/imported/CharlieChurchFloorTxt.png-a7bc7533dcb93a10772b15a09c7a0ca9.ctex"]
 
 [params]
 
