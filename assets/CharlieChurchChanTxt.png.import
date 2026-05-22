@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://26hovlkqyeow"
-path="res://.godot/imported/cultist_0.png-daea77dfa4adf0f37c2690af3256097f.ctex"
+uid="uid://c8wlyjbwcc54a"
+path="res://.godot/imported/CharlieChurchChanTxt.png-91ea44aec60ee7e6a78faeccd5542b2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cultist_0.png"
-dest_files=["res://.godot/imported/cultist_0.png-daea77dfa4adf0f37c2690af3256097f.ctex"]
+source_file="res://assets/CharlieChurchChanTxt.png"
+dest_files=["res://.godot/imported/CharlieChurchChanTxt.png-91ea44aec60ee7e6a78faeccd5542b2d.ctex"]
 
 [params]
 
