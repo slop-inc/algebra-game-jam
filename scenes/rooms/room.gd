@@ -1,6 +1,8 @@
 extends Node3D
 
 @onready var room_marker = $RoomMarker
+@onready var entrance_area = $EntranceArea
+@onready var rocks = $Rocks
 
 func _ready() -> void:
 	pass

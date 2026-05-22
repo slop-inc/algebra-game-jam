@@ -118,6 +118,8 @@ func _kick():
 		var direction = camera.global_basis * Vector3.FORWARD
 		if hit.is_in_group("enemy"):
 			hit._getKicked(10, direction)
+		elif hit.get_parent().is_in_group("door"):
+			hit.get_parent().kick()
 			
 func _walljump():
 	wall_jump_bool = true
