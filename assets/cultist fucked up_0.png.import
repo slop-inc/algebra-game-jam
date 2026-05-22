@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://b83v26tf5po5g"
+=======
+uid="uid://dq6qdwwh0k5av"
+>>>>>>> 0ef5c2fbfd0bcf52ff8104780ed98d90f106192a
 path="res://.godot/imported/cultist fucked up_0.png-7f7412174a581e0539f16653c0da564a.ctex"
 metadata={
 "vram_texture": false

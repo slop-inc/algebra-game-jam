@@ -4,6 +4,7 @@ var max_health = 100
 var health = 100
 var is_stunned = false
 var stun_time = 0
+var explode = false
 
 var state_machine = self.get_child(1)
 
@@ -51,6 +52,7 @@ func _getKicked(dmg: int, kick_direction: Vector3):
 func _on_instakill_detector_body_entered(body: Node3D) -> void:
 	var player = get_tree().get_first_node_in_group("player")
 	if body == player:
+		explode = true
 		health = 0
 		
 		
