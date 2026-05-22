@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://xrdjdkok86pc"]
 
 [ext_resource type="Script" uid="uid://dvcljq17otay1" path="res://scenes/building_blocks/door.gd" id="1_hgf7s"]
-[ext_resource type="ArrayMesh" uid="uid://dh2145loy0e63" path="res://assets/grueldoorkick.obj" id="2_5d5yt"]
-[ext_resource type="ArrayMesh" uid="uid://cqtm3eag3vpn1" path="res://assets/grueldoor.obj" id="3_mhiaw"]
+[ext_resource type="ArrayMesh" uid="uid://dol3e0fry4xmy" path="res://assets/grueldoorkick.obj" id="2_5d5yt"]
+[ext_resource type="ArrayMesh" uid="uid://6rfjcwcunsk5" path="res://assets/grueldoor.obj" id="3_mhiaw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5d5yt"]
 size = Vector3(1, 2, 0.1)

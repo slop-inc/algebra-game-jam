@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bpfbrqubdrlyg"]
+
+[ext_resource type="ArrayMesh" uid="uid://3u7yamt5bun8" path="res://assets/FloorStrop.obj" id="1_uk2nj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3del"]
+size = Vector3(2, 0.2, 2)
+
+[node name="HorizontalMinimum" type="StaticBody3D" unique_id=465483348]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=644877574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = ExtResource("1_uk2nj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1983759524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10000003, 0)
+shape = SubResource("BoxShape3D_s3del")
