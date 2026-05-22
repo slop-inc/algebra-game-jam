@@ -1,12 +1,17 @@
 extends CharacterBody3D
 
 # Movement vars
-var SPEED = 0.0
-var MAXSPEED = 5.0
-var JUMP_VELOCITY = 4.
-var DECEL = 1
-var ACCEL = 0.30
-var SENSITIVITY = 0.001
+var speed = 0.0
+var max_speed = 5.0
+var decel = 1
+var accel = 0.30
+
+var jump_velocity = 4.
+var velocity_on_jump
+var wall_jump_bool = false
+var wall_jump_time = 0
+
+var sensitivity = 0.001
 
 # Dash vars
 var dashed_bool = false
@@ -26,6 +31,7 @@ var t_bob = 0.0
 @onready var head = $Head
 @onready var camera = $Head/Neck/Camera3D
 @onready var neck = $Head/Neck
+@onready var hit_ray = $Head/Neck/Camera3D/RayCast3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -34,8 +40,8 @@ func _unhandled_input(event):
 	
 	# Look Around
 	if event is InputEventMouseMotion:
-		head.rotate_y(-event.relative.x * SENSITIVITY)
-		camera.rotate_z(-event.relative.y * SENSITIVITY)
+		head.rotate_y(-event.relative.x * sensitivity)
+		camera.rotate_z(-event.relative.y * sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 	
 	# Unlock mouse
@@ -55,9 +61,15 @@ func _input(event):
 	if Input.is_action_just_pressed("dash"):
 		_dash()
 		
+	#Slam Input
 	if Input.is_action_just_pressed("slam"):
 		if !is_on_floor():
 			_slam()
+			
+	# Punch Input
+	if Input.is_action_just_pressed("punch"):
+		_punch()
+			
 	
 # Dash Function
 func _dash():
@@ -76,6 +88,35 @@ func _slam():
 	velocity.x = 0
 	velocity.z = 0
 	velocity.y = -slam_strength
+	
+func _punch():
+	# I am ChatGPT and i wrote this code, uggggghhh im jorking it ughhhhhhh
+	print("Punched")
+	var hit = hit_ray.get_collider()
+	var sway = randf_range(0,10)
+	
+	# Tilt to side
+	if sway < 5:
+		neck.rotation.x = lerp_angle(neck.rotation.x, deg_to_rad(-5), 0.04)
+	else:
+		neck.rotation.x = lerp_angle(neck.rotation.x, deg_to_rad(5), 0.04)
+		
+	if hit:
+		if hit.is_in_group("enemy"):
+			hit._takeDamage(10)
+			
+func _walljump():
+	wall_jump_bool = true
+	var collision_normal = get_last_slide_collision().get_normal()
+	var no_velocity = velocity_on_jump.x == 0 and velocity_on_jump.z == 0
+	
+	if no_velocity:
+		velocity_on_jump = -collision_normal * speed
+	
+	velocity = velocity_on_jump.bounce(collision_normal)
+	velocity.y = jump_velocity
+	
+	velocity_on_jump = velocity
 
 func _physics_process(delta: float) -> void:
 	
@@ -87,6 +128,14 @@ func _physics_process(delta: float) -> void:
 			dashed_bool= false
 			print("Dash Done")
 			
+	if wall_jump_bool:
+		wall_jump_time += 1 * delta 
+		print(wall_jump_time)
+		if wall_jump_time >= 0.3:
+			wall_jump_time = 0
+			wall_jump_bool= false
+			print("WallJump Done")
+			
 	if slamed_bool and is_on_floor():
 		slamed_bool = false
 		print("Slam Done")
@@ -96,8 +145,12 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity_on_jump = velocity
+		velocity.y = jump_velocity
+		
+	if Input.is_action_just_pressed("jump") and is_on_wall_only():
+		_walljump()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -114,11 +167,11 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and !dashed_bool and !slamed_bool:
 		if direction:
 			# Speed up acceleration
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
-			if SPEED < MAXSPEED:
-				SPEED = SPEED + ACCEL
-			print("SPEED:",SPEED)
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+			if speed < max_speed:
+				speed = speed + accel
+			print("SPEED:",speed)
 		#elif SPEED > 0:
 			# Slow down
 			#SPEED = SPEED - DECEL
@@ -129,20 +182,20 @@ func _physics_process(delta: float) -> void:
 
 		else:
 			# Stop
-			SPEED = 0
-			velocity.x = move_toward(velocity.x, 0, MAXSPEED)
-			velocity.z = move_toward(velocity.z, 0, MAXSPEED)
+			speed = 0
+			velocity.x = move_toward(velocity.x, 0, max_speed)
+			velocity.z = move_toward(velocity.z, 0, max_speed)
 	elif !dashed_bool and !slamed_bool:
 		if direction:
 			# Speed up acceleration
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
-			if SPEED < MAXSPEED:
-				SPEED = SPEED + ACCEL
-			print("SPEED:",SPEED)
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+			if speed < max_speed:
+				speed = speed + accel
+			print("SPEED:",speed)
 		else:
-			velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0)
-			velocity.y = lerp(velocity.y, direction.y * SPEED, delta * 2.0)
+			velocity.x = lerp(velocity.x, direction.x * speed, delta * 2.0)
+			velocity.y = lerp(velocity.y, direction.y * speed, delta * 2.0)
 	move_and_slide()
 	
 	# Head Bob

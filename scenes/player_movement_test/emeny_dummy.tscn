@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://njf4w6xcqe3f"]
+
+[ext_resource type="Script" uid="uid://bsr3ntluahawm" path="res://scenes/player_movement_test/emeny_dummy.gd" id="1_mxlf7"]
+[ext_resource type="PackedScene" uid="uid://8lltg4uh3ei2" path="res://assets/cultist.fbx" id="2_6k1ey"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ca4xg"]
+
+[node name="EmenyDummy" type="StaticBody3D" unique_id=1318146514 groups=["enemy"]]
+script = ExtResource("1_mxlf7")
+
+[node name="cultist" parent="." unique_id=103616958 instance=ExtResource("2_6k1ey")]
+transform = Transform3D(0.82900006, 0, 0, 0, 0.77053684, 0, 0, 0, 0.8273579, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1314594796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97109747, -0.2512362)
+shape = SubResource("CapsuleShape3D_ca4xg")
