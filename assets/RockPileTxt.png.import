@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://26hovlkqyeow"
-path.s3tc="res://.godot/imported/cultist_0.png-daea77dfa4adf0f37c2690af3256097f.s3tc.ctex"
+uid="uid://b2g0bdasdw0nj"
+path.s3tc="res://.godot/imported/RockPileTxt.png-676ccf02182bc8f7ad80397fa28214e8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/cultist_0.png"
-dest_files=["res://.godot/imported/cultist_0.png-daea77dfa4adf0f37c2690af3256097f.s3tc.ctex"]
+source_file="res://assets/RockPileTxt.png"
+dest_files=["res://.godot/imported/RockPileTxt.png-676ccf02182bc8f7ad80397fa28214e8.s3tc.ctex"]
 
 [params]
 
