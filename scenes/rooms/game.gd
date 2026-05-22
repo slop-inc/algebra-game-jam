@@ -81,7 +81,7 @@ func advance():
 
 func _ready() -> void:
 	_spawn_room(playground)
-	for i in range(1):
+	for i in range(5):
 		_generate_room()
 
 func _process(_delta: float) -> void:
