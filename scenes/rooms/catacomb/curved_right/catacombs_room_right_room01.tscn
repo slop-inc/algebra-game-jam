@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://mapskbvnvlgs"]
+[gd_scene format=3 uid="uid://ck7esfdv5y48a"]
 
-[ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_ewda1"]
-[ext_resource type="PackedScene" uid="uid://drvashnbmyti1" path="res://scenes/building_blocks/entrance_area.tscn" id="2_1hirs"]
-[ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="2_a7iaf"]
-[ext_resource type="ArrayMesh" uid="uid://chef4clg2816l" path="res://assets/RockPile.obj" id="2_h0efs"]
-[ext_resource type="Texture2D" uid="uid://diteybb4kaiwy" path="res://assets/CatWallTxt.png" id="3_h0efs"]
-[ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="4_1hirs"]
+[ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_xyqga"]
+[ext_resource type="PackedScene" uid="uid://drvashnbmyti1" path="res://scenes/building_blocks/entrance_area.tscn" id="2_2e072"]
+[ext_resource type="ArrayMesh" uid="uid://chef4clg2816l" path="res://assets/RockPile.obj" id="3_jyskl"]
+[ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="4_i4nwl"]
+[ext_resource type="Texture2D" uid="uid://diteybb4kaiwy" path="res://assets/CatWallTxt.png" id="5_nmxs1"]
+[ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="6_68bei"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bw0n"]
 size = Vector3(1.9, 3.4, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj74k"]
-albedo_texture = ExtResource("3_h0efs")
+albedo_texture = ExtResource("5_nmxs1")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
@@ -22,7 +22,7 @@ material = SubResource("StandardMaterial3D_nj74k")
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvrgy"]
-albedo_texture = ExtResource("4_1hirs")
+albedo_texture = ExtResource("6_68bei")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
@@ -36,7 +36,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Root" type="Node3D" unique_id=1133836879]
-script = ExtResource("1_ewda1")
+script = ExtResource("1_xyqga")
 
 [node name="RoomMarker" type="Marker3D" parent="." unique_id=1263662154]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16, 0, -16)
@@ -44,21 +44,21 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16, 
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=578743990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
-[node name="EntranceArea" parent="." unique_id=598252848 instance=ExtResource("2_1hirs")]
+[node name="EntranceArea" parent="." unique_id=598252848 instance=ExtResource("2_2e072")]
 
 [node name="Rocks" type="StaticBody3D" parent="." unique_id=941111733]
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks" unique_id=913704172]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.90000004, -0.1)
-mesh = ExtResource("2_h0efs")
+mesh = ExtResource("3_jyskl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks" unique_id=1802834133]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0.15000007, 1.3062178, 0.15000002)
 shape = SubResource("BoxShape3D_2bw0n")
 disabled = true
 
-[node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("2_a7iaf")]
+[node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("4_i4nwl")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, -16)
 
 [node name="Enemies" type="Node" parent="." unique_id=178427674]
@@ -169,15 +169,6 @@ mesh = SubResource("BoxMesh_2bw0n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D10/StaticBody3D" unique_id=855780746]
 shape = SubResource("ConcavePolygonShape3D_ln6rh")
 
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="Room/Floors" unique_id=1587364426]
-transform = Transform3D(8, 0, 0, 0, 0.2, 0, 0, 0, 16, 12.000001, 2.95, -16)
-mesh = SubResource("BoxMesh_2bw0n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/MeshInstance3D11" unique_id=473883622]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D11/StaticBody3D" unique_id=1294524820]
-shape = SubResource("ConcavePolygonShape3D_ln6rh")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floors" unique_id=1164271689]
 transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 24, 0, -0.1, -11.999999)
 mesh = SubResource("BoxMesh_2bw0n")
@@ -185,13 +176,4 @@ mesh = SubResource("BoxMesh_2bw0n")
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/MeshInstance3D" unique_id=1189950942]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D/StaticBody3D" unique_id=1059834678]
-shape = SubResource("ConcavePolygonShape3D_a2kk7")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room/Floors" unique_id=1258442770]
-transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 24, 0, 2.9500003, -11.999999)
-mesh = SubResource("BoxMesh_2bw0n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/MeshInstance3D2" unique_id=1562138615]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D2/StaticBody3D" unique_id=1719908182]
 shape = SubResource("ConcavePolygonShape3D_a2kk7")
