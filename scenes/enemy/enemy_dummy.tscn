@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://d107fi78qxqc3" path="res://scenes/enemy/EnemyAsleep.gd" id="3_ajul1"]
 [ext_resource type="Script" uid="uid://dog6bixt1x20u" path="res://scenes/enemy/EnemyIdle.gd" id="4_2hyn7"]
 [ext_resource type="Script" uid="uid://bnqjoibwbkp8y" path="res://scenes/enemy/EnemyChase.gd" id="5_6ynje"]
+[ext_resource type="Script" uid="uid://co4dy6kh6yqkj" path="res://scenes/enemy/EnemyDeath.gd" id="6_437bq"]
 [ext_resource type="PackedScene" uid="uid://vtwp1xir82q3" path="res://scenes/enemy/cultist2.tscn" id="6_xm4fq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ca4xg"]
@@ -34,6 +35,10 @@ metadata/_custom_type_script = "uid://dog6bixt1x20u"
 [node name="Chase" type="Node" parent="StateMachine" unique_id=1524620161]
 script = ExtResource("5_6ynje")
 metadata/_custom_type_script = "uid://bnqjoibwbkp8y"
+
+[node name="die" type="Node" parent="StateMachine" unique_id=2136494028]
+script = ExtResource("6_437bq")
+metadata/_custom_type_script = "uid://co4dy6kh6yqkj"
 
 [node name="cultist" parent="." unique_id=1115433254 instance=ExtResource("6_xm4fq")]
 

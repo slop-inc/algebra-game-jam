@@ -26,6 +26,9 @@ func Physics_Update(delta: float):
 	elif !player and !agent.is_stunned:
 		print("No player Located")
 		Transitioned.emit(self,"idle")
+		
+	if agent.health <= 0:
+		Transitioned.emit(self,"die")
 	agent.move_and_slide()
 	
 	
