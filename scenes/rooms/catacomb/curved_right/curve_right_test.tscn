@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://dn8rwqydvwu35"]
 
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_m62u0"]
+[ext_resource type="ArrayMesh" uid="uid://chef4clg2816l" path="res://assets/RockPile.obj" id="2_57jfc"]
+[ext_resource type="PackedScene" uid="uid://drvashnbmyti1" path="res://scenes/building_blocks/entrance_area.tscn" id="2_lenio"]
 [ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="2_m62u0"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="3_jrf78"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3f5cf"]
+size = Vector3(1.9, 3.4, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrf78"]
 albedo_texture = ExtResource("3_jrf78")
@@ -28,8 +33,24 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 16, 
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=578743990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
+[node name="EntranceArea" parent="." unique_id=598252848 instance=ExtResource("2_lenio")]
+
+[node name="Rocks" type="StaticBody3D" parent="." unique_id=1354497769]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks" unique_id=738446473]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.90000004, -0.1)
+mesh = ExtResource("2_57jfc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks" unique_id=1882869083]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0.15000007, 1.3062178, 0.15000002)
+shape = SubResource("BoxShape3D_3f5cf")
+disabled = true
+
 [node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("2_m62u0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, -16)
+
+[node name="Enemies" type="Node" parent="." unique_id=2123286737]
 
 [node name="Room" type="Node3D" parent="." unique_id=627971117]
 

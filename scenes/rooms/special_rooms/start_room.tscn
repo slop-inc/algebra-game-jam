@@ -1,23 +1,12 @@
 [gd_scene format=3 uid="uid://c44iiifu0ij7x"]
 
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_f8a4q"]
-[ext_resource type="ArrayMesh" uid="uid://c10xbexjw8sdj" path="res://assets/RockPile.obj" id="2_3qkig"]
+[ext_resource type="ArrayMesh" uid="uid://chef4clg2816l" path="res://assets/RockPile.obj" id="2_3qkig"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="2_kbl62"]
+[ext_resource type="PackedScene" uid="uid://drvashnbmyti1" path="res://scenes/building_blocks/entrance_area.tscn" id="2_sw25w"]
 [ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="3_qr66m"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sw25w"]
-size = Vector3(0.3, 2.2, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_r1ypf"]
-size = Vector3(0.3, 2.2, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6wumg"]
-size = Vector3(1.4, 2.2, 0.3)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_rewp5"]
-size = Vector3(1.4, 0.3, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_y4mkc"]
 size = Vector3(1.9, 3.4, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbl62"]
@@ -40,40 +29,24 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.08
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=1646835019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
-[node name="EntranceArea" type="Area3D" parent="." unique_id=1937644259]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6000001, 0)
+[node name="EntranceArea" parent="." unique_id=598252848 instance=ExtResource("2_sw25w")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EntranceArea" unique_id=1728268770]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 1.1, -0.5)
-shape = SubResource("BoxShape3D_sw25w")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="EntranceArea" unique_id=3664505]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8499999, 1.1, -0.5)
-shape = SubResource("BoxShape3D_r1ypf")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="EntranceArea" unique_id=1792850533]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7881393e-07, 1.1, -1.15)
-shape = SubResource("BoxShape3D_6wumg")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="EntranceArea" unique_id=442672521]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7881393e-07, 2.35, -0.49999988)
-shape = SubResource("BoxShape3D_rewp5")
-
-[node name="Rocks" type="StaticBody3D" parent="." unique_id=916160366]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4, 0)
+[node name="Rocks" type="StaticBody3D" parent="." unique_id=1843386916]
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks" unique_id=1109990232]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks" unique_id=1791756178]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.90000004, -0.1)
 mesh = ExtResource("2_3qkig")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks" unique_id=1026060631]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rocks" unique_id=576971488]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0.15000007, 1.3062178, 0.15000002)
-shape = SubResource("BoxShape3D_y4mkc")
+shape = SubResource("BoxShape3D_rewp5")
 disabled = true
 
 [node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("3_qr66m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Enemies" type="Node" parent="." unique_id=876708153]
 
 [node name="Room" type="Node3D" parent="." unique_id=235440140]
 

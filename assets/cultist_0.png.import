@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b83v26tf5po5g"
-path="res://.godot/imported/cultist fucked up_0.png-7f7412174a581e0539f16653c0da564a.ctex"
+uid="uid://66ien58iwgjo"
+path="res://.godot/imported/cultist_0.png-daea77dfa4adf0f37c2690af3256097f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cultist fucked up_0.png"
-dest_files=["res://.godot/imported/cultist fucked up_0.png-7f7412174a581e0539f16653c0da564a.ctex"]
+source_file="res://assets/cultist_0.png"
+dest_files=["res://.godot/imported/cultist_0.png-daea77dfa4adf0f37c2690af3256097f.ctex"]
 
 [params]
 
