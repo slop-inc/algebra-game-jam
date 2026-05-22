@@ -1,45 +1,56 @@
 extends CharacterBody3D
 
-
+# Movement vars
 var SPEED = 0.0
 var MAXSPEED = 5.0
 var JUMP_VELOCITY = 4.
 var DECEL = 1
 var ACCEL = 0.80
-var SENSITIVITY = 0.006
+var SENSITIVITY = 0.001
+
+# Dash vars
 var dashed_bool = false
 var dash_time = 0
 
+# Fluf vars
 var bob_frequency = 1.5
 var bob_amplitude = 0.05
 var t_bob = 0.0 
 
 
 @onready var head = $Head
-@onready var camera = $Head/Camera3D
-@onready var dash_point = $Head/Camera3D/SpringArm3D/DashPoint
+@onready var camera = $Head/Neck/Camera3D
+@onready var neck = $Head/Neck
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
+	
+	# Look Around
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_z(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 	
+	# Unlock mouse
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			
+	# Lock Mouse
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.double_click:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			
+
 func _input(event):
+	
+	# Dash Input
 	if Input.is_action_just_pressed("dash"):
 		_dash()
 	
+# Dash Function
 func _dash():
 	print("Dashed")
 	dashed_bool = true
@@ -73,11 +84,11 @@ func _physics_process(delta: float) -> void:
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	if input_dir.x < 0:
-		camera.rotation.z = lerp_angle(camera.rotation.z, deg_to_rad(4), 0.02)
+		neck.rotation.x = lerp_angle(neck.rotation.x, deg_to_rad(-4), 0.02)
 	if input_dir.x > 0:
-		camera.rotation.z = lerp_angle(camera.rotation.z, deg_to_rad(-4), 0.02)
+		neck.rotation.x = lerp_angle(neck.rotation.x, deg_to_rad(4), 0.02)
 	if input_dir.x == 0:
-		camera.rotation.z = lerp_angle(camera.rotation.z, deg_to_rad(0), 0.02)
+		neck.rotation.x = lerp_angle(neck.rotation.x, deg_to_rad(0), 0.02)
 	
 	if is_on_floor() and !dashed_bool:
 		if direction:

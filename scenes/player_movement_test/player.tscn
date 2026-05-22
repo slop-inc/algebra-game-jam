@@ -24,17 +24,19 @@ shape = SubResource("CapsuleShape3D_7pbky")
 [node name="Head" type="Node3D" parent="." unique_id=67311142]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52799296, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=2138004851]
-transform = Transform3D(-5.463923e-08, 0, -1.2499999, 0, 1.25, 0, 1.2499999, 0, -5.463923e-08, 0, 0, 0)
+[node name="Neck" type="Node3D" parent="Head" unique_id=811422326]
+
+[node name="Camera3D" type="Camera3D" parent="Head/Neck" unique_id=2138004851]
+transform = Transform3D(-5.4639234e-08, 0, -1.25, 0, 1.25, 0, 1.25, 0, -5.4639234e-08, 0, 0, 0)
 fov = 72.8149
 
-[node name="SpringArm3D" type="SpringArm3D" parent="Head/Camera3D" unique_id=1226474976]
+[node name="SpringArm3D" type="SpringArm3D" parent="Head/Neck/Camera3D" unique_id=1226474976]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
 spring_length = 3.0
 
-[node name="DashPoint" type="Node3D" parent="Head/Camera3D/SpringArm3D" unique_id=796801964]
+[node name="DashPoint" type="Node3D" parent="Head/Neck/Camera3D/SpringArm3D" unique_id=796801964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/SpringArm3D/DashPoint" unique_id=1439566421]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Neck/Camera3D/SpringArm3D/DashPoint" unique_id=1439566421]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 mesh = SubResource("SphereMesh_rmv2p")
