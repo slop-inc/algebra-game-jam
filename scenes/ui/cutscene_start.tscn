@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dbxsiowyytltq"]
 
 [ext_resource type="Script" uid="uid://hxb4p8fdakef" path="res://scenes/ui/cutscene_start.gd" id="1_7a4cy"]
+[ext_resource type="AudioStream" uid="uid://b22d55m482wk5" path="res://assets/sound/click.wav" id="2_6trma"]
+[ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="2_l3ckd"]
+[ext_resource type="AudioStream" uid="uid://cyi01w6gps35d" path="res://assets/sound/drone.wav" id="4_gj335"]
 
 [node name="Node2D" type="CanvasLayer" unique_id=1879991073]
 script = ExtResource("1_7a4cy")
@@ -47,30 +50,57 @@ anchor_left = -0.16700001
 anchor_right = 1.167
 anchor_bottom = 1.0
 offset_left = 256.32
-offset_top = 128.0
+offset_top = 96.0
 offset_right = -256.32007
-offset_bottom = -64.0
+offset_bottom = -128.0
 
 [node name="Label" type="Label" parent="Control/Control/VBoxContainer" unique_id=1296173814]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "I am the evil fucking demon of doom."
+theme_override_fonts/font = ExtResource("2_l3ckd")
+theme_override_font_sizes/font_size = 28
+text = "There you are. ^Samson, ^our brave little vessel. ^Barely a fitting one by now, with how you ruined your body."
 horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Control/Control/VBoxContainer" unique_id=354195998]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
 
 [node name="Label2" type="Label" parent="Control/Control/VBoxContainer" unique_id=1101790777]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "I am gonna kill you and shit."
+theme_override_fonts/font = ExtResource("2_l3ckd")
+theme_override_font_sizes/font_size = 28
+text = "But a fitting vessel you still are, ^so with as little time as we have, I can't have you not cooperating."
 horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BoxContainer2" type="BoxContainer" parent="Control/Control/VBoxContainer" unique_id=2128393530]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
 
 [node name="Label3" type="Label" parent="Control/Control/VBoxContainer" unique_id=537156822]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "My little chudling vessel."
+theme_override_fonts/font = ExtResource("2_l3ckd")
+theme_override_font_sizes/font_size = 28
+text = "While its not ideal, ^I have only one more thing i can do to stop you from getting the Holy Lance, ^and to sacrifice you for my Glorious Lord."
 horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BoxContainer3" type="BoxContainer" parent="Control/Control/VBoxContainer" unique_id=455241686]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="Control/Control/VBoxContainer" unique_id=2029724528]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_l3ckd")
+theme_override_font_sizes/font_size = 28
+text = ".^.^.^ \"squelch\" is the sound thats made when the wolf takes his heart out of his chest, ^then followed by some gutteral screams."
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Button" type="Button" parent="Control" unique_id=749008062]
 layout_mode = 1
@@ -84,5 +114,13 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "next"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=453991697]
+stream = ExtResource("2_6trma")
+pitch_scale = 0.25
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1003204337]
+stream = ExtResource("4_gj335")
+autoplay = true
 
 [connection signal="pressed" from="Control/Button" to="." method="_advance"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhqh4lhawx71j"]
 
 [ext_resource type="Script" uid="uid://br8rqe0gw6l5u" path="res://scenes/player_movement_test/player.gd" id="1_ou55v"]
+[ext_resource type="PackedScene" uid="uid://jh1j6acxviwf" path="res://scenes/ui/ui.tscn" id="2_5efra"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rmv2p"]
 
@@ -27,3 +28,16 @@ fov = 72.8149
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Neck/Camera3D" unique_id=1029934374]
 target_position = Vector3(0, 0, -2)
+
+[node name="UI" parent="Head/Neck/Camera3D" unique_id=1616747875 instance=ExtResource("2_5efra")]
+
+[node name="Label" type="Label" parent="Head/Neck/Camera3D" unique_id=1682352896]
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 288.0
+offset_bottom = 200.0
+
+[node name="Health" type="Timer" parent="." unique_id=523939863]
+wait_time = 30.0
+one_shot = true
+autostart = true
