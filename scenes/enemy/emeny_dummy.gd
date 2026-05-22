@@ -6,9 +6,7 @@ var is_stunned = false
 var stun_time = 0
 var explode = false
 
-var state_machine = self.get_child(1)
 
-signal GotKicked 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
@@ -16,9 +14,6 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if health <= 0:
-		print("died")
 		
 func _physics_process(delta: float) -> void:
 	if is_stunned:
@@ -51,7 +46,7 @@ func _getKicked(dmg: int, kick_direction: Vector3):
 
 func _on_instakill_detector_body_entered(body: Node3D) -> void:
 	var player = get_tree().get_first_node_in_group("player")
-	if body == player:
+	if body == player and player.dashed_bool or player.slamed_bool:
 		explode = true
 		health = 0
 		
