@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://njf4w6xcqe3f"]
+[gd_scene format=3 uid="uid://db48dsrgg6x0p"]
 
 [ext_resource type="Script" uid="uid://bsr3ntluahawm" path="res://scenes/enemy/emeny_dummy.gd" id="1_xm4fq"]
 [ext_resource type="Script" uid="uid://bmw7y1bfxxxav" path="res://scenes/enemy/StateMachine.gd" id="2_437bq"]
@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://dog6bixt1x20u" path="res://scenes/enemy/EnemyIdle.gd" id="4_2hyn7"]
 [ext_resource type="Script" uid="uid://bnqjoibwbkp8y" path="res://scenes/enemy/EnemyChase.gd" id="5_6ynje"]
 [ext_resource type="Script" uid="uid://co4dy6kh6yqkj" path="res://scenes/enemy/EnemyDeath.gd" id="6_437bq"]
-[ext_resource type="PackedScene" uid="uid://vtwp1xir82q3" path="res://scenes/enemy/cultist2.tscn" id="6_xm4fq"]
-[ext_resource type="Script" uid="uid://yikwchdxkj0h" path="res://scenes/enemy/EnemyAttack.gd" id="7_ajul1"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/cultist2.tscn" id="6_xm4fq"]
+[ext_resource type="Script" path="res://scenes/enemy/EnemyAttack.gd" id="7_ajul1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ca4xg"]
 radius = 0.5078125
@@ -46,7 +46,6 @@ metadata/_custom_type_script = "uid://co4dy6kh6yqkj"
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=933228501]
 script = ExtResource("7_ajul1")
-metadata/_custom_type_script = "uid://yikwchdxkj0h"
 
 [node name="cultist" parent="." unique_id=1115433254 instance=ExtResource("6_xm4fq")]
 transform = Transform3D(-0.7, 0, 6.119594e-08, 0, 0.7, 0, -6.119594e-08, 0, -0.7, -1.3892524e-08, 0, -0.00074246526)

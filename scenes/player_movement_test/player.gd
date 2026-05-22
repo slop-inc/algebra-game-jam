@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+const HEAL_AMOUNT = 3.0
+
 # Movement vars
 var speed = 0.0
 var max_speed = 5.0
@@ -35,8 +37,13 @@ var t_bob = 0.0
 
 @onready var timer = $Health
 @onready var time_label = $Head/Neck/Camera3D/Label
+@onready var ui = $Head/Neck/Camera3D/UI
+@onready var fader = $Head/Neck/Camera3D/Fader
+@onready var meat_sound = $MeatSound
+var stop_meat = false
 
 func _ready():
+	meat_sound.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
@@ -110,7 +117,13 @@ func _punch():
 	if hit:
 		if hit.is_in_group("enemy"):
 			hit._takeDamage(10)
-			
+			if hit.health < 0:
+				_heal(HEAL_AMOUNT)
+
+func _heal(amount: float) -> void:
+	var current_time = timer.get_time_left()
+	timer.set_wait_time(current_time + amount)
+
 func _kick():
 	# I am ChatGPT and i wrote this code, uggggghhh im jorking it ughhhhhhh
 	#print("Kicked")
@@ -137,8 +150,24 @@ func _walljump():
 	
 	velocity_on_jump = velocity
 
+var dying = false
 func _process(float) -> void:
-	pass
+	if !stop_meat:
+		meat_sound.volume_db = -50 + (50 * (1.0 - (timer.get_time_left() / timer.get_wait_time())))
+	ui.set_bar_percentage(timer.get_time_left() / timer.get_wait_time())
+	time_label.set_text(str(timer.get_time_left()).left(4))
+	if timer.get_time_left() <= 0 and !dying:
+		dying = true
+		_fade_away()
+
+func _fade_away():
+	var sound_tween = get_tree().create_tween()
+	await sound_tween.tween_property(meat_sound, "volume_db", -100, 2)
+	stop_meat = true
+	fader.visible = true
+	var tween = get_tree().create_tween()
+	await tween.tween_property(fader, "modulate:a", 1, 2).finished
+	get_tree().change_scene_to_file("res://scenes/ui/death.tscn")
 
 func _physics_process(delta: float) -> void:
 	
