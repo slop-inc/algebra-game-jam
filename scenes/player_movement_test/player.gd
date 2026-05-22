@@ -33,6 +33,9 @@ var t_bob = 0.0
 @onready var neck = $Head/Neck
 @onready var hit_ray = $Head/Neck/Camera3D/RayCast3D
 
+@onready var timer = $Health
+@onready var time_label = $Head/Neck/Camera3D/Label
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -133,6 +136,9 @@ func _walljump():
 	velocity.y = jump_velocity
 	
 	velocity_on_jump = velocity
+
+func _process():
+	pass
 
 func _physics_process(delta: float) -> void:
 	
