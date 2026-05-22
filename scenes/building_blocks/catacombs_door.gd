@@ -8,6 +8,7 @@ extends Node3D
 var door_kick_sounds_dir = "res://assets/sound/door_kick_sounds/"
 var kick_sounds = [ ]
 var is_kicked = false
+var time_until_collision_enabled_s = 0.1
 
 func kick() -> void:
 	if is_kicked:
@@ -17,9 +18,11 @@ func kick() -> void:
 		static_door.queue_free()
 	physics_door.visible = true
 	physics_door.freeze = false
-	physics_door.apply_force(Vector3(-500, 250, -600))
+	physics_door.apply_force(Vector3(-250, 250, -600))
 	sound_player.play()
 	game.advance()
+	await get_tree().create_timer(time_until_collision_enabled_s).timeout
+	$PhysicsDoor/CollisionShape3D.disabled = false
 
 func _ready() -> void:
 	for i in DirAccess.get_files_at(door_kick_sounds_dir):
