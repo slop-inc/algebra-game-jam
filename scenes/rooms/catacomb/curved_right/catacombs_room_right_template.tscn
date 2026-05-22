@@ -169,15 +169,6 @@ mesh = SubResource("BoxMesh_2bw0n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D10/StaticBody3D" unique_id=855780746]
 shape = SubResource("ConcavePolygonShape3D_ln6rh")
 
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="Room/Floors" unique_id=1587364426]
-transform = Transform3D(8, 0, 0, 0, 0.2, 0, 0, 0, 16, 12.000001, 2.95, -16)
-mesh = SubResource("BoxMesh_2bw0n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/MeshInstance3D11" unique_id=473883622]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D11/StaticBody3D" unique_id=1294524820]
-shape = SubResource("ConcavePolygonShape3D_ln6rh")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floors" unique_id=1164271689]
 transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 24, 0, -0.1, -11.999999)
 mesh = SubResource("BoxMesh_2bw0n")
@@ -185,13 +176,4 @@ mesh = SubResource("BoxMesh_2bw0n")
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/MeshInstance3D" unique_id=1189950942]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D/StaticBody3D" unique_id=1059834678]
-shape = SubResource("ConcavePolygonShape3D_a2kk7")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room/Floors" unique_id=1258442770]
-transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 24, 0, 2.9500003, -11.999999)
-mesh = SubResource("BoxMesh_2bw0n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/MeshInstance3D2" unique_id=1562138615]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D2/StaticBody3D" unique_id=1719908182]
 shape = SubResource("ConcavePolygonShape3D_a2kk7")
