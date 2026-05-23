@@ -12,6 +12,9 @@ func Physics_Update(delta):
 	if agent.is_awake:
 		print("!!!!")
 		_awake()
+		
+	if agent.health <= 0:
+		Transitioned.emit(self, "die")
 	
 
 func _awake():

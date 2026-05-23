@@ -7,7 +7,7 @@
 script = ExtResource("2_v17lv")
 
 [node name="Armature" parent="." index="0" unique_id=993581309]
-transform = Transform3D(100, 2.236873e-14, 2.220385e-14, -2.2203852e-14, 99.99725, -0.73981047, -2.2368732e-14, 0.73981047, 99.99725, -7.1121196e-19, -0.003203014, -1.817703)
+transform = Transform3D(100, 2.236873e-14, 2.220385e-14, -2.2203852e-14, 99.99725, -0.73981047, -2.2368732e-14, 0.73981047, 99.99725, 0, -0.003, 0)
 
 [node name="Skeleton3D" parent="Armature" index="0" unique_id=1620700250]
 bones/0/rotation = Quaternion(0.6147759, -0.03330028, 0.32888284, 0.7160851)
