@@ -54,5 +54,6 @@ func _on_instakill_detector_body_entered(body: Node3D) -> void:
 	if body == player and player.dashed_bool or player.slamed_bool:
 		explode = true
 		health = 0
+	player.heal(5.0)
 		
 		
