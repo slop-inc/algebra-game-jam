@@ -9,6 +9,7 @@ var door_kick_sounds_dir = "res://assets/sound/door_kick_sounds/"
 var kick_sounds = [ ]
 var is_kicked = false
 var time_until_collision_enabled_s = 0.1
+const TIME_UNTIL_COLLISION_DISABLED_S = 5
 
 func kick() -> void:
 	if is_kicked:
@@ -23,6 +24,11 @@ func kick() -> void:
 	game.advance()
 	await get_tree().create_timer(time_until_collision_enabled_s).timeout
 	$PhysicsDoor/CollisionShape3D.disabled = false
+	
+	await get_tree().create_timer(TIME_UNTIL_COLLISION_DISABLED_S).timeout
+	
+	physics_door.freeze = true
+	$PhysicsDoor/CollisionShape3D.disabled = true
 
 func _ready() -> void:
 	for i in DirAccess.get_files_at(door_kick_sounds_dir):
@@ -32,4 +38,6 @@ func _ready() -> void:
 	physics_door.freeze = true
 
 func _process(delta: float) -> void:
+	print(physics_door.get_linear_velocity())
+	
 	pass

@@ -38,7 +38,7 @@ script = ExtResource("2_5rlfb")
 transform = Transform3D(1, 0, 0, 0, 0.86602545, 0.50000006, 0, -0.50000006, 0.86602545, 0, 0, 0)
 mesh = ExtResource("1_goy8h")
 
-[node name="Node" type="Node" parent="." unique_id=207026378]
+[node name="Node" type="Node3D" parent="." unique_id=1943681813]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Node" unique_id=1762798964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.10000001)
