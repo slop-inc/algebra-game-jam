@@ -12,6 +12,7 @@ shader_parameter/vignette_opacity = 0.0
 shader_parameter/vignette_rgb = Vector4(1, 0, 0, 1)
 
 [node name="UI" type="CanvasLayer" unique_id=1616747875]
+layer = -5
 script = ExtResource("1_g5kmx")
 
 [node name="Control" type="Control" parent="." unique_id=372426446]
@@ -62,16 +63,6 @@ offset_left = 160.32
 offset_top = 592.0
 offset_right = -160.32007
 mouse_filter = 2
-
-[node name="Label" type="Label" parent="Control/Control" unique_id=828835505]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 240.0
-offset_bottom = 80.0
-theme_override_font_sizes/font_size = 32
-text = "bullllshit"
-vertical_alignment = 1
 
 [node name="Vignette" type="ColorRect" parent="Control" unique_id=1561337620]
 material = SubResource("ShaderMaterial_u7n8c")

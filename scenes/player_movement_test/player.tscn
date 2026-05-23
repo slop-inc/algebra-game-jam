@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://br8rqe0gw6l5u" path="res://scenes/player_movement_test/player.gd" id="1_ou55v"]
 [ext_resource type="PackedScene" uid="uid://jh1j6acxviwf" path="res://scenes/ui/ui.tscn" id="2_5efra"]
+[ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="3_5smiu"]
+[ext_resource type="AudioStream" uid="uid://o0cl64by1f60" path="res://assets/sound/meat.wav" id="4_j57bu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rmv2p"]
 
@@ -32,12 +34,33 @@ target_position = Vector3(0, 0, -2)
 [node name="UI" parent="Head/Neck/Camera3D" unique_id=1616747875 instance=ExtResource("2_5efra")]
 
 [node name="Label" type="Label" parent="Head/Neck/Camera3D" unique_id=1682352896]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 192.0
-offset_top = 128.0
-offset_right = 288.0
-offset_bottom = 200.0
+offset_top = 64.0
+offset_right = -192.0
+offset_bottom = -528.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_5smiu")
+theme_override_font_sizes/font_size = 32
+text = "30.0000000"
+
+[node name="Fader" type="ColorRect" parent="Head/Neck/Camera3D" unique_id=1628240347]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Health" type="Timer" parent="." unique_id=523939863]
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
 autostart = true
+
+[node name="MeatSound" type="AudioStreamPlayer" parent="." unique_id=1319242089]
+stream = ExtResource("4_j57bu")
+volume_db = -50.0
+autoplay = true
