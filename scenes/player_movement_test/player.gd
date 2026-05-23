@@ -30,10 +30,14 @@ var bob_amplitude = 0.05
 var t_bob = 0.0 
 
 
+@onready var PROJECTILE = preload("res://scenes/enemy/Fireball.tscn")
+
 @onready var head = $Head
 @onready var camera = $Head/Neck/Camera3D
 @onready var neck = $Head/Neck
 @onready var hit_ray = $Head/Neck/Camera3D/RayCast3D
+
+@onready var evil_fucking_marker_for_the_purposes_of_launching_the_projectile = $Head/Neck/Camera3D/EvilFuckingMarkerForThePurposesOfLaunchingTheProjectile
 
 @onready var timer = $Health
 @onready var time_label = $Head/Neck/Camera3D/Label
@@ -82,7 +86,9 @@ func _input(event):
 		
 	if Input.is_action_just_pressed("kick"):
 		_kick()
-			
+	
+	if Input.is_action_just_pressed("shoot"):
+		_shoot()
 	
 # Dash Function
 func _dash():
@@ -113,6 +119,18 @@ func _punch():
 			hit._takeDamage(10)
 			if hit.health < 0:
 				_heal(HEAL_AMOUNT)
+
+func _shoot():
+	var projectile = PROJECTILE.instantiate()
+	projectile.is_from_player = true
+	get_tree().root.get_child(0).add_child(projectile)
+	projectile.global_position = Vector3(camera.global_position.x, camera.global_position.y, camera.global_position.z)
+	projectile.dir = camera.global_position.direction_to(evil_fucking_marker_for_the_purposes_of_launching_the_projectile.global_position)
+	pass
+
+func take_damage(amount: float):
+	var current_time = timer.get_time_left()
+	timer.set_wait_time(current_time - amount)
 
 func _heal(amount: float) -> void:
 	var current_time = timer.get_time_left()

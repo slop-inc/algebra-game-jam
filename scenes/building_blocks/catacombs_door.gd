@@ -38,6 +38,6 @@ func _ready() -> void:
 	physics_door.freeze = true
 
 func _process(delta: float) -> void:
-	print(physics_door.get_linear_velocity())
+	#print(physics_door.get_linear_velocity())
 	
 	pass
