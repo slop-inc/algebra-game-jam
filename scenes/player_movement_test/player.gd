@@ -144,9 +144,7 @@ func take_damage(amount: float):
 
 func heal(amount: float) -> void:
 	can_dash = true
-	print("about to heal")
 	var current_time = timer.get_time_left()
-	print("Time left:")
 	print(timer.get_time_left())
 	timer.stop()
 	if current_time + amount > 20:
@@ -155,7 +153,6 @@ func heal(amount: float) -> void:
 		timer.set_wait_time(current_time + amount)
 	timer.start()
 	timer.set_wait_time(max_time)
-	print("Will heal for" + str(current_time + amount))
 
 func _kick():
 	hand._attack()
