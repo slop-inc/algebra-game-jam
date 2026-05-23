@@ -36,6 +36,6 @@ func _shoot_projectile():
 	has_shot = true
 	var projectile = PROJECTILE.instantiate()
 	get_parent().add_child(projectile)
-	projectile.global_position = Vector3(agent.global_position.x, agent.global_position.y + 1, agent.global_position.z)
+	projectile.global_position = Vector3(agent.global_position.x, agent.global_position.y + 0.5, agent.global_position.z)
 	projectile.dir = agent.global_position.direction_to(player.global_position)
 	
