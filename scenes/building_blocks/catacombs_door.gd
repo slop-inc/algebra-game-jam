@@ -51,7 +51,7 @@ var ticks_of_rest = 15
 func _process(_delta: float) -> void:
 	if physics_door.freeze == false:
 		var velocity = physics_door.get_linear_velocity()
-		print(velocity)
+		#print(velocity)
 		if velocity.x <= stop and velocity.x >= -stop and velocity.y <= stop and velocity.y >= -stop and velocity.z <= stop and velocity.z >= -stop:
 			ticks_of_rest -= 1
 		else:

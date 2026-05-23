@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cjjtvxev80b5e"]
+[gd_scene format=3 uid="uid://c8emfq5gl2547"]
 
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_wnknl"]
 [ext_resource type="PackedScene" uid="uid://drvashnbmyti1" path="res://scenes/building_blocks/entrance_area.tscn" id="2_wkse0"]
@@ -63,7 +63,7 @@ disabled = true
 [node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("4_f0bb1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16, 0, -16.000002)
 
-[node name="Enemies" type="Node" parent="." unique_id=842915712]
+[node name="Enemies" type="Node3D" parent="." unique_id=521875661]
 
 [node name="EnemyRanged" parent="Enemies" unique_id=1073975167 instance=ExtResource("5_naqvj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1, -4)

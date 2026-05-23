@@ -86,7 +86,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9861283, 0)
 [node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("3_qr66m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
-[node name="Enemies" type="Node" parent="." unique_id=876708153]
+[node name="Enemies" type="Node3D" parent="." unique_id=696890207]
 
 [node name="Room" type="Node3D" parent="." unique_id=235440140]
 

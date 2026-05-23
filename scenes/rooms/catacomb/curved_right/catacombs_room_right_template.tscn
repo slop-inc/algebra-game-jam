@@ -61,7 +61,7 @@ disabled = true
 [node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("2_a7iaf")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, -16)
 
-[node name="Enemies" type="Node" parent="." unique_id=178427674]
+[node name="Enemies" type="Node3D" parent="." unique_id=2052425224]
 
 [node name="Room" type="Node3D" parent="." unique_id=627971117]
 

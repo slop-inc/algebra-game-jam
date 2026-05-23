@@ -7,7 +7,7 @@ const blood_explosion = preload("res://scenes/enemy/BloodExplosion.tscn")
 
 
 func Enter():
-	print("Entered Death")
+	#print("Entered Death")
 	_die()
 	
 func _die():

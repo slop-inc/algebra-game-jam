@@ -4,19 +4,23 @@ class_name EnemyAsleep
 @onready var agent = self.get_parent().get_parent()
 
 func Enter():
-	print("Entered Sleep")
+	#print("Entered Sleep")
+	pass
 	
 	
 func Physics_Update(delta):
-	_awake()
+	if agent.is_awake:
+		print("!!!!")
+		_awake()
 	
 
 func _awake():
-	print("Awoke")
+	#print("Awoke")
 	
 	if agent.is_ranged:
 		Transitioned.emit(self, "ranged")
 	else:
 		Transitioned.emit(self, "chase")
 func Exit():
-	print("Left Sleep")
+	#print("Left Sleep")
+	pass

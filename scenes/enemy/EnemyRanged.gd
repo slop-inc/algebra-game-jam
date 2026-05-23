@@ -10,7 +10,8 @@ var last_shot = 0
 var has_shot = false
 
 func Enter():
-	print("Entered Ranged Attack")
+	#print("Entered Ranged Attack")
+	pass
 
 func Physics_Update(_delta: float):
 	if !has_shot:

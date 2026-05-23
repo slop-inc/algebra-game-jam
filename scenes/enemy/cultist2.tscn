@@ -7,7 +7,7 @@
 [node name="cultist" unique_id=1115433254 instance=ExtResource("1_oc7np")]
 script = ExtResource("2_g61jq")
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(2110817755) index="0" unique_id=710163542]
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1105097716) index="0" unique_id=1349086942]
 bones/1/rotation = Quaternion(0.0688192, 1.18926664e-07, 8.203887e-09, 0.99762917)
 bones/2/rotation = Quaternion(0.06579015, -0.056476746, 0.011665833, 0.99616563)
 bones/3/rotation = Quaternion(0.10912803, 1.2027799e-07, 4.0517516e-08, 0.99402773)
@@ -50,7 +50,7 @@ bones/50/rotation = Quaternion(-0.5399431, -0.038501076, 0.099349536, 0.83493054
 bones/51/rotation = Quaternion(0.56160975, 0.030802073, 0.005942263, 0.8268075)
 bones/52/rotation = Quaternion(0.39682043, 0.072786264, -0.116806015, 0.90751976)
 
-[node name="Cube" parent="Armature/Skeleton3D" index="0" unique_id=1294202769]
+[node name="Cube" parent="Armature/Skeleton3D" index="0" unique_id=959749380]
 surface_material_override/0 = ExtResource("3_0wec3")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
