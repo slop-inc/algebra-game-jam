@@ -312,16 +312,7 @@ transform = Transform3D(0.2588191, 0, 0.96592593, 0, 1, 0, -0.96592593, 0, 0.258
 transform = Transform3D(0.2588191, 0, 0.96592593, 0, 1, 0, -0.96592593, 0, 0.2588191, 15.843381, 1.4000001, -10.684578)
 
 [node name="Torch6" parent="Room/Torches" unique_id=1257052052 instance=ExtResource("9_m7yo6")]
-transform = Transform3D(-5.9604645e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -5.9604645e-08, 9.94338, 2.8500001, -18.284576)
-
-[node name="Torch3" parent="Room/Torches" unique_id=693165247 instance=ExtResource("9_m7yo6")]
-transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, 1.5082624, 4.9000006, -23.875553)
-
-[node name="Torch5" parent="Room/Torches" unique_id=725331264 instance=ExtResource("9_m7yo6")]
-transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, 9.308262, 6.5000005, -23.875553)
-
-[node name="Torch4" parent="Room/Torches" unique_id=451707250 instance=ExtResource("9_m7yo6")]
-transform = Transform3D(-0.25881886, 0, -0.96592575, 0, 1, 0, 0.96592575, 0, -0.25881886, -8.241738, 2, -15.732619)
+transform = Transform3D(-0.9659256, 0, 0.2588191, 0, 1, 0, -0.2588191, 0, -0.9659256, 8.44338, 2.8500001, -18.934576)
 
 [node name="RockPile" type="MeshInstance3D" parent="." unique_id=380600062]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 15.3, 1.0500001, -13.85)
