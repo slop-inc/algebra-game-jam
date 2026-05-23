@@ -120,8 +120,9 @@ func _punch():
 	if hit:
 		if hit.is_in_group("enemy"):
 			hit._takeDamage(10)
-			if hit.health < 0:
+			if hit.health <= 0:
 				_heal(HEAL_AMOUNT)
+				ui.bloody()
 
 func _shoot():
 	hand._orb()
@@ -137,6 +138,7 @@ func take_damage(amount: float):
 	timer.set_wait_time(current_time - amount)
 
 func _heal(amount: float) -> void:
+	print("will heal")
 	var current_time = timer.get_time_left()
 	timer.set_wait_time(current_time + amount)
 
@@ -167,13 +169,13 @@ func _walljump():
 
 var dying = false
 func _process(float) -> void:
-	#if !stop_meat:
-	#	meat_sound.volume_db = -50 + (50 * (1.0 - (timer.get_time_left() / timer.get_wait_time())))
-	#ui.set_bar_percentage(timer.get_time_left() / timer.get_wait_time())
-	#time_label.set_text(str(timer.get_time_left()).left(4))
-	#if timer.get_time_left() <= 0 and !dying:
-	#	dying = true
-	#	_fade_away()
+	if !stop_meat:
+		meat_sound.volume_db = -50 + (50 * (1.0 - (timer.get_time_left() / timer.get_wait_time())))
+	ui.set_bar_percentage(timer.get_time_left() / timer.get_wait_time())
+	time_label.set_text(str(timer.get_time_left()).left(4))
+	if timer.get_time_left() <= 0 and !dying:
+		dying = true
+		_fade_away()
 	pass
 
 func _fade_away():
