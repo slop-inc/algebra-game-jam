@@ -16,6 +16,7 @@ func _advance() -> void:
 	if current_text >= amount_of_labels:
 		var tween = get_tree().create_tween()
 		await tween.tween_property(fader, "modulate:a", 1, 2).finished
+		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file(next_scene_path)
 		return
 	
@@ -51,6 +52,7 @@ func _advance() -> void:
 	can_advance = true
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	for i in text_container.get_child_count():
 		if text_container.get_child(i) is Label:
 			text_array.append(text_container.get_child(i))

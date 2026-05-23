@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cryux404dwelx"]
 
-[ext_resource type="Script" uid="uid://b02rtj8xh0sim" path="res://scenes/rooms/special_rooms/charlie_church.gd" id="1_ij3hv"]
+[ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_ij3hv"]
 [ext_resource type="PackedScene" uid="uid://drvashnbmyti1" path="res://scenes/building_blocks/entrance_area.tscn" id="2_xrrj4"]
 [ext_resource type="ArrayMesh" uid="uid://chef4clg2816l" path="res://assets/RockPile.obj" id="3_civqf"]
 [ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="4_nmyvs"]
@@ -16,9 +16,6 @@
 [ext_resource type="ArrayMesh" uid="uid://c3v6sx2uypqcu" path="res://assets/CatBascancskaPloca.obj" id="13_jp228"]
 [ext_resource type="Texture2D" uid="uid://c8wlyjbwcc54a" path="res://assets/CharlieChurchChanTxt.png" id="14_h5mfk"]
 [ext_resource type="ArrayMesh" uid="uid://dmr3iuoej8bj0" path="res://assets/CharlieChurchChandaleir.obj" id="15_ij3hv"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ij3hv"]
-size = Vector3(14.900001, 5.5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_65ou5"]
 size = Vector3(1.9, 3.4, 1)
@@ -284,13 +281,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
 [node name="EntranceArea" parent="." unique_id=598252848 instance=ExtResource("2_xrrj4")]
-
-[node name="MarkerMarker" type="Area3D" parent="." unique_id=1407785174]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MarkerMarker" unique_id=413065318]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15000057, 2.25, -1)
-shape = SubResource("BoxShape3D_ij3hv")
 
 [node name="Rocks" type="StaticBody3D" parent="." unique_id=573355034]
 visible = false
@@ -1270,4 +1260,3 @@ material_override = SubResource("StandardMaterial3D_lh5i2")
 mesh = ExtResource("15_ij3hv")
 
 [connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]
-[connection signal="body_entered" from="MarkerMarker" to="." method="_on_marker_marker_body_entered"]

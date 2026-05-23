@@ -1,15 +1,14 @@
-[gd_scene format=3 uid="uid://yxotdcnrbjvy"]
+[gd_scene format=3 uid="uid://kwn4wvijqwyp"]
 
-[ext_resource type="Script" uid="uid://hxb4p8fdakef" path="res://scenes/ui/cutscene.gd" id="1_03xi7"]
-[ext_resource type="Texture2D" uid="uid://emfqfbguo4dc" path="res://assets/CUTSCENE1.png" id="2_csaeb"]
-[ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="3_jht44"]
-[ext_resource type="AudioStream" uid="uid://b22d55m482wk5" path="res://assets/sound/click.wav" id="4_ms472"]
-[ext_resource type="AudioStream" uid="uid://cyi01w6gps35d" path="res://assets/sound/drone.wav" id="5_u8c3a"]
-[ext_resource type="AudioStream" uid="uid://met4objdjark" path="res://assets/sound/door.wav" id="6_4u8l5"]
+[ext_resource type="Script" uid="uid://hxb4p8fdakef" path="res://scenes/ui/cutscene.gd" id="1_culc2"]
+[ext_resource type="Texture2D" uid="uid://p572fsindd45" path="res://assets/GameOver.png" id="2_7rsdk"]
+[ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="2_dae1q"]
+[ext_resource type="AudioStream" uid="uid://b22d55m482wk5" path="res://assets/sound/click.wav" id="3_7rsdk"]
+[ext_resource type="AudioStream" uid="uid://cyi01w6gps35d" path="res://assets/sound/drone.wav" id="4_65b8w"]
 
 [node name="Node" type="Node" unique_id=157251814]
-script = ExtResource("1_03xi7")
-next_scene_path = "res://scenes/rooms/game.tscn"
+script = ExtResource("1_culc2")
+next_scene_path = "res://scenes/main_menu/main_menu.tscn"
 
 [node name="Node2D" type="CanvasLayer" parent="." unique_id=1879991073]
 
@@ -48,7 +47,7 @@ anchor_right = 1.167
 anchor_bottom = 1.0
 offset_left = 0.32000732
 offset_right = -0.32006836
-texture = ExtResource("2_csaeb")
+texture = ExtResource("2_7rsdk")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Node2D/Control/Control" unique_id=810046998]
@@ -62,51 +61,12 @@ offset_top = 96.0
 offset_right = -256.32007
 offset_bottom = -128.0
 
-[node name="Label" type="Label" parent="Node2D/Control/Control/VBoxContainer" unique_id=1296173814]
+[node name="TriggerLabel" type="Label" parent="Node2D/Control/Control/VBoxContainer" unique_id=1296173814]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jht44")
+theme_override_fonts/font = ExtResource("2_dae1q")
 theme_override_font_sizes/font_size = 28
-text = "\"The Vessel is ready for the ritual\""
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="BoxContainer" type="BoxContainer" parent="Node2D/Control/Control/VBoxContainer" unique_id=354195998]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="Node2D/Control/Control/VBoxContainer" unique_id=1101790777]
-visible = false
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jht44")
-theme_override_font_sizes/font_size = 28
-text = "\"It is the perfect sacrifice for our Divine Lord's birth^, a holy lamb.^.^.^\""
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="BoxContainer2" type="BoxContainer" parent="Node2D/Control/Control/VBoxContainer" unique_id=2128393530]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="TriggerLabel" type="Label" parent="Node2D/Control/Control/VBoxContainer" unique_id=537156822]
-visible = false
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jht44")
-theme_override_font_sizes/font_size = 28
-text = "[^^\"The alignment nears.^ Do you subjects have the Vessel ready?^ We didn't spend the last decade finding the blade of the Holy Lance,^ just for the ritual to fail due to your incompetence.\"^^]"
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="BoxContainer3" type="BoxContainer" parent="Node2D/Control/Control/VBoxContainer" unique_id=455241686]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="Label4" type="Label" parent="Node2D/Control/Control/VBoxContainer" unique_id=2029724528]
-visible = false
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_jht44")
-theme_override_font_sizes/font_size = 28
-text = ".^.^.^ The wolves apprehending you have their backs currently turned.^^^ It's the time to strike."
+text = ".^.^."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -134,17 +94,12 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=453991697]
 position = Vector2(640, 0)
-stream = ExtResource("4_ms472")
+stream = ExtResource("3_7rsdk")
 pitch_scale = 0.25
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1003204337]
 position = Vector2(640, 0)
-stream = ExtResource("5_u8c3a")
+stream = ExtResource("4_65b8w")
 autoplay = true
-
-[node name="DoorOpen" type="AudioStreamPlayer2D" parent="." unique_id=937878637]
-position = Vector2(640, 0)
-stream = ExtResource("6_4u8l5")
-pitch_scale = 0.75
 
 [connection signal="pressed" from="Node2D/Control/Button" to="." method="_advance"]

@@ -38,6 +38,7 @@ var t_bob = 0.0
 @onready var camera = $Head/Neck/Camera3D
 @onready var neck = $Head/Neck
 @onready var hit_ray = $Head/Neck/Camera3D/RayCast3D
+@onready var fader2 = $Head/Neck/Camera3D/ColorRect
 
 @onready var evil_fucking_marker_for_the_purposes_of_launching_the_projectile = $Head/Neck/Camera3D/EvilFuckingMarkerForThePurposesOfLaunchingTheProjectile
 
@@ -51,6 +52,13 @@ var t_bob = 0.0
 @onready var meat_sound = $MeatSound
 
 var stop_meat = false
+
+func end_game():
+	var tween = get_tree().create_tween()
+	await tween.tween_property(fader2, "modulate:a", 1, 2).finished
+	
+	get_tree().change_scene_to_file("res://scenes/ui/cutscene_end.tscn")
+
 
 func _ready():
 	meat_sound.play()
@@ -199,7 +207,8 @@ func _fade_away():
 	fader.visible = true
 	var tween = get_tree().create_tween()
 	await tween.tween_property(fader, "modulate:a", 1, 2).finished
-	get_tree().change_scene_to_file("res://scenes/ui/death.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file("res://scenes/ui/cutscene_death.tscn")
 
 func _physics_process(delta: float) -> void:
 	

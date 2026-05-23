@@ -30,6 +30,14 @@ transform = Transform3D(-5.4639234e-08, 0, -1.25, 0, 1.25, 0, 1.25, 0, -5.463923
 cull_mask = 1048573
 fov = 72.8149
 
+[node name="ColorRect" type="ColorRect" parent="Head/Neck/Camera3D" unique_id=1635455092]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [node name="RayCast3D" type="RayCast3D" parent="Head/Neck/Camera3D" unique_id=1029934374]
 target_position = Vector3(0, 0, -2)
 
