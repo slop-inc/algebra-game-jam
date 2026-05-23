@@ -19,7 +19,7 @@ var sensitivity = 0.001
 # Dash vars
 var dashed_bool = false
 var dash_time = 0
-var dash_strength = 15
+var dash_strength = 20
 var can_dash = true
 
 # Slam vars
@@ -203,6 +203,7 @@ func _physics_process(delta: float) -> void:
 		if dash_time >= 0.3:
 			dash_time = 0
 			dashed_bool= false
+			velocity.y = 0
 			
 	if wall_jump_bool:
 		wall_jump_time += 1 * delta 
