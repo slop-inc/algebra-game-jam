@@ -19,7 +19,7 @@ func _on_body_entered(body):
 
 	if body.is_in_group("player"):
 		print("body is player")
-		body.heal(-5)
+		body.take_damage(5.0)
 		queue_free()
 
 	elif !body.is_in_group("player") and !body.is_in_group("enemy"):

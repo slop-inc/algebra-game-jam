@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const HEAL_AMOUNT = 7.5
+const HEAL_AMOUNT = 2.0
 
 # Movement vars
 var speed = 0.0
@@ -148,7 +148,16 @@ func _shoot():
 
 func take_damage(amount: float):
 	var current_time = timer.get_time_left()
-	timer.set_wait_time(current_time - amount)
+	if current_time - amount <= 0:
+		_fade_away()
+	print(timer.get_time_left())
+	timer.stop()
+	if current_time + amount > 20:
+		timer.set_wait_time(max_time)
+	else:
+		timer.set_wait_time(current_time - amount)
+	timer.start()
+	timer.set_wait_time(max_time)
 
 func heal(amount: float) -> void:
 	can_dash = true
