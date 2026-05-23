@@ -51,6 +51,13 @@ material = SubResource("StandardMaterial3D_sbjic")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ywk45"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_wu12n"]
+vertices = PackedVector3Array(-7.5, 0.03999999, -31.5, -7.5, 0.03999999, -0.5, 7.5, 0.03999999, -0.5, 7.5, 0.03999999, -31.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"navmesh_group"
+cell_height = 0.02
+
 [node name="Root" type="Node3D" unique_id=1133836879]
 script = ExtResource("1_w54o4")
 
@@ -107,7 +114,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.3
 
 [node name="Floors" type="Node3D" parent="Room" unique_id=1002812748]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floors" unique_id=1776658310]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floors" unique_id=1776658310 groups=["navmesh_group"]]
 transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 32, 0, -0.1, -16)
 mesh = SubResource("BoxMesh_ubwfd")
 
@@ -261,6 +268,10 @@ mesh = SubResource("BoxMesh_dbjug")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D11/StaticBody3D" unique_id=2019166660]
 shape = SubResource("ConcavePolygonShape3D_320ii")
 
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Room/Walls/MeshInstance3D11" unique_id=1024369043]
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Room/Walls" unique_id=913433162]
 transform = Transform3D(5.8, 0, 0, 0, 3, 0, 0, 0, 1, 1.66893e-06, 1.5, -14.549998)
 mesh = SubResource("BoxMesh_dbjug")
@@ -332,5 +343,8 @@ mesh = SubResource("BoxMesh_y7f2o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D7/StaticBody3D" unique_id=615428379]
 shape = SubResource("ConcavePolygonShape3D_ywk45")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=823424235]
+navigation_mesh = SubResource("NavigationMesh_wu12n")
 
 [connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]
