@@ -66,6 +66,13 @@ material = SubResource("StandardMaterial3D_x7a6r")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a378l"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_15sa5"]
+vertices = PackedVector3Array(-7.5, 0.03999999, -15.5, -7.5, 0.03999999, -0.5, 7.5, 0.03999999, -0.5, 7.5, 0.03999999, -15.5, -7.5, 7.86, -15.5, -7.5, 3.84, -0.5, 7.5, 3.84, -0.5, 7.5, 7.86, -15.5, -7.5, 7.12, -12.772727, -7.5, 6.72, -11.409091, -7.5, 6.38, -10.045454, -7.5, 5.2400002, -5.954546, -7.5, 4.92, -4.590909, 7.5, 4.92, -4.590909, 7.5, 5.2400002, -5.954546, 7.5, 6.38, -10.045454, 7.5, 6.72, -11.409091, 7.5, 7.12, -12.772727, -6.525, 7.52, -14.525, -5.01912, 4.3, -2.5229425, 5.4759645, 4.3, -2.4960327, 5.5050964, 7.52, -14.4871025, 0.9953861, 6.32, -10.023413, -4.9946623, 6.32, -10.017361, -6.504132, 4.3, -2.4839287, 5.5004225, 6.32, -9.990452, 1.0058203, 4.7200003, -3.9778767, 2.5059404, 4.3, -2.5180063, -6.4947824, 6.72, -11.477232, -6.479674, 6.32, -9.978348)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(17, 21, 7), PackedInt32Array(7, 21, 4), PackedInt32Array(4, 18, 8), PackedInt32Array(8, 28, 9), PackedInt32Array(9, 28, 10), PackedInt32Array(10, 29, 11), PackedInt32Array(11, 19, 12), PackedInt32Array(12, 24, 5), PackedInt32Array(5, 27, 6), PackedInt32Array(6, 20, 13), PackedInt32Array(13, 20, 14), PackedInt32Array(14, 25, 15), PackedInt32Array(15, 25, 16), PackedInt32Array(16, 25, 17), PackedInt32Array(17, 25, 21), PackedInt32Array(21, 18, 4), PackedInt32Array(18, 28, 8), PackedInt32Array(28, 29, 10), PackedInt32Array(29, 23, 11), PackedInt32Array(19, 24, 12), PackedInt32Array(11, 23, 19), PackedInt32Array(24, 19, 5), PackedInt32Array(27, 20, 6), PackedInt32Array(5, 19, 27), PackedInt32Array(20, 26, 14), PackedInt32Array(14, 26, 25), PackedInt32Array(25, 22, 21), PackedInt32Array(21, 22, 18), PackedInt32Array(18, 23, 28), PackedInt32Array(28, 23, 29), PackedInt32Array(23, 26, 19), PackedInt32Array(27, 26, 20), PackedInt32Array(19, 26, 27), PackedInt32Array(26, 22, 25), PackedInt32Array(22, 23, 18), PackedInt32Array(23, 22, 26)]
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"navmesh_group"
+cell_height = 0.02
+
 [node name="StartRoom" type="Node3D" unique_id=1380908902]
 script = ExtResource("1_a378l")
 
@@ -116,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
 [node name="Floors" type="Node3D" parent="Room" unique_id=88759278]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floors" unique_id=750540300]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floors" unique_id=750540300 groups=["navmesh_group"]]
 transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 16, 0, -0.1, 0)
 mesh = SubResource("BoxMesh_86g8l")
 
@@ -125,7 +132,7 @@ mesh = SubResource("BoxMesh_86g8l")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D/StaticBody3D" unique_id=559701226]
 shape = SubResource("ConcavePolygonShape3D_ncw7s")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room/Floors" unique_id=96463540]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room/Floors" unique_id=96463540 groups=["navmesh_group"]]
 transform = Transform3D(16, 0, 0, 0, 0.19318517, -4.2705145, 0, 0.051763814, 15.937776, 0, 5.65, 0)
 mesh = SubResource("BoxMesh_86g8l")
 
@@ -337,5 +344,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.8
 
 [node name="Torch4" parent="Room/Torches" unique_id=348160323 instance=ExtResource("12_15sa5")]
 transform = Transform3D(-0.9999999, 0, -1.4702741e-07, 0, 1, 0, 1.4702741e-07, 0, -0.9999999, -3.1917381, 2, -2.0826187)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1989688944]
+navigation_mesh = SubResource("NavigationMesh_15sa5")
 
 [connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]

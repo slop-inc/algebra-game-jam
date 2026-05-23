@@ -51,6 +51,13 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dbjug"]
 data = PackedVector3Array(-0.25, 1.0424, 0.3362, -0.0902, 1.1466, -0.3551, -0.0902, 1.1466, 0.3551, -0.25, 1.0424, -0.3362, -0.0902, 1.1466, -0.3551, -0.25, 1.0424, 0.3362, -0.25, 1.0424, 0.3362, -0.0902, 0.5513, 0.56049997, -0.25, 0.4788, 0.53069997, -0.0902, 1.1466, 0.3551, -0.0902, 0.5513, 0.56049997, -0.25, 1.0424, 0.3362, -0.25, 0.4788, -0.53069997, -0.25, 1.0424, 0.3362, -0.25, 0.4788, 0.53069997, -0.25, 0.4788, -0.53069997, -0.25, 0.4788, 0.53069997, -0.25, -1.25, -0.2959, -0.25, -1.25, -0.2959, -0.25, 0.4788, 0.53069997, -0.25, -1.25, 0.2959, 0, -1.25, 0.2959, 0.25, -1.25, -0.2959, 0, -1.25, -0.2959, 0.25, -1.25, 0.2959, 0.25, -1.25, -0.2959, 0, -1.25, 0.2959, 0, -1.25, 0.2959, 0, -1.25, -0.2959, -0.25, -1.25, 0.2959, -0.25, -1.25, 0.2959, 0, -1.25, -0.2959, -0.25, -1.25, -0.2959, 0.25, 0.6022, 0.61, 0.25, 1.25, -0.38639998, 0.25, 0.6022, -0.61, 0.25, 1.25, 0.38639998, 0.25, 1.25, -0.38639998, 0.25, 0.6022, 0.61, 0.25, 0.6022, 0.61, 0.25, 0.6022, -0.61, 0.25, -1.25, 0.2959, 0.25, -1.25, 0.2959, 0.25, 0.6022, -0.61, 0.25, -1.25, -0.2959, 0.25, 0.6022, -0.61, -0.0902, 1.1466, -0.3551, -0.0902, 0.5513, -0.56049997, 0.25, 0.6022, -0.61, 0, -1.25, -0.2959, 0.25, -1.25, -0.2959, -0.25, -1.25, 0.2959, -0.0902, 0.5513, 0.56049997, 0, -1.25, 0.2959, 0, -1.25, 0.2959, 0.25, 0.6022, 0.61, 0.25, -1.25, 0.2959, -0.0902, 0.5513, -0.56049997, -0.25, -1.25, -0.2959, 0, -1.25, -0.2959, -0.0902, 0.5513, -0.56049997, -0.25, 1.0424, -0.3362, -0.25, 0.4788, -0.53069997, -0.0902, 1.1466, -0.3551, -0.25, 1.0424, -0.3362, -0.0902, 0.5513, -0.56049997, -0.0902, 1.1466, 0.3551, 0.25, 0.6022, 0.61, -0.0902, 0.5513, 0.56049997, 0.25, 1.25, 0.38639998, 0.25, 0.6022, 0.61, -0.0902, 1.1466, 0.3551, 0.25, 1.25, 0.38639998, -0.0902, 1.1466, -0.3551, 0.25, 1.25, -0.38639998, -0.0902, 1.1466, 0.3551, -0.0902, 1.1466, -0.3551, 0.25, 1.25, 0.38639998, -0.25, 1.0424, -0.3362, -0.25, 1.0424, 0.3362, -0.25, 0.4788, -0.53069997, 0.25, 1.25, -0.38639998, -0.0902, 1.1466, -0.3551, 0.25, 0.6022, -0.61, -0.0902, 0.5513, -0.56049997, 0, -1.25, -0.2959, 0.25, 0.6022, -0.61, -0.25, 0.4788, 0.53069997, -0.0902, 0.5513, 0.56049997, -0.25, -1.25, 0.2959, -0.0902, 0.5513, 0.56049997, 0.25, 0.6022, 0.61, 0, -1.25, 0.2959, -0.25, 0.4788, -0.53069997, -0.25, -1.25, -0.2959, -0.0902, 0.5513, -0.56049997)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_06hha"]
+vertices = PackedVector3Array(-7.5, 0.03999999, -31.5, -7.5, 0.03999999, -0.5, 7.5, 0.03999999, -0.5, 7.5, 0.03999999, -31.5, -7.5, 3.2399998, -31.5, -7.5, 3.2399998, -0.5, 7.5, 3.2399998, -0.5, 7.5, 3.2399998, -31.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5)]
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"navmesh_group"
+cell_height = 0.02
+
 [node name="Root" type="Node3D" unique_id=1133836879]
 script = ExtResource("1_b7lvg")
 
@@ -95,7 +102,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2000003, 0, -12.3)
 
 [node name="Floors" type="Node3D" parent="Room" unique_id=1002812748]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floors" unique_id=1776658310]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floors" unique_id=1776658310 groups=["navmesh_group"]]
 transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 32, 0, -0.1, -16)
 mesh = SubResource("BoxMesh_ubwfd")
 
@@ -104,7 +111,7 @@ mesh = SubResource("BoxMesh_ubwfd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D/StaticBody3D" unique_id=791857626]
 shape = SubResource("ConcavePolygonShape3D_dg0a3")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room/Floors" unique_id=126426359]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room/Floors" unique_id=126426359 groups=["navmesh_group"]]
 transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 32, 0, 3.1000001, -16)
 mesh = SubResource("BoxMesh_ubwfd")
 
@@ -400,5 +407,8 @@ mesh = ExtResource("9_pbmr3")
 [node name="CultPlate2" type="MeshInstance3D" parent="." unique_id=757566434]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.049999952, 2.2, -31.9)
 mesh = ExtResource("9_pbmr3")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1783748712]
+navigation_mesh = SubResource("NavigationMesh_06hha")
 
 [connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]

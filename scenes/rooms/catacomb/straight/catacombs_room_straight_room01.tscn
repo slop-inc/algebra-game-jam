@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://2xscwjc0g766" path="res://scenes/enemy/enemy_ranged.tscn" id="6_k7enn"]
 [ext_resource type="ArrayMesh" uid="uid://c3v6sx2uypqcu" path="res://assets/CatBascancskaPloca.obj" id="7_g03ax"]
 [ext_resource type="ArrayMesh" uid="uid://djf6dfyc7e0xy" path="res://assets/CultPlate.obj" id="8_c4dv7"]
+[ext_resource type="PackedScene" uid="uid://ct52ca5jyv1eq" path="res://scenes/building_blocks/torch.tscn" id="12_k7enn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wu12n"]
 size = Vector3(1.9, 3.4, 1)
@@ -344,7 +345,29 @@ mesh = SubResource("BoxMesh_y7f2o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D7/StaticBody3D" unique_id=615428379]
 shape = SubResource("ConcavePolygonShape3D_ywk45")
 
+<<<<<<< HEAD
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=823424235]
 navigation_mesh = SubResource("NavigationMesh_wu12n")
+=======
+[node name="Torches" type="Node3D" parent="Room" unique_id=1746839686]
+
+[node name="Torch" parent="Room/Torches" unique_id=683275015 instance=ExtResource("12_k7enn")]
+transform = Transform3D(-8.940697e-08, 0, -1, 0, 1, 0, 1, 0, -8.940697e-08, -2.7136858, 2, -4.184573)
+
+[node name="Torch2" parent="Room/Torches" unique_id=2002854024 instance=ExtResource("12_k7enn")]
+transform = Transform3D(-8.940697e-08, 0, -1, 0, 1, 0, 1, 0, -8.940697e-08, -2.7136858, 2, -17.884573)
+
+[node name="Torch3" parent="Room/Torches" unique_id=226392223 instance=ExtResource("12_k7enn")]
+transform = Transform3D(-8.940697e-08, 0, -1, 0, 1, 0, 1, 0, -8.940697e-08, -2.7136858, 2, -29.334572)
+
+[node name="Torch4" parent="Room/Torches" unique_id=1234733334 instance=ExtResource("12_k7enn")]
+transform = Transform3D(1.9841906e-09, 0, 1, 0, 1, 0, -1, 0, 1.9841906e-09, 2.8863144, 2, -25.884571)
+
+[node name="Torch5" parent="Room/Torches" unique_id=1321790923 instance=ExtResource("12_k7enn")]
+transform = Transform3D(1.9841906e-09, 0, 1, 0, 1, 0, -1, 0, 1.9841906e-09, 2.8863144, 4.05, -14.4845705)
+
+[node name="Torch6" parent="Room/Torches" unique_id=1483936303 instance=ExtResource("12_k7enn")]
+transform = Transform3D(1.9841906e-09, 0, 1, 0, 1, 0, -1, 0, 1.9841906e-09, 2.8863144, 4.05, -8.43457)
+>>>>>>> 3cca42aa0bd1759705facf58c8567297c1d0c7fe
 
 [connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]
