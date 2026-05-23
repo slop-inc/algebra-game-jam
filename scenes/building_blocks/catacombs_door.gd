@@ -46,9 +46,9 @@ func _ready() -> void:
 			sound_player.set_stream(kick_sounds.pick_random())
 	physics_door.freeze = true
 
-var stop = 0.5
-var ticks_of_rest = 30
-func _process(delta: float) -> void:
+var stop = 0.01
+var ticks_of_rest = 15
+func _process(_delta: float) -> void:
 	if physics_door.freeze == false:
 		var velocity = physics_door.get_linear_velocity()
 		print(velocity)
