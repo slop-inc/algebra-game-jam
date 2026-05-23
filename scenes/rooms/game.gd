@@ -9,9 +9,9 @@ extends Node3D
 # 2. Tutorial room, then:
 var room_generation = [ "tutorial_room01", "tutorial_room02",
 						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb",
-#						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb",
-#						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb", 
-#						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb"
+						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb",
+						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb", 
+						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb"
 						]
 
 # dep
@@ -93,7 +93,7 @@ func advance():
 	doors_kicked += 1
 
 func _ready() -> void:
-	for i in range(4):
+	for i in range(20):
 		_generate_room()
 
 func _process(_delta: float) -> void:
