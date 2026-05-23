@@ -22,6 +22,7 @@ func Update(_delta: float):
 		agent.look_at(target)
 
 func Physics_Update(delta: float):	
+	
 	player = get_tree().get_first_node_in_group("player")
 	if player and !agent.is_stunned and agent.is_on_floor():
 		update_target_location(player.global_position)
