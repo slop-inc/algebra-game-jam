@@ -5,14 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://c6bsp7rst7esy" path="res://assets/textures/menu_button.png" id="3_ob46e"]
 [ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="3_wem23"]
 [ext_resource type="Texture2D" uid="uid://dolgyfrvgj2x" path="res://assets/textures/gruel_logo.png" id="4_3ovsr"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_vho56"]
+[ext_resource type="PackedScene" uid="uid://c44iiifu0ij7x" path="res://scenes/rooms/special_rooms/start_room.tscn" id="6_3ovsr"]
 
 [node name="Root" type="Node3D" unique_id=792507597]
 script = ExtResource("1_fsom3")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1955861]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1)
+transform = Transform3D(-0.8133039, 0, 0.58183914, 0, 1, 0, -0.58183914, 0, -0.8133039, -3.7101204, 1.3987995, 1)
 
 [node name="UI" parent="Camera3D" unique_id=1616747875 instance=ExtResource("2_0ebjn")]
 
@@ -165,16 +164,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 texture = ExtResource("3_ob46e")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=975434608]
-transform = Transform3D(0.75, -0.5, -0.4330127, 0.4330127, 0.8660254, -0.25, 0.5, 0, 0.8660254, -2.6000001, 0, -4.2000003)
-mesh = SubResource("BoxMesh_vho56")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=398983371]
-transform = Transform3D(0.03068909, -0.32199532, -0.9462435, 0.8152642, 0.5557691, -0.1626805, 0.5782753, -0.7664463, 0.27956715, 2.1499999, -1.9, -2.554551)
-mesh = SubResource("BoxMesh_vho56")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2107355075]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -3.2)
+[node name="StartRoom" parent="." unique_id=1380908902 instance=ExtResource("6_3ovsr")]
 
 [connection signal="pressed" from="Camera3D/CanvasLayer/Control/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Camera3D/CanvasLayer/Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
