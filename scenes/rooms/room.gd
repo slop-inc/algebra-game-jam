@@ -4,6 +4,9 @@ extends Node3D
 @onready var entrance_area = $EntranceArea
 @onready var rocks = $Rocks
 
+func _on_entrance_area_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
 func _ready() -> void:
 	pass
 

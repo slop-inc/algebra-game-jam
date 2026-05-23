@@ -66,18 +66,19 @@ material = SubResource("StandardMaterial3D_x7a6r")
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="StartRoom" type="Node3D" unique_id=1380908902]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 script = ExtResource("1_a378l")
 
 [node name="RoomMarker" type="Marker3D" parent="." unique_id=2035750139]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.0897083e-07, 0, -8.000001)
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 9.0897083e-07, 0, -16)
 
 [node name="Marker3D" type="Marker3D" parent="RoomMarker" unique_id=1646835019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000019)
 
 [node name="EntranceArea" parent="." unique_id=598252848 instance=ExtResource("2_fnlfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
 [node name="Rocks" type="StaticBody3D" parent="." unique_id=1843386916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Rocks" unique_id=1791756178]
@@ -90,7 +91,7 @@ shape = SubResource("BoxShape3D_rewp5")
 disabled = true
 
 [node name="CatacombsDoor" parent="." unique_id=1497648598 instance=ExtResource("4_41myy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
 
 [node name="Enemies" type="Node" parent="." unique_id=876708153]
 
@@ -110,6 +111,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15, 0, -5.1000004)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1, 0, -6.75)
 
 [node name="Room" type="Node3D" parent="." unique_id=235440140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
 [node name="Floors" type="Node3D" parent="Room" unique_id=88759278]
 
@@ -317,3 +319,5 @@ mesh = SubResource("BoxMesh_f7b7w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D16/StaticBody3D" unique_id=364952248]
 shape = SubResource("ConcavePolygonShape3D_a378l")
+
+[connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]
