@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const HEAL_AMOUNT = 5.0
+const HEAL_AMOUNT = 7.5
 
 # Movement vars
 var speed = 0.0
