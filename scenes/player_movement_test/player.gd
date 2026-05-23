@@ -30,10 +30,14 @@ var bob_amplitude = 0.05
 var t_bob = 0.0 
 
 
+@onready var PROJECTILE = preload("res://scenes/enemy/Fireball.tscn")
+
 @onready var head = $Head
 @onready var camera = $Head/Neck/Camera3D
 @onready var neck = $Head/Neck
 @onready var hit_ray = $Head/Neck/Camera3D/RayCast3D
+
+@onready var evil_fucking_marker_for_the_purposes_of_launching_the_projectile = $Head/Neck/Camera3D/EvilFuckingMarkerForThePurposesOfLaunchingTheProjectile
 
 @onready var timer = $Health
 @onready var time_label = $Head/Neck/Camera3D/Label
@@ -82,29 +86,25 @@ func _input(event):
 		
 	if Input.is_action_just_pressed("kick"):
 		_kick()
-			
+	
+	if Input.is_action_just_pressed("shoot"):
+		_shoot()
 	
 # Dash Function
 func _dash():
-	#print("Dashed")
 	dashed_bool = true
-	#self.global_position = dash_point.global_position
 	var direction = camera.global_basis * Vector3.FORWARD
 	velocity.x = direction.x * dash_strength
 	velocity.z = direction.z * dash_strength
 	velocity.y = direction.y * dash_strength
-	#print(dashed_bool)
 	
 func _slam():
-	#print("Slamed")
 	slamed_bool = true
 	velocity.x = 0
 	velocity.z = 0
 	velocity.y = -slam_strength
 	
 func _punch():
-	# I am ChatGPT and i wrote this code, uggggghhh im jorking it ughhhhhhh
-	#print("Punched")
 	var hit = hit_ray.get_collider()
 	var sway = randf_range(0,10)
 	
@@ -120,13 +120,23 @@ func _punch():
 			if hit.health < 0:
 				_heal(HEAL_AMOUNT)
 
+func _shoot():
+	var projectile = PROJECTILE.instantiate()
+	projectile.is_from_player = true
+	get_tree().root.get_child(0).add_child(projectile)
+	projectile.global_position = Vector3(camera.global_position.x, camera.global_position.y, camera.global_position.z)
+	projectile.dir = camera.global_position.direction_to(evil_fucking_marker_for_the_purposes_of_launching_the_projectile.global_position)
+	pass
+
+func take_damage(amount: float):
+	var current_time = timer.get_time_left()
+	timer.set_wait_time(current_time - amount)
+
 func _heal(amount: float) -> void:
 	var current_time = timer.get_time_left()
 	timer.set_wait_time(current_time + amount)
 
 func _kick():
-	# I am ChatGPT and i wrote this code, uggggghhh im jorking it ughhhhhhh
-	#print("Kicked")
 	var hit = hit_ray.get_collider()
 	var sway = randf_range(0,10)
 	
@@ -136,7 +146,7 @@ func _kick():
 			hit._getKicked(10, direction)
 		elif hit.get_parent().is_in_group("door"):
 			hit.get_parent().kick()
-			
+
 func _walljump():
 	wall_jump_bool = true
 	var collision_normal = get_last_slide_collision().get_normal()
@@ -152,13 +162,14 @@ func _walljump():
 
 var dying = false
 func _process(float) -> void:
-	if !stop_meat:
-		meat_sound.volume_db = -50 + (50 * (1.0 - (timer.get_time_left() / timer.get_wait_time())))
-	ui.set_bar_percentage(timer.get_time_left() / timer.get_wait_time())
-	time_label.set_text(str(timer.get_time_left()).left(4))
-	if timer.get_time_left() <= 0 and !dying:
-		dying = true
-		_fade_away()
+	#if !stop_meat:
+	#	meat_sound.volume_db = -50 + (50 * (1.0 - (timer.get_time_left() / timer.get_wait_time())))
+	#ui.set_bar_percentage(timer.get_time_left() / timer.get_wait_time())
+	#time_label.set_text(str(timer.get_time_left()).left(4))
+	#if timer.get_time_left() <= 0 and !dying:
+	#	dying = true
+	#	_fade_away()
+	pass
 
 func _fade_away():
 	var sound_tween = get_tree().create_tween()
@@ -173,23 +184,18 @@ func _physics_process(delta: float) -> void:
 	
 	if dashed_bool:
 		dash_time += 1 * delta 
-		#print(dash_time)
 		if dash_time >= 0.3:
 			dash_time = 0
 			dashed_bool= false
-			#print("Dash Done")
 			
 	if wall_jump_bool:
 		wall_jump_time += 1 * delta 
-		#print(wall_jump_time)
 		if wall_jump_time >= 0.3:
 			wall_jump_time = 0
 			wall_jump_bool= false
-			#print("WallJump Done")
 			
 	if slamed_bool and is_on_floor():
 		slamed_bool = false
-		#print("Slam Done")
 		
 	# Add the gravity.
 	if not is_on_floor():
@@ -222,13 +228,6 @@ func _physics_process(delta: float) -> void:
 			velocity.z = direction.z * speed
 			if speed < max_speed:
 				speed = speed + accel
-		#elif SPEED > 0:
-			# Slow down
-			#SPEED = SPEED - DECEL
-			#velocity.x = move_toward(velocity.x, SPEED, delta)
-			#velocity.z = move_toward(velocity.z, SPEED, delta)
-			
-			#print("SPEED:",SPEED)
 
 		else:
 			# Stop
@@ -242,7 +241,6 @@ func _physics_process(delta: float) -> void:
 			velocity.z = direction.z * speed
 			if speed < max_speed:
 				speed = speed + accel
-			#print("SPEED:",speed)
 		else:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 2.0)
 			velocity.y = lerp(velocity.y, direction.y * speed, delta * 2.0)

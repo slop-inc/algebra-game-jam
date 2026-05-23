@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://evh0iagnavdw" path="res://scenes/ui/ui.gd" id="1_g5kmx"]
 [ext_resource type="Shader" uid="uid://dpe7vmd11xuck" path="res://scenes/ui/vignette.gdshader" id="1_u7n8c"]
+[ext_resource type="Texture2D" uid="uid://gihe1kwkc2dg" path="res://assets/SideEvilBars.png" id="2_0dwhk"]
 [ext_resource type="Texture2D" uid="uid://07q4e0uqdj4y" path="res://assets/TopEvilBar.png" id="2_aac20"]
 [ext_resource type="Texture2D" uid="uid://cd6ibxr210s2r" path="res://assets/BottomEvilBar.png" id="3_g5kmx"]
 
@@ -25,6 +26,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control" unique_id=2106662913]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -34,6 +36,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="Control" unique_id=481465426]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -104,3 +107,13 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_g5kmx")
 expand_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=2071259932]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0dwhk")
+expand_mode = 1

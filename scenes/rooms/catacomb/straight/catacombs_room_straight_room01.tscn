@@ -6,6 +6,11 @@
 [ext_resource type="ArrayMesh" uid="uid://chef4clg2816l" path="res://assets/RockPile.obj" id="2_tv0d8"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="3_tv0d8"]
 [ext_resource type="Texture2D" uid="uid://diteybb4kaiwy" path="res://assets/CatWallTxt.png" id="4_hyq8w"]
+[ext_resource type="PackedScene" uid="uid://db48dsrgg6x0p" path="res://scenes/enemy/enemy_melee.tscn" id="5_wu12n"]
+[ext_resource type="ArrayMesh" uid="uid://emvn7fwfc2vy" path="res://assets/CatCoffin.obj" id="6_hyq8w"]
+[ext_resource type="PackedScene" uid="uid://2xscwjc0g766" path="res://scenes/enemy/enemy_ranged.tscn" id="6_k7enn"]
+[ext_resource type="ArrayMesh" uid="uid://c3v6sx2uypqcu" path="res://assets/CatBascancskaPloca.obj" id="7_g03ax"]
+[ext_resource type="ArrayMesh" uid="uid://djf6dfyc7e0xy" path="res://assets/CultPlate.obj" id="8_c4dv7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wu12n"]
 size = Vector3(1.9, 3.4, 1)
@@ -20,6 +25,9 @@ material = SubResource("StandardMaterial3D_mhneh")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dg0a3"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2nys0"]
+data = PackedVector3Array(-0.25, 1.0424, 0.3362, -0.0902, 1.1466, -0.3551, -0.0902, 1.1466, 0.3551, -0.25, 1.0424, -0.3362, -0.0902, 1.1466, -0.3551, -0.25, 1.0424, 0.3362, -0.25, 1.0424, 0.3362, -0.0902, 0.5513, 0.56049997, -0.25, 0.4788, 0.53069997, -0.0902, 1.1466, 0.3551, -0.0902, 0.5513, 0.56049997, -0.25, 1.0424, 0.3362, -0.25, 0.4788, -0.53069997, -0.25, 1.0424, 0.3362, -0.25, 0.4788, 0.53069997, -0.25, 0.4788, -0.53069997, -0.25, 0.4788, 0.53069997, -0.25, -1.25, -0.2959, -0.25, -1.25, -0.2959, -0.25, 0.4788, 0.53069997, -0.25, -1.25, 0.2959, 0, -1.25, 0.2959, 0.25, -1.25, -0.2959, 0, -1.25, -0.2959, 0.25, -1.25, 0.2959, 0.25, -1.25, -0.2959, 0, -1.25, 0.2959, 0, -1.25, 0.2959, 0, -1.25, -0.2959, -0.25, -1.25, 0.2959, -0.25, -1.25, 0.2959, 0, -1.25, -0.2959, -0.25, -1.25, -0.2959, 0.25, 0.6022, 0.61, 0.25, 1.25, -0.38639998, 0.25, 0.6022, -0.61, 0.25, 1.25, 0.38639998, 0.25, 1.25, -0.38639998, 0.25, 0.6022, 0.61, 0.25, 0.6022, 0.61, 0.25, 0.6022, -0.61, 0.25, -1.25, 0.2959, 0.25, -1.25, 0.2959, 0.25, 0.6022, -0.61, 0.25, -1.25, -0.2959, 0.25, 0.6022, -0.61, -0.0902, 1.1466, -0.3551, -0.0902, 0.5513, -0.56049997, 0.25, 0.6022, -0.61, 0, -1.25, -0.2959, 0.25, -1.25, -0.2959, -0.25, -1.25, 0.2959, -0.0902, 0.5513, 0.56049997, 0, -1.25, 0.2959, 0, -1.25, 0.2959, 0.25, 0.6022, 0.61, 0.25, -1.25, 0.2959, -0.0902, 0.5513, -0.56049997, -0.25, -1.25, -0.2959, 0, -1.25, -0.2959, -0.0902, 0.5513, -0.56049997, -0.25, 1.0424, -0.3362, -0.25, 0.4788, -0.53069997, -0.0902, 1.1466, -0.3551, -0.25, 1.0424, -0.3362, -0.0902, 0.5513, -0.56049997, -0.0902, 1.1466, 0.3551, 0.25, 0.6022, 0.61, -0.0902, 0.5513, 0.56049997, 0.25, 1.25, 0.38639998, 0.25, 0.6022, 0.61, -0.0902, 1.1466, 0.3551, 0.25, 1.25, 0.38639998, -0.0902, 1.1466, -0.3551, 0.25, 1.25, -0.38639998, -0.0902, 1.1466, 0.3551, -0.0902, 1.1466, -0.3551, 0.25, 1.25, 0.38639998, -0.25, 1.0424, -0.3362, -0.25, 1.0424, 0.3362, -0.25, 0.4788, -0.53069997, 0.25, 1.25, -0.38639998, -0.0902, 1.1466, -0.3551, 0.25, 0.6022, -0.61, -0.0902, 0.5513, -0.56049997, 0, -1.25, -0.2959, 0.25, 0.6022, -0.61, -0.25, 0.4788, 0.53069997, -0.0902, 0.5513, 0.56049997, -0.25, -1.25, 0.2959, -0.0902, 0.5513, 0.56049997, 0.25, 0.6022, 0.61, 0, -1.25, 0.2959, -0.25, 0.4788, -0.53069997, -0.25, -1.25, -0.2959, -0.0902, 0.5513, -0.56049997)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ob4ke"]
 albedo_texture = ExtResource("4_hyq8w")
@@ -71,6 +79,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 
 [node name="Enemies" type="Node" parent="." unique_id=1092966804]
 
+[node name="EnemyMelee" parent="Enemies" unique_id=1073975167 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -19.900002)
+
+[node name="EnemyMelee2" parent="Enemies" unique_id=3725185 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.5, 0, -18.300001)
+
+[node name="EnemyMelee3" parent="Enemies" unique_id=1994114868 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.75, 0, -19.250002)
+
+[node name="EnemyMelee4" parent="Enemies" unique_id=1072377503 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.05000007, 0, -10.250002)
+
+[node name="EnemyMelee5" parent="Enemies" unique_id=1893769003 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.1999998, 0, -6.4500017)
+
+[node name="EnemyRanged" parent="Enemies" unique_id=1615942341 instance=ExtResource("6_k7enn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.2500001, 4, -11.800001)
+
+[node name="EnemyRanged2" parent="Enemies" unique_id=1042016574 instance=ExtResource("6_k7enn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.0499998, 4, -11.800001)
+
+[node name="EnemyRanged3" parent="Enemies" unique_id=1450760050 instance=ExtResource("6_k7enn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.35000017, 3.05, -27.050003)
+
 [node name="Room" type="Node3D" parent="." unique_id=1918957510]
 
 [node name="Floors" type="Node3D" parent="Room" unique_id=1002812748]
@@ -84,6 +116,77 @@ mesh = SubResource("BoxMesh_ubwfd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D/StaticBody3D" unique_id=791857626]
 shape = SubResource("ConcavePolygonShape3D_dg0a3")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room/Floors" unique_id=408758420]
+transform = Transform3D(16, 0, 0, 0, 0.2, 0, 0, 0, 32, 0, 8, -16)
+mesh = SubResource("BoxMesh_ubwfd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/MeshInstance3D2" unique_id=1220075167]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D2/StaticBody3D" unique_id=265642313]
+shape = SubResource("ConcavePolygonShape3D_dg0a3")
+
+[node name="CatCoffin" type="MeshInstance3D" parent="Room/Floors" unique_id=715488249]
+transform = Transform3D(3.0908637e-08, -0.7071068, -0.7071067, 1, 1.0552863e-07, -6.181724e-08, 1.183314e-07, -0.7071067, 0.7071068, -1.3, 0.25, -4)
+mesh = ExtResource("6_hyq8w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/CatCoffin" unique_id=1874031237]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/CatCoffin/StaticBody3D" unique_id=359486585]
+shape = SubResource("ConcavePolygonShape3D_2nys0")
+
+[node name="CatCoffin2" type="MeshInstance3D" parent="Room/Floors" unique_id=2002081467]
+transform = Transform3D(0.24999994, -0.06698732, -0.96592593, 0.25881898, 0.96592593, -4.4786308e-08, 0.93301266, -0.24999996, 0.258819, -2.25, 1.25, -13.55)
+mesh = ExtResource("6_hyq8w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/CatCoffin2" unique_id=220586746]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/CatCoffin2/StaticBody3D" unique_id=1375791800]
+shape = SubResource("ConcavePolygonShape3D_2nys0")
+
+[node name="CatCoffin3" type="MeshInstance3D" parent="Room/Floors" unique_id=1963580899]
+transform = Transform3D(-0.00041784556, 0.6581806, -0.7528601, 0.99992216, -0.009109208, -0.008518623, -0.012464742, -0.75280505, -0.65812564, 1.3, 0.24999997, -25.15)
+mesh = ExtResource("6_hyq8w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/CatCoffin3" unique_id=1328404151]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/CatCoffin3/StaticBody3D" unique_id=1783879269]
+shape = SubResource("ConcavePolygonShape3D_2nys0")
+
+[node name="CatCoffin6" type="MeshInstance3D" parent="Room/Floors" unique_id=1991147921]
+transform = Transform3D(-0.009109366, -0.06690958, -0.9977176, 0.9999221, -0.009109207, -0.008518622, -0.0085184425, -0.9977175, 0.066987425, -2.15, 0.24999997, -30.550001)
+mesh = ExtResource("6_hyq8w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/CatCoffin6" unique_id=393401005]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/CatCoffin6/StaticBody3D" unique_id=1626521878]
+shape = SubResource("ConcavePolygonShape3D_2nys0")
+
+[node name="CatCoffin4" type="MeshInstance3D" parent="Room/Floors" unique_id=1107286541]
+transform = Transform3D(0.24999994, -0.06698732, -0.96592593, 0.25881898, 0.96592593, -4.4786308e-08, 0.93301266, -0.24999996, 0.258819, 0.099999964, 1.25, -25.4)
+mesh = ExtResource("6_hyq8w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/CatCoffin4" unique_id=219021498]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/CatCoffin4/StaticBody3D" unique_id=793362391]
+shape = SubResource("ConcavePolygonShape3D_2nys0")
+
+[node name="CatCoffin5" type="MeshInstance3D" parent="Room/Floors" unique_id=1093266622]
+transform = Transform3D(0.8365162, -0.22414385, -0.5000001, 0.25881898, 0.96592593, -3.5338946e-08, 0.4829629, -0.12940946, 0.86602545, 0.54999995, 1.25, -26.5)
+mesh = ExtResource("6_hyq8w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floors/CatCoffin5" unique_id=106468761]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/CatCoffin5/StaticBody3D" unique_id=2123469392]
+shape = SubResource("ConcavePolygonShape3D_2nys0")
+
+[node name="CatBascancskaPloca" type="MeshInstance3D" parent="Room/Floors" unique_id=806960342]
+transform = Transform3D(-0.8660254, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660254, -0.55, 0.45, -27.6)
+mesh = ExtResource("7_g03ax")
+
+[node name="CultPlate" type="MeshInstance3D" parent="Room/Floors" unique_id=1232425589]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.2, -31.9)
+mesh = ExtResource("8_c4dv7")
+
 [node name="Walls" type="Node3D" parent="Room" unique_id=1020755266]
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Room/Walls" unique_id=1571801034]
@@ -95,6 +198,15 @@ mesh = SubResource("BoxMesh_dbjug")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D8/StaticBody3D" unique_id=1432969862]
 shape = SubResource("ConcavePolygonShape3D_320ii")
 
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Room/Walls" unique_id=1992222433]
+transform = Transform3D(0.1, 0, 0, 0, 8, 0, 0, 0, 31.8, 2.9500012, 3.9, -16)
+mesh = SubResource("BoxMesh_dbjug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D13" unique_id=459835018]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D13/StaticBody3D" unique_id=1544710503]
+shape = SubResource("ConcavePolygonShape3D_320ii")
+
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Room/Walls" unique_id=1254227609]
 transform = Transform3D(0.1, 0, 0, 0, 8, 0, 0, 0, 31.8, -7.949999, 3.9, -15.999999)
 mesh = SubResource("BoxMesh_dbjug")
@@ -102,6 +214,69 @@ mesh = SubResource("BoxMesh_dbjug")
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D9" unique_id=1323443700]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D9/StaticBody3D" unique_id=1556388524]
+shape = SubResource("ConcavePolygonShape3D_320ii")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Room/Walls" unique_id=1557249959]
+transform = Transform3D(0.1, 0, 0, 0, 8, 0, 0, 0, 31.8, -2.9499989, 3.9, -15.999999)
+mesh = SubResource("BoxMesh_dbjug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D12" unique_id=2001319400]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D12/StaticBody3D" unique_id=930371479]
+shape = SubResource("ConcavePolygonShape3D_320ii")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Room/Walls" unique_id=255044911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2000016, 0.50000006, -5.9999986)
+mesh = SubResource("BoxMesh_dbjug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D10" unique_id=1557031579]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D10/StaticBody3D" unique_id=1503514463]
+shape = SubResource("ConcavePolygonShape3D_320ii")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Room/Walls" unique_id=1976096993]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, 1.0500016, 2, -11.749997)
+mesh = SubResource("BoxMesh_dbjug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D14" unique_id=517820380]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D14/StaticBody3D" unique_id=1909495478]
+shape = SubResource("ConcavePolygonShape3D_320ii")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Room/Walls" unique_id=1231721952]
+transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 1, -1.2499983, 2, -11.749997)
+mesh = SubResource("BoxMesh_dbjug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D15" unique_id=1738267220]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D15/StaticBody3D" unique_id=2119991836]
+shape = SubResource("ConcavePolygonShape3D_320ii")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Room/Walls" unique_id=205281122]
+transform = Transform3D(5.8, 0, 0, 0, 3, 0, 0, 0, 1, 1.66893e-06, 1.5, -8.499998)
+mesh = SubResource("BoxMesh_dbjug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D11" unique_id=544462853]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D11/StaticBody3D" unique_id=2019166660]
+shape = SubResource("ConcavePolygonShape3D_320ii")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Room/Walls" unique_id=913433162]
+transform = Transform3D(5.8, 0, 0, 0, 3, 0, 0, 0, 1, 1.66893e-06, 1.5, -14.549998)
+mesh = SubResource("BoxMesh_dbjug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D16" unique_id=723271752]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D16/StaticBody3D" unique_id=118148815]
+shape = SubResource("ConcavePolygonShape3D_320ii")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Room/Walls" unique_id=1651051785]
+transform = Transform3D(2.8999999, 0, 0.8660254, 0, 2.9999998, 0, -5.022948, 0, 0.49999997, 1.66893e-06, 1.5, -27.55)
+mesh = SubResource("BoxMesh_dbjug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D17" unique_id=2071915978]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D17/StaticBody3D" unique_id=154398240]
 shape = SubResource("ConcavePolygonShape3D_320ii")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Room/Walls" unique_id=73446622]

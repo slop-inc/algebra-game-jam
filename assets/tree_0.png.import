@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca14d62i1iqy"
-path.s3tc="res://.godot/imported/CharlieChurchTopWallTxt.png-520e68b7269427aef830e25a019c5733.s3tc.ctex"
+uid="uid://bwla5446ga3ys"
+path.s3tc="res://.godot/imported/tree_0.png-cd174571467863ef7a92d80a8625f19a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "61bfc26b7b6775cce35af6b4ba271d4c"
+}
 
 [deps]
 
-source_file="res://assets/CharlieChurchTopWallTxt.png"
-dest_files=["res://.godot/imported/CharlieChurchTopWallTxt.png-520e68b7269427aef830e25a019c5733.s3tc.ctex"]
+source_file="res://assets/tree_0.png"
+dest_files=["res://.godot/imported/tree_0.png-cd174571467863ef7a92d80a8625f19a.s3tc.ctex"]
 
 [params]
 

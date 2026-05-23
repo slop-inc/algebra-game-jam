@@ -1,9 +1,15 @@
 extends Node3D
 
+var rng = RandomNumberGenerator.new()
+
 @onready var fader = $Camera3D/CanvasLayer/Fader
+@onready var ui = $Camera3D/UI
 
 func _ready() -> void:
-	pass
+	while true:
+		await get_tree().create_timer(0.5).timeout
+		var random = rng.randf_range(0.25, 0.5)
+		ui.set_bar_percentage(random)
 
 func _process(delta: float) -> void:
 	pass

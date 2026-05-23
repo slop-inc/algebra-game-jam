@@ -35,6 +35,9 @@ func _attack():
 func Physics_Update(_delta: float):
 	if anim.attack_is_done:
 		Transitioned.emit(self, "chase")
+		
+	if agent.health <= 0:
+		Transitioned.emit(self,"die")
 	agent.move_and_slide()
 
 func Exit():

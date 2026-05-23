@@ -1,14 +1,12 @@
-[gd_scene format=3 uid="uid://4crtsyxdh7y4"]
+[gd_scene format=3 uid="uid://dbxsiowyytltq"]
 
-[ext_resource type="Script" uid="uid://hxb4p8fdakef" path="res://scenes/ui/cutscene.gd" id="1_7a4cy"]
-[ext_resource type="AudioStream" uid="uid://b22d55m482wk5" path="res://assets/sound/click.wav" id="2_6trma"]
-[ext_resource type="Texture2D" uid="uid://emfqfbguo4dc" path="res://assets/CUTSCENE1.png" id="2_36rk4"]
-[ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="2_l3ckd"]
-[ext_resource type="AudioStream" uid="uid://cyi01w6gps35d" path="res://assets/sound/drone.wav" id="4_gj335"]
+[ext_resource type="Script" uid="uid://hxb4p8fdakef" path="res://scenes/ui/cutscene.gd" id="1_27l3b"]
+[ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="2_g8sa0"]
+[ext_resource type="AudioStream" uid="uid://b22d55m482wk5" path="res://assets/sound/click.wav" id="3_xygyl"]
+[ext_resource type="AudioStream" uid="uid://cyi01w6gps35d" path="res://assets/sound/drone.wav" id="4_pxsms"]
 
 [node name="Node" type="Node" unique_id=157251814]
-script = ExtResource("1_7a4cy")
-next_scene_path = "res://scenes/rooms/game.tscn"
+script = ExtResource("1_27l3b")
 
 [node name="Node2D" type="CanvasLayer" parent="." unique_id=1879991073]
 
@@ -39,16 +37,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Node2D/Control/Control" unique_id=206933219]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.16700001
 anchor_right = 1.167
 anchor_bottom = 1.0
-offset_left = 0.32000732
-offset_right = -0.32006836
-texture = ExtResource("2_36rk4")
-expand_mode = 1
+offset_left = 160.32
+offset_right = -160.32007
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Node2D/Control/Control" unique_id=810046998]
 layout_mode = 1
@@ -64,9 +59,9 @@ offset_bottom = -128.0
 [node name="Label" type="Label" parent="Node2D/Control/Control/VBoxContainer" unique_id=1296173814]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_l3ckd")
+theme_override_fonts/font = ExtResource("2_g8sa0")
 theme_override_font_sizes/font_size = 28
-text = "\"The vessel is ready for the ritual.\"^^ one ritualist says."
+text = "There you are. ^Samson, ^our brave little vessel. ^Barely a fitting one by now, with how you ruined your body."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -77,9 +72,9 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="Node2D/Control/Control/VBoxContainer" unique_id=1101790777]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_l3ckd")
+theme_override_fonts/font = ExtResource("2_g8sa0")
 theme_override_font_sizes/font_size = 28
-text = "\"It is the perfect sacrifice for our Divine Lord's birth,^ a holy lamb.\"^ the other replies."
+text = "But a fitting vessel you still are, ^so with as little time as we have, I can't have you not cooperating."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -90,9 +85,9 @@ layout_mode = 2
 [node name="TriggerLabel" type="Label" parent="Node2D/Control/Control/VBoxContainer" unique_id=537156822]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_l3ckd")
+theme_override_fonts/font = ExtResource("2_g8sa0")
 theme_override_font_sizes/font_size = 28
-text = "\"The allignment is soon, do you subjects have the vessel ready?^ We didn't spend last decade finding the Holy Lance for the ritual to fail because of your incompetence.\"^ he says and exists the room"
+text = "While its not ideal, ^I have only one more thing i can do to stop you from getting the Holy Lance, ^and to sacrifice you for my Glorious Lord."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -103,9 +98,9 @@ layout_mode = 2
 [node name="Label4" type="Label" parent="Node2D/Control/Control/VBoxContainer" unique_id=2029724528]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_l3ckd")
+theme_override_fonts/font = ExtResource("2_g8sa0")
 theme_override_font_sizes/font_size = 28
-text = ".^.^.^ The wolves apprehending you have their backs currently turned.^^^ It's the time to strike."
+text = ".^.^.^ \"squelch\" is the sound thats made when the wolf takes his heart out of his chest, ^then followed by some gutteral screams."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -133,12 +128,12 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=453991697]
 position = Vector2(640, 0)
-stream = ExtResource("2_6trma")
+stream = ExtResource("3_xygyl")
 pitch_scale = 0.25
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1003204337]
 position = Vector2(640, 0)
-stream = ExtResource("4_gj335")
+stream = ExtResource("4_pxsms")
 autoplay = true
 
 [connection signal="pressed" from="Node2D/Control/Button" to="." method="_advance"]

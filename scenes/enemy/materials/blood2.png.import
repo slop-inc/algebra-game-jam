@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca14d62i1iqy"
-path.s3tc="res://.godot/imported/CharlieChurchTopWallTxt.png-520e68b7269427aef830e25a019c5733.s3tc.ctex"
+uid="uid://o1601es0crrj"
+path.s3tc="res://.godot/imported/blood2.png-6d223ba527d9376fee5f893f681f0f28.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/CharlieChurchTopWallTxt.png"
-dest_files=["res://.godot/imported/CharlieChurchTopWallTxt.png-520e68b7269427aef830e25a019c5733.s3tc.ctex"]
+source_file="res://scenes/enemy/materials/blood2.png"
+dest_files=["res://.godot/imported/blood2.png-6d223ba527d9376fee5f893f681f0f28.s3tc.ctex"]
 
 [params]
 

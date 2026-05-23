@@ -55,6 +55,9 @@ offset_bottom = 720.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="EvilFuckingMarkerForThePurposesOfLaunchingTheProjectile" type="Marker3D" parent="Head/Neck/Camera3D" unique_id=210815097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.3798156)
+
 [node name="Health" type="Timer" parent="." unique_id=523939863]
 wait_time = 20.0
 one_shot = true
