@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4h0xl877ck6a" path="res://scenes/enemy/blood_explosion.gd" id="1_t0avu"]
 [ext_resource type="Texture2D" uid="uid://o1601es0crrj" path="res://scenes/enemy/materials/blood2.png" id="2_xtvtu"]
+[ext_resource type="AudioStream" uid="uid://du7ascuk16vl2" path="res://assets/sound/meat2.wav" id="3_f64ja"]
 
 [sub_resource type="Curve" id="Curve_xtvtu"]
 _data = [Vector2(0, 0.2959184), 0.0, 4.7733994, 0, 0, Vector2(0.98872185, 0.08163273), 0.0, 0.0, 0, 0]
@@ -68,6 +69,7 @@ draw_pass_1 = SubResource("QuadMesh_el6by")
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=1669072513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84085834, 0)
+stream = ExtResource("3_f64ja")
 
 [node name="BloodDecal" type="Decal" parent="." unique_id=2136019678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005859375, 0.177, 0)

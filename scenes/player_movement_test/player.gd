@@ -57,7 +57,7 @@ func end_game():
 	var tween = get_tree().create_tween()
 	await tween.tween_property(fader2, "modulate:a", 1, 2).finished
 	
-	get_tree().change_scene_to_file("res://scenes/ui/cutscene_end.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/cutscene_post.tscn")
 
 
 func _ready():
@@ -152,10 +152,7 @@ func take_damage(amount: float):
 		_fade_away()
 	print(timer.get_time_left())
 	timer.stop()
-	if current_time + amount > 20:
-		timer.set_wait_time(max_time)
-	else:
-		timer.set_wait_time(current_time - amount)
+	timer.set_wait_time(current_time - amount)
 	timer.start()
 	timer.set_wait_time(max_time)
 
