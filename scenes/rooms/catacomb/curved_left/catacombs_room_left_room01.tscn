@@ -422,3 +422,7 @@ shape = SubResource("ConvexPolygonShape3D_wc2ru")
 [node name="CatBascancskaPloca2" type="MeshInstance3D" parent="Room/Decorations" unique_id=1902241858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.858448, 6.381521, -22.734617)
 mesh = ExtResource("6_tu0fn")
+
+[node name="CultPlate" type="MeshInstance3D" parent="." unique_id=1622412325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.900001, 2.2, -16)
+mesh = ExtResource("7_a6gik")
