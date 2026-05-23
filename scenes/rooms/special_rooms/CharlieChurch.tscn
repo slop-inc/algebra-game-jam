@@ -391,7 +391,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D43" type="MeshInstance3D" parent="." unique_id=2093784677]
-transform = Transform3D(-4.3711386e-09, 0, 19.94146, 0, 0.8972274, 0, -0.099999994, 0, -8.71669e-07, -0.5015631, 6.3491583, -32.0333)
+transform = Transform3D(-4.371139e-09, 0, 15.8, 0, 0.897, 0, -0.1, 0, -6.906399e-07, 0, 6.349, -32.033)
 mesh = SubResource("BoxMesh_1t1nv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D43" unique_id=286461852]
@@ -400,7 +400,7 @@ mesh = SubResource("BoxMesh_1t1nv")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D44" type="MeshInstance3D" parent="." unique_id=1581929783]
-transform = Transform3D(-4.3711386e-09, 0, 19.94146, 0, 4.6038613, 0, -0.099999994, 0, -8.71669e-07, -0.5015631, 8.829904, -32.0333)
+transform = Transform3D(-4.371139e-09, 0, 15.8, 0, 4.604, 0, -0.1, 0, -6.906399e-07, 0, 8.83, -32.033)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D44" unique_id=1906492853]
@@ -418,7 +418,7 @@ mesh = SubResource("BoxMesh_1t1nv")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D48" type="MeshInstance3D" parent="." unique_id=1626272671]
-transform = Transform3D(-4.3711386e-09, 0, 19.94146, 0, 4.6038613, 0, -0.099999994, 0, -8.71669e-07, -0.5015631, 8.829904, -0.033298492)
+transform = Transform3D(-4.371139e-09, 0, 15.8, 0, 4.604, 0, -0.1, 0, -6.906399e-07, 0, 8.83, -0.033)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D48" unique_id=524321517]
@@ -481,7 +481,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D22" type="MeshInstance3D" parent="." unique_id=2111460820]
-transform = Transform3D(0.099999994, 0, 0, 0, 0.8972274, 0, -4.440892e-16, 0, 36.57389, -7.7130384, 0.47695756, -16.21024)
+transform = Transform3D(0.099999994, 0, 1.4210856e-13, 0, 0.8972274, 0, -4.440892e-16, 0, 32, -7.7130384, 0.47695756, -16.21024)
 mesh = SubResource("BoxMesh_1t1nv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D22" unique_id=1353461925]
@@ -490,7 +490,7 @@ mesh = SubResource("BoxMesh_1t1nv")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D23" type="MeshInstance3D" parent="." unique_id=1349632986]
-transform = Transform3D(0.099999994, 0, 0, 0, 0.8972274, 0, -4.440892e-16, 0, 36.57389, -7.7130384, 5.5406837, -16.21024)
+transform = Transform3D(0.099999994, 0, 1.4210856e-13, 0, 0.8972274, 0, -4.440892e-16, 0, 32, -7.7130384, 5.5406837, -16.21024)
 mesh = SubResource("BoxMesh_nooe6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D23" unique_id=1220080423]
@@ -499,7 +499,7 @@ mesh = SubResource("BoxMesh_nooe6")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D24" type="MeshInstance3D" parent="." unique_id=377251951]
-transform = Transform3D(0.09999999, 0, 0, 0, 4.603861, 0, 0, 0, 36.57389, -7.7130384, 2.9577026, -16.21024)
+transform = Transform3D(0.09999999, 0, 0, 0, 4.603861, 0, 0, 0, 32, -7.7130384, 2.9577026, -16.21024)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D24" unique_id=481860846]
@@ -508,7 +508,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D25" type="MeshInstance3D" parent="." unique_id=1792845707]
-transform = Transform3D(0.099999994, 0, 0, 0, 0.8972274, 0, -4.440892e-16, 0, 36.57389, 7.7513313, 0.47695756, -16.21024)
+transform = Transform3D(0.099999994, 0, 1.4210856e-13, 0, 0.8972274, 0, -4.440892e-16, 0, 32, 7.7513313, 0.47695756, -16.21024)
 mesh = SubResource("BoxMesh_1t1nv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D25" unique_id=1762455928]
@@ -517,7 +517,7 @@ mesh = SubResource("BoxMesh_1t1nv")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D26" type="MeshInstance3D" parent="." unique_id=101313060]
-transform = Transform3D(0.099999994, 0, 0, 0, 0.8972274, 0, -4.440892e-16, 0, 36.57389, 7.7513313, 5.5406837, -16.21024)
+transform = Transform3D(0.099999994, 0, 1.4210856e-13, 0, 0.8972274, 0, -4.440892e-16, 0, 32, 7.7513313, 5.5406837, -16.21024)
 mesh = SubResource("BoxMesh_nooe6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D26" unique_id=278446696]
@@ -526,7 +526,7 @@ mesh = SubResource("BoxMesh_nooe6")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D27" type="MeshInstance3D" parent="." unique_id=1366866752]
-transform = Transform3D(0.09999999, 0, 0, 0, 4.603861, 0, 0, 0, 36.57389, 7.7513313, 2.9577026, -16.21024)
+transform = Transform3D(0.09999999, 0, 0, 0, 4.603861, 0, 0, 0, 32, 7.7513313, 2.9577026, -16.21024)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D27" unique_id=491469342]
@@ -535,7 +535,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D41" type="MeshInstance3D" parent="." unique_id=1668096]
-transform = Transform3D(0.099999994, 0, 0, 0, 0.8972274, 0, -4.440892e-16, 0, 36.57389, -7.7130384, 6.126958, -16.21024)
+transform = Transform3D(0.099999994, 0, 1.4210856e-13, 0, 0.8972274, 0, -4.440892e-16, 0, 32, -7.7130384, 6.126958, -16.21024)
 mesh = SubResource("BoxMesh_1t1nv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D41" unique_id=1349193702]
@@ -544,7 +544,7 @@ mesh = SubResource("BoxMesh_1t1nv")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D42" type="MeshInstance3D" parent="." unique_id=732947774]
-transform = Transform3D(0.09999999, 0, 0, 0, 4.603861, 0, 0, 0, 36.57389, -7.7130384, 8.607702, -16.21024)
+transform = Transform3D(0.09999999, 0, 0, 0, 4.603861, 0, 0, 0, 32, -7.7130384, 8.607702, -16.21024)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D42" unique_id=567953795]
@@ -553,7 +553,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D45" type="MeshInstance3D" parent="." unique_id=1108126345]
-transform = Transform3D(0.099999994, 0, 0, 0, 0.8972274, 0, -4.440892e-16, 0, 36.57389, 7.7513313, 6.126958, -16.21024)
+transform = Transform3D(0.099999994, 0, 1.4210856e-13, 0, 0.8972274, 0, -4.440892e-16, 0, 32, 7.7513313, 6.126958, -16.21024)
 mesh = SubResource("BoxMesh_1t1nv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D45" unique_id=1524405088]
@@ -562,7 +562,7 @@ mesh = SubResource("BoxMesh_1t1nv")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D46" type="MeshInstance3D" parent="." unique_id=788574619]
-transform = Transform3D(0.09999999, 0, 0, 0, 4.603861, 0, 0, 0, 36.57389, 7.7513313, 8.607702, -16.21024)
+transform = Transform3D(0.09999999, 0, 0, 0, 4.603861, 0, 0, 0, 32, 7.7513313, 8.607702, -16.21024)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D46" unique_id=691548724]
@@ -571,7 +571,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D49" type="MeshInstance3D" parent="." unique_id=438196984]
-transform = Transform3D(0.09659257, -1.1915668, 0, 0.025881903, 4.4469886, 0, 0, 0, 36.57389, 7.1709194, 8.523457, -16.21024)
+transform = Transform3D(0.09659257, -1.1915672, 0, 0.025881903, 4.4469886, 0, 0, 0, 32, 7.1709194, 8.523457, -16.21024)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D49" unique_id=443435122]
@@ -580,7 +580,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D50" type="MeshInstance3D" parent="." unique_id=455824843]
-transform = Transform3D(0.049999993, -3.9870605, 0, 0.086602524, 2.3019302, 0, 0, 0, 36.57389, 5.5712395, 9.7250395, -16.215378)
+transform = Transform3D(0.049999986, -3.9870605, 0, 0.086602524, 2.3019302, 0, 0, 0, 32, 5.5712395, 9.7250395, -16.215378)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D50" unique_id=2050038025]
@@ -589,7 +589,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D52" type="MeshInstance3D" parent="." unique_id=1921133327]
-transform = Transform3D(-0.09659257, 1.1915668, 3.1973912e-06, 0.025881901, 4.446988, 0, -8.44439e-09, 1.0417008e-07, -36.57389, -7.2341576, 8.523457, -16.215378)
+transform = Transform3D(-0.09659257, 1.1915668, 4.8318657e-06, 0.025881901, 4.446988, -4.459086e-14, -1.4585073e-08, 1.799216e-07, -32, -7.2341576, 8.523457, -16.215378)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D52" unique_id=411083937]
@@ -598,7 +598,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D53" type="MeshInstance3D" parent="." unique_id=1599522763]
-transform = Transform3D(-0.04999999, 3.9870605, 3.1973912e-06, 0.086602524, 2.3019302, 0, -4.3711372e-09, 3.4855987e-07, -36.573887, -5.6344776, 9.7250395, -16.21024)
+transform = Transform3D(-0.049999986, 3.9870605, 4.8318657e-06, 0.086602524, 2.3019302, 4.6163926e-14, -7.5497875e-09, 6.0202944e-07, -32, -5.6344776, 9.7250395, -16.21024)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D53" unique_id=1647361373]
@@ -607,7 +607,7 @@ mesh = SubResource("BoxMesh_ujk2d")
 shape = SubResource("ConcavePolygonShape3D_umab0")
 
 [node name="MeshInstance3D51" type="MeshInstance3D" parent="." unique_id=2055357183]
-transform = Transform3D(0, -9.638471, 0, 0.1, -4.991442e-07, 0, 0, 0, 36.573887, 0.33237123, 10.732077, -16.215378)
+transform = Transform3D(-4.371139e-09, -9.638471, 0, 0.1, -4.2131094e-07, 0, 0, 0, 32, 0.33237123, 10.732077, -16.215378)
 mesh = SubResource("BoxMesh_ujk2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D51" unique_id=288779122]
