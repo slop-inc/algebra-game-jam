@@ -60,7 +60,7 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.3372549, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_wem23")
 theme_override_font_sizes/font_size = 32
-text = "OPTIONS"
+text = "THIS IS A BUTTON"
 flat = true
 
 [node name="BoxContainer2" type="BoxContainer" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=1445831555]
