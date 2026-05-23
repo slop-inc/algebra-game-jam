@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://2xscwjc0g766" path="res://scenes/enemy/enemy_ranged.tscn" id="5_3uvn1"]
 [ext_resource type="PackedScene" uid="uid://db48dsrgg6x0p" path="res://scenes/enemy/enemy_melee.tscn" id="6_5llss"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="7_8pu3f"]
+[ext_resource type="PackedScene" uid="uid://ct52ca5jyv1eq" path="res://scenes/building_blocks/torch.tscn" id="7_l2yc2"]
 [ext_resource type="Texture2D" uid="uid://diteybb4kaiwy" path="res://assets/CatWallTxt.png" id="8_1beu6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wu12n"]
@@ -102,6 +103,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85, 0, -8.400001)
 
 [node name="EnemyMelee6" parent="Enemies" unique_id=1261016357 instance=ExtResource("6_5llss")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, -12.400001)
+
+[node name="Torches" type="Node3D" parent="Enemies/EnemyMelee6" unique_id=1133312066]
+
+[node name="Torch" parent="Enemies/EnemyMelee6/Torches" unique_id=683275015 instance=ExtResource("7_l2yc2")]
+transform = Transform3D(-8.940697e-08, 0, -1, 0, 1, 0, 1, 0, -8.940697e-08, -3.0636857, 2, -4.184573)
+
+[node name="Torch2" parent="Enemies/EnemyMelee6/Torches" unique_id=1484145086 instance=ExtResource("7_l2yc2")]
+transform = Transform3D(-8.940697e-08, 0, -1, 0, 1, 0, 1, 0, -8.940697e-08, -3.0636857, 2, -17.884571)
+
+[node name="Torch3" parent="Enemies/EnemyMelee6/Torches" unique_id=300143936 instance=ExtResource("7_l2yc2")]
+transform = Transform3D(-8.940697e-08, 0, -1, 0, 1, 0, 1, 0, -8.940697e-08, -2.7136858, 2, 2.5654287)
+
+[node name="Torch4" parent="Enemies/EnemyMelee6/Torches" unique_id=1843030580 instance=ExtResource("7_l2yc2")]
+transform = Transform3D(1.9841906e-09, 0, 1, 0, 1, 0, -1, 0, 1.9841906e-09, 2.8863144, 2, -11.334573)
+
+[node name="Torch5" parent="Enemies/EnemyMelee6/Torches" unique_id=1788974294 instance=ExtResource("7_l2yc2")]
+transform = Transform3D(1.9841906e-09, 0, 1, 0, 1, 0, -1, 0, 1.9841906e-09, 2.8863144, 4.05, -1.9845705)
+
+[node name="Torch6" parent="Enemies/EnemyMelee6/Torches" unique_id=1894038658 instance=ExtResource("7_l2yc2")]
+transform = Transform3D(1.9841906e-09, 0, 1, 0, 1, 0, -1, 0, 1.9841906e-09, 2.8863144, 4.05, 6.1654296)
 
 [node name="Room" type="Node3D" parent="." unique_id=1918957510]
 
