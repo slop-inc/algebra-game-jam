@@ -12,6 +12,7 @@ var jump_velocity = 8
 var velocity_on_jump
 var wall_jump_bool = false
 var wall_jump_time = 0
+var has_jumped = false
 
 var sensitivity = 0.001
 
@@ -19,6 +20,7 @@ var sensitivity = 0.001
 var dashed_bool = false
 var dash_time = 0
 var dash_strength = 15
+var can_dash = true
 
 # Slam vars
 var slamed_bool = false
@@ -46,6 +48,7 @@ var t_bob = 0.0
 @onready var ui = $Head/Neck/Camera3D/UI
 @onready var fader = $Head/Neck/Camera3D/Fader
 @onready var meat_sound = $MeatSound
+
 var stop_meat = false
 
 func _ready():
@@ -94,6 +97,7 @@ func _input(event):
 	
 # Dash Function
 func _dash():
+	can_dash = false
 	dashed_bool = true
 	var direction = camera.global_basis * Vector3.FORWARD
 	velocity.x = direction.x * dash_strength
@@ -121,7 +125,7 @@ func _punch():
 		if hit.is_in_group("enemy"):
 			hit._takeDamage(10)
 			if hit.health <= 0:
-				_heal(HEAL_AMOUNT)
+				heal(HEAL_AMOUNT)
 				ui.bloody()
 
 func _shoot():
@@ -137,7 +141,8 @@ func take_damage(amount: float):
 	var current_time = timer.get_time_left()
 	timer.set_wait_time(current_time - amount)
 
-func _heal(amount: float) -> void:
+func heal(amount: float) -> void:
+	can_dash = true
 	print("will heal")
 	var current_time = timer.get_time_left()
 	timer.set_wait_time(current_time + amount)
@@ -155,6 +160,7 @@ func _kick():
 			hit.get_parent().kick()
 
 func _walljump():
+	has_jumped = true
 	wall_jump_bool = true
 	var collision_normal = get_last_slide_collision().get_normal()
 	var no_velocity = velocity_on_jump.x == 0 and velocity_on_jump.z == 0
@@ -189,6 +195,9 @@ func _fade_away():
 
 func _physics_process(delta: float) -> void:
 	
+	if has_jumped and is_on_floor():
+		has_jumped = false
+	
 	if dashed_bool:
 		dash_time += 1 * delta 
 		if dash_time >= 0.3:
@@ -213,7 +222,7 @@ func _physics_process(delta: float) -> void:
 		velocity_on_jump = velocity
 		velocity.y = jump_velocity
 		
-	if Input.is_action_just_pressed("jump") and is_on_wall_only():
+	if Input.is_action_just_pressed("jump") and is_on_wall_only() and !has_jumped:
 		_walljump()
 
 	# Get the input direction and handle the movement/deceleration.
