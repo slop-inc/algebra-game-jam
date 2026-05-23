@@ -22,7 +22,7 @@ func _attack():
 			player = i
 	
 	if player:
-		#print(player)
+		player.take_damage(5.0)
 		has_attacked = true
 	else:
 		#print("found no player")
