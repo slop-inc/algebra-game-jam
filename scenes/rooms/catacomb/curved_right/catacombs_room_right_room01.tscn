@@ -342,3 +342,5 @@ mesh = ExtResource("7_2e072")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CatStairs3/StaticBody3D" unique_id=825796890]
 shape = SubResource("ConvexPolygonShape3D_jyskl")
+
+[connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]

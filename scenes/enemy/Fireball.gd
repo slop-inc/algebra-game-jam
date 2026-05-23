@@ -22,4 +22,6 @@ func _on_body_entered(body):
 		elif body.is_in_group("enemy") and is_from_player:
 			body.take_damage(damage)
 			queue_free()
-	# TODO: prolaze kroz pod
+	elif !body.is_in_group("player") and !body.is_in_group("enemy"):
+		queue_free()
+		
