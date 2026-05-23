@@ -4,11 +4,11 @@ const HEAL_AMOUNT = 3.0
 
 # Movement vars
 var speed = 0.0
-var max_speed = 5.0
+var max_speed = 8.0
 var decel = 1
-var accel = 0.30
+var accel = 0.40
 
-var jump_velocity = 4.
+var jump_velocity = 8
 var velocity_on_jump
 var wall_jump_bool = false
 var wall_jump_time = 0
