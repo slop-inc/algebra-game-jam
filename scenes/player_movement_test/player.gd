@@ -78,7 +78,7 @@ func _unhandled_input(event):
 func _input(event):
 	
 	# Dash Input
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and can_dash:
 		_dash()
 		
 	#Slam Input
