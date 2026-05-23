@@ -6,7 +6,9 @@
 [ext_resource type="ArrayMesh" uid="uid://chef4clg2816l" path="res://assets/RockPile.obj" id="2_tv0d8"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="3_tv0d8"]
 [ext_resource type="Texture2D" uid="uid://diteybb4kaiwy" path="res://assets/CatWallTxt.png" id="4_hyq8w"]
+[ext_resource type="PackedScene" uid="uid://db48dsrgg6x0p" path="res://scenes/enemy/enemy_melee.tscn" id="5_wu12n"]
 [ext_resource type="ArrayMesh" uid="uid://emvn7fwfc2vy" path="res://assets/CatCoffin.obj" id="6_hyq8w"]
+[ext_resource type="PackedScene" uid="uid://2xscwjc0g766" path="res://scenes/enemy/enemy_ranged.tscn" id="6_k7enn"]
 [ext_resource type="ArrayMesh" uid="uid://c3v6sx2uypqcu" path="res://assets/CatBascancskaPloca.obj" id="7_g03ax"]
 [ext_resource type="ArrayMesh" uid="uid://djf6dfyc7e0xy" path="res://assets/CultPlate.obj" id="8_c4dv7"]
 
@@ -76,6 +78,30 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 
 [node name="Enemies" type="Node" parent="." unique_id=1092966804]
+
+[node name="EnemyMelee" parent="Enemies" unique_id=1073975167 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -19.900002)
+
+[node name="EnemyMelee2" parent="Enemies" unique_id=3725185 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.5, 0, -18.300001)
+
+[node name="EnemyMelee3" parent="Enemies" unique_id=1994114868 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.75, 0, -19.250002)
+
+[node name="EnemyMelee4" parent="Enemies" unique_id=1072377503 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.05000007, 0, -10.250002)
+
+[node name="EnemyMelee5" parent="Enemies" unique_id=1893769003 instance=ExtResource("5_wu12n")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.1999998, 0, -6.4500017)
+
+[node name="EnemyRanged" parent="Enemies" unique_id=1615942341 instance=ExtResource("6_k7enn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.2500001, 4, -11.800001)
+
+[node name="EnemyRanged2" parent="Enemies" unique_id=1042016574 instance=ExtResource("6_k7enn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.0499998, 4, -11.800001)
+
+[node name="EnemyRanged3" parent="Enemies" unique_id=1450760050 instance=ExtResource("6_k7enn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.35000017, 3.05, -27.050003)
 
 [node name="Room" type="Node3D" parent="." unique_id=1918957510]
 

@@ -11,6 +11,8 @@
 [ext_resource type="ArrayMesh" uid="uid://emvn7fwfc2vy" path="res://assets/CatCoffin.obj" id="9_wc2ru"]
 [ext_resource type="Texture2D" uid="uid://b4i8m5r4ln6up" path="res://assets/MedBedTxt.png" id="10_wc2ru"]
 [ext_resource type="ArrayMesh" uid="uid://g6oqewijg15s" path="res://assets/MedBed.obj" id="11_3c0qq"]
+[ext_resource type="PackedScene" uid="uid://2xscwjc0g766" path="res://scenes/enemy/enemy_ranged.tscn" id="12_i3fle"]
+[ext_resource type="PackedScene" uid="uid://db48dsrgg6x0p" path="res://scenes/enemy/enemy_melee.tscn" id="13_m40f0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c02sl"]
 size = Vector3(1.9, 3.4, 1)
@@ -426,3 +428,27 @@ mesh = ExtResource("6_tu0fn")
 [node name="CultPlate" type="MeshInstance3D" parent="." unique_id=1622412325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.900001, 2.2, -16)
 mesh = ExtResource("7_a6gik")
+
+[node name="EnemyRanged" parent="." unique_id=1073975167 instance=ExtResource("12_i3fle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 1.95, -11.400001)
+
+[node name="EnemyMelee" parent="." unique_id=328105 instance=ExtResource("13_m40f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2000003, 0, -8)
+
+[node name="EnemyMelee2" parent="." unique_id=1939688949 instance=ExtResource("13_m40f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -4.05)
+
+[node name="EnemyMelee3" parent="." unique_id=2006026757 instance=ExtResource("13_m40f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.45, 0, -5.4000006)
+
+[node name="EnemyMelee4" parent="." unique_id=1405313272 instance=ExtResource("13_m40f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.05, 0, -20)
+
+[node name="EnemyMelee5" parent="." unique_id=1572548804 instance=ExtResource("13_m40f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.45, 0, -10.05)
+
+[node name="EnemyMelee6" parent="." unique_id=1670689750 instance=ExtResource("13_m40f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0999994, 0, -10.85)
+
+[node name="EnemyMelee7" parent="." unique_id=22000569 instance=ExtResource("13_m40f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, -22.85)
