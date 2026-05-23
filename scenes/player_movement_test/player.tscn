@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jh1j6acxviwf" path="res://scenes/ui/ui.tscn" id="2_5efra"]
 [ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="3_5smiu"]
 [ext_resource type="AudioStream" uid="uid://o0cl64by1f60" path="res://assets/sound/meat.wav" id="4_j57bu"]
+[ext_resource type="PackedScene" uid="uid://cn6p2utnlw8n1" path="res://scenes/player_movement_test/hand_3.tscn" id="5_t3s4j"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rmv2p"]
 
@@ -26,6 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52799296, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head/Neck" unique_id=2138004851]
 transform = Transform3D(-5.4639234e-08, 0, -1.25, 0, 1.25, 0, 1.25, 0, -5.4639234e-08, 0, 0, 0)
+cull_mask = 1048573
 fov = 72.8149
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Neck/Camera3D" unique_id=1029934374]
@@ -57,6 +59,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="EvilFuckingMarkerForThePurposesOfLaunchingTheProjectile" type="Marker3D" parent="Head/Neck/Camera3D" unique_id=210815097]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.3798156)
+
+[node name="hand4" parent="Head/Neck/Camera3D" unique_id=47045647 instance=ExtResource("5_t3s4j")]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, 0.45798212, -0.31052572, -0.3301183)
 
 [node name="Health" type="Timer" parent="." unique_id=523939863]
 wait_time = 20.0
