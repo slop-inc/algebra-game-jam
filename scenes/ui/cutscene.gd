@@ -58,3 +58,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	pass
+
+func _on_button_2_pressed() -> void:
+	var tween = get_tree().create_tween()
+	await tween.tween_property(fader, "modulate:a", 1, 2).finished
+	get_tree().change_scene_to_file(next_scene_path)
