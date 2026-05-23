@@ -72,7 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.3798156)
 transform = Transform3D(-0.8, 0, 1.2079664e-07, 0, 0.802, 0, -1.2079664e-07, 0, -0.8, 0.3442523, -0.38916606, 0.044888437)
 
 [node name="Health" type="Timer" parent="." unique_id=523939863]
-wait_time = 20.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 

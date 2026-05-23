@@ -90,13 +90,13 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 
 [node name="Enemies" type="Node3D" parent="." unique_id=2129374344]
 
 [node name="EnemyRanged" parent="Enemies" unique_id=1073975167 instance=ExtResource("8_p5qe8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45000002, 5, -13.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.95, 5, -13.05)
 
 [node name="EnemyRanged2" parent="Enemies" unique_id=538809341 instance=ExtResource("8_p5qe8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 5, -16.45)
 
 [node name="EnemyMelee" parent="Enemies" unique_id=1293026434 instance=ExtResource("9_g1e8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, -14.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, -17)
 
 [node name="EnemyMelee2" parent="Enemies" unique_id=475541430 instance=ExtResource("9_g1e8n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85, 0, -8.6)
@@ -212,7 +212,7 @@ transform = Transform3D(1.0000001, 0, 9.094947e-13, 0, 1, 0, -5.551115e-17, 0, 1
 shape = SubResource("ConcavePolygonShape3D_svu4m")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="Room/Walls" unique_id=239576492]
-transform = Transform3D(-4.371139e-09, 0, 13, 0, 9, 0, -0.1, 0, -5.68248e-07, 1.4000001, 4.4500003, -21.800001)
+transform = Transform3D(-4.371139e-09, 0, 7.8, 0, 6.93, 0, -0.1, 0, -3.4094882e-07, 4.4, 1.5500003, -21.800001)
 mesh = SubResource("BoxMesh_igb57")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D12" unique_id=44477170]
@@ -242,7 +242,7 @@ transform = Transform3D(1.0000001, 0, 9.094947e-13, 0, 1, 0, -5.551115e-17, 0, 1
 shape = SubResource("ConcavePolygonShape3D_svu4m")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Room/Walls" unique_id=160682585]
-transform = Transform3D(-1.732051, 0, 0.99999964, 0, 5, 0, -0.99999964, 0, -1.732051, -0.40000027, 2.5000002, -12.999998)
+transform = Transform3D(-1.732051, 0, 0.99999964, 0, 5, 0, -0.99999964, 0, -1.732051, -3.8000004, 2.5000002, -12.999998)
 mesh = SubResource("BoxMesh_igb57")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D16" unique_id=1933510652]
@@ -327,10 +327,10 @@ mesh = ExtResource("8_nmxs1")
 [node name="Torches" type="Node3D" parent="Room" unique_id=610266495]
 
 [node name="Torch" parent="Room/Torches" unique_id=683275015 instance=ExtResource("12_g1e8n")]
-transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, -1.0136856, 2, -12.134573)
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, -4.413686, 2, -12.134573)
 
 [node name="Torch2" parent="Room/Torches" unique_id=1433283529 instance=ExtResource("12_g1e8n")]
-transform = Transform3D(0.2588191, 0, 0.96592593, 0, 1, 0, -0.96592593, 0, 0.2588191, 7.8933806, 1.4000001, -9.884577)
+transform = Transform3D(2.9802322e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 2.9802322e-08, 15.893381, 2.8000002, -15.984577)
 
 [node name="Torch6" parent="Room/Torches" unique_id=1653178115 instance=ExtResource("12_g1e8n")]
 transform = Transform3D(-5.9604645e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -5.9604645e-08, 9.94338, 2.8500001, -18.284576)
@@ -338,8 +338,17 @@ transform = Transform3D(-5.9604645e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 
 [node name="Torch3" parent="Room/Torches" unique_id=1572215050 instance=ExtResource("12_g1e8n")]
 transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, 1.5082624, 4.9000006, -23.875553)
 
+[node name="Torch7" parent="Room/Torches" unique_id=912444675 instance=ExtResource("12_g1e8n")]
+transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, -1.1917377, 2.3000004, -23.875553)
+
 [node name="Torch5" parent="Room/Torches" unique_id=881370737 instance=ExtResource("12_g1e8n")]
 transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, 9.308262, 6.5000005, -23.875553)
+
+[node name="Torch8" parent="Room/Torches" unique_id=1235574527 instance=ExtResource("12_g1e8n")]
+transform = Transform3D(1.9272301e-07, 0, 1, 0, 1, 0, -1, 0, 1.9272301e-07, 7.908262, 3.8000004, -10.575553)
+
+[node name="Torch9" parent="Room/Torches" unique_id=1637900122 instance=ExtResource("12_g1e8n")]
+transform = Transform3D(1.9272301e-07, 0, 1, 0, 1, 0, -1, 0, 1.9272301e-07, 7.908262, 3.8000004, -17.675552)
 
 [node name="Torch4" parent="Room/Torches" unique_id=2011150010 instance=ExtResource("12_g1e8n")]
 transform = Transform3D(-0.25881886, 0, -0.96592575, 0, 1, 0, 0.96592575, 0, -0.25881886, -8.241738, 2, -15.732619)

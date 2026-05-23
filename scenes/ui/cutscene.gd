@@ -9,6 +9,7 @@ var current_text = 0
 var can_advance = true
 @onready var amount_of_labels: int
 var text_array = [ ]
+@onready var sound = $AudioStreamPlayer2D2
 
 func _advance() -> void:
 	if !can_advance:
@@ -52,6 +53,7 @@ func _advance() -> void:
 	can_advance = true
 
 func _ready() -> void:
+	sound.volume_db = 10
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	for i in text_container.get_child_count():
 		if text_container.get_child(i) is Label:

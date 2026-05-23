@@ -8,10 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://diteybb4kaiwy" path="res://assets/CatWallTxt.png" id="5_w76ks"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="6_b3cr1"]
 [ext_resource type="PackedScene" uid="uid://db48dsrgg6x0p" path="res://scenes/enemy/enemy_melee.tscn" id="6_f0bb1"]
+[ext_resource type="ArrayMesh" uid="uid://bso8f4hxms5n" path="res://assets/CatStairs.obj" id="7_w76ks"]
 [ext_resource type="PackedScene" uid="uid://ct52ca5jyv1eq" path="res://scenes/building_blocks/torch.tscn" id="9_f0bb1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c02sl"]
 size = Vector3(1.9, 3.4, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b3cr1"]
+points = PackedVector3Array(-0.71436965, 1, 1, -0.71436965, 1, -1, -1, 1, 1, 1, -0.71436965, 1, -1, 1, -1, 1, -0.71436965, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c02sl"]
 albedo_texture = ExtResource("5_w76ks")
@@ -88,6 +92,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.150001, 0, -15.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0, -16.85)
 
 [node name="Room" type="Node3D" parent="." unique_id=710496453]
+
+[node name="Stairs" type="Node3D" parent="Room" unique_id=943994220]
+
+[node name="CatStairs2" type="MeshInstance3D" parent="Room/Stairs" unique_id=1100404892]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -11.9, 2.9499998, -14.4)
+mesh = ExtResource("7_w76ks")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Stairs/CatStairs2" unique_id=595190942]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Stairs/CatStairs2/StaticBody3D" unique_id=1515695254]
+shape = SubResource("ConvexPolygonShape3D_b3cr1")
+
+[node name="CatStairs3" type="MeshInstance3D" parent="Room/Stairs" unique_id=911310210]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -9.9, 1.0499997, -14.4)
+mesh = ExtResource("7_w76ks")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Stairs/CatStairs3" unique_id=782776211]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Stairs/CatStairs3/StaticBody3D" unique_id=1599575126]
+shape = SubResource("ConvexPolygonShape3D_b3cr1")
+
+[node name="CatStairs4" type="MeshInstance3D" parent="Room/Stairs" unique_id=2007393995]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -11.9, 2.9499998, -12.4)
+mesh = ExtResource("7_w76ks")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Stairs/CatStairs4" unique_id=727563538]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Stairs/CatStairs4/StaticBody3D" unique_id=2080332425]
+shape = SubResource("ConvexPolygonShape3D_b3cr1")
+
+[node name="CatStairs5" type="MeshInstance3D" parent="Room/Stairs" unique_id=264638432]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -9.9, 1.0499997, -12.4)
+mesh = ExtResource("7_w76ks")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Stairs/CatStairs5" unique_id=548988122]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Stairs/CatStairs5/StaticBody3D" unique_id=534877617]
+shape = SubResource("ConvexPolygonShape3D_b3cr1")
 
 [node name="Walls" type="Node3D" parent="Room" unique_id=1059322364]
 
@@ -235,6 +277,24 @@ mesh = SubResource("BoxMesh_pocp4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D24/StaticBody3D" unique_id=204071158]
 shape = SubResource("ConcavePolygonShape3D_k588r")
 
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="Room/Walls" unique_id=303914640]
+transform = Transform3D(2, 0, 2.9802319e-08, 0, 4, 0, -5.9604638e-08, 0, 1, -14.899998, 2, -12.85)
+mesh = SubResource("BoxMesh_pocp4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D27" unique_id=779351301]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D27/StaticBody3D" unique_id=136660573]
+shape = SubResource("ConcavePolygonShape3D_k588r")
+
+[node name="MeshInstance3D28" type="MeshInstance3D" parent="Room/Walls" unique_id=89254989]
+transform = Transform3D(2, 0, 2.9802319e-08, 0, 4, 0, -5.9604638e-08, 0, 1, -14.899998, 2, -11.85)
+mesh = SubResource("BoxMesh_pocp4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D28" unique_id=1760531379]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D28/StaticBody3D" unique_id=1216847846]
+shape = SubResource("ConcavePolygonShape3D_k588r")
+
 [node name="MeshInstance3D25" type="MeshInstance3D" parent="Room/Walls" unique_id=986000275]
 transform = Transform3D(1, 0, 1.5497206e-07, 0, 4, 0, -2.9802319e-08, 0, 5.2, -13.399998, 2, -15.950001)
 mesh = SubResource("BoxMesh_pocp4")
@@ -242,6 +302,15 @@ mesh = SubResource("BoxMesh_pocp4")
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D25" unique_id=178600874]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D25/StaticBody3D" unique_id=1922354802]
+shape = SubResource("ConcavePolygonShape3D_k588r")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="Room/Walls" unique_id=1989119600]
+transform = Transform3D(1, 0, 1.5497206e-07, 0, 4, 0, -2.9802319e-08, 0, 5.2, -13.399998, 2, -13.550001)
+mesh = SubResource("BoxMesh_pocp4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D26" unique_id=1169256734]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Walls/MeshInstance3D26/StaticBody3D" unique_id=1028145291]
 shape = SubResource("ConcavePolygonShape3D_k588r")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Room/Walls" unique_id=571908989]

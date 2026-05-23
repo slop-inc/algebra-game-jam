@@ -14,7 +14,7 @@ var wall_jump_bool = false
 var wall_jump_time = 0
 var has_jumped = false
 
-var sensitivity = 0.001
+var sensitivity = 0.002
 
 # Dash vars
 var dashed_bool = false
@@ -45,7 +45,7 @@ var t_bob = 0.0
 @onready var hand = $Head/Neck/Camera3D/hand4
 
 @onready var timer = $Health
-@onready var max_time = 20.0
+@onready var max_time = 60.0
 @onready var time_label = $Head/Neck/Camera3D/Label
 @onready var ui = $Head/Neck/Camera3D/UI
 @onready var fader = $Head/Neck/Camera3D/Fader
@@ -161,7 +161,7 @@ func heal(amount: float) -> void:
 	var current_time = timer.get_time_left()
 	print(timer.get_time_left())
 	timer.stop()
-	if current_time + amount > 20:
+	if current_time + amount > max_time:
 		timer.set_wait_time(max_time)
 	else:
 		timer.set_wait_time(current_time + amount)
@@ -198,7 +198,7 @@ var dying = false
 func _process(float) -> void:
 	#print(timer.get_time_left())
 	if !stop_meat:
-		meat_sound.volume_db = -50 + (50 * (1.0 - (timer.get_time_left() / timer.get_wait_time())))
+		meat_sound.volume_db = -25 + (25 * (1.0 - (timer.get_time_left() / timer.get_wait_time())))
 	ui.set_bar_percentage(timer.get_time_left() / timer.get_wait_time())
 	time_label.set_text(str(timer.get_time_left()).left(4))
 	if timer.get_time_left() <= 0 and !dying:

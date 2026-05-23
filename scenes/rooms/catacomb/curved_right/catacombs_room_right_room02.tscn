@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b3x0xp6kmwdil"]
+[gd_scene format=3 uid="uid://rniy5ifq4vcn"]
 
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_3vopj"]
 [ext_resource type="PackedScene" uid="uid://drvashnbmyti1" path="res://scenes/building_blocks/entrance_area.tscn" id="2_27tme"]
@@ -181,7 +181,7 @@ mesh = SubResource("BoxMesh_igb57")
 shape = SubResource("ConcavePolygonShape3D_svu4m")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Room/Walls" unique_id=443820930]
-transform = Transform3D(-0.07071069, -2.8284268, -2.2818101e-08, 0.070710674, -2.8284266, 8.515835e-08, 5.5879363e-09, 1.1920927e-07, 4, 14.549998, 1.0999999, -16.6)
+transform = Transform3D(-0.07071069, -2.8284268, -2.2818101e-08, 0.070710674, -2.8284266, 8.515835e-08, 5.5879363e-09, 1.1920927e-07, 4, 14.55, -20, -16.6)
 mesh = SubResource("BoxMesh_igb57")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D16" unique_id=1345089109]
@@ -321,17 +321,11 @@ transform = Transform3D(0.2588191, 0, 0.96592593, 0, 1, 0, -0.96592593, 0, 0.258
 [node name="Torch6" parent="Room/Torches" unique_id=1257052052 instance=ExtResource("9_m7yo6")]
 transform = Transform3D(-5.9604645e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -5.9604645e-08, 9.94338, 2.8500001, -18.284576)
 
-[node name="Torch3" parent="Room/Torches" unique_id=693165247 instance=ExtResource("9_m7yo6")]
-transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, 1.5082624, 4.9000006, -23.875553)
-
 [node name="Torch5" parent="Room/Torches" unique_id=725331264 instance=ExtResource("9_m7yo6")]
 transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, 9.308262, 6.5000005, -23.875553)
 
-[node name="Torch4" parent="Room/Torches" unique_id=451707250 instance=ExtResource("9_m7yo6")]
-transform = Transform3D(-0.25881886, 0, -0.96592575, 0, 1, 0, 0.96592575, 0, -0.25881886, -8.241738, 2, -15.732619)
-
 [node name="RockPile" type="MeshInstance3D" parent="." unique_id=380600062]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 15.3, 1.0500001, -13.85)
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 15.3, -20, -13.85)
 mesh = ExtResource("3_15dow")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RockPile" unique_id=244144412]
@@ -340,7 +334,7 @@ mesh = ExtResource("3_15dow")
 shape = SubResource("ConvexPolygonShape3D_h0efs")
 
 [node name="CatCoffin" type="MeshInstance3D" parent="." unique_id=1879549782]
-transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 13.3, 1.5, -17.6)
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 13.3, -20, -17.6)
 mesh = ExtResource("10_g6pag")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CatCoffin" unique_id=1833815282]
