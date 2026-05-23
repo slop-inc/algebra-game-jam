@@ -1,10 +1,12 @@
 extends CharacterBody3D
 
-var max_health = 100
-var health = 100
+var max_health = 20
+var health = 20
 var is_stunned = false
 var stun_time = 0
 var explode = false
+
+@export var is_ranged = false
 
 
 # Called when the node enters the scene tree for the first time.

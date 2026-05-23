@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://2xscwjc0g766"]
+
+[ext_resource type="Script" uid="uid://bsr3ntluahawm" path="res://scenes/enemy/emeny_dummy.gd" id="1_ypdm1"]
+[ext_resource type="Script" uid="uid://bmw7y1bfxxxav" path="res://scenes/enemy/StateMachine.gd" id="2_2jbxt"]
+[ext_resource type="Script" uid="uid://d107fi78qxqc3" path="res://scenes/enemy/EnemyAsleep.gd" id="3_ptkbb"]
+[ext_resource type="Script" uid="uid://dog6bixt1x20u" path="res://scenes/enemy/EnemyIdle.gd" id="4_3f1l2"]
+[ext_resource type="Script" uid="uid://co4dy6kh6yqkj" path="res://scenes/enemy/EnemyDeath.gd" id="6_nmkjp"]
+[ext_resource type="Script" uid="uid://o5e0ealp1d3e" path="res://scenes/enemy/EnemyRanged.gd" id="6_npp3m"]
+[ext_resource type="PackedScene" uid="uid://vtwp1xir82q3" path="res://scenes/enemy/cultist2.tscn" id="8_lcxkx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ca4xg"]
+radius = 0.5078125
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajul1"]
+size = Vector3(1, 0.81347656, 0.80410767)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm4fq"]
+radius = 0.5883789
+height = 1.9941864
+
+[node name="EnemyRanged" type="CharacterBody3D" unique_id=1073975167 groups=["enemy"]]
+script = ExtResource("1_ypdm1")
+is_ranged = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1319839874]
+
+[node name="StateMachine" type="Node" parent="." unique_id=1460263048 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_2jbxt")
+initial_state = NodePath("Sleep")
+
+[node name="Sleep" type="Node" parent="StateMachine" unique_id=1202453455]
+script = ExtResource("3_ptkbb")
+metadata/_custom_type_script = "uid://d107fi78qxqc3"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=351667329]
+script = ExtResource("4_3f1l2")
+metadata/_custom_type_script = "uid://dog6bixt1x20u"
+
+[node name="Die" type="Node" parent="StateMachine" unique_id=2136494028]
+script = ExtResource("6_nmkjp")
+metadata/_custom_type_script = "uid://co4dy6kh6yqkj"
+
+[node name="Ranged" type="Node" parent="StateMachine" unique_id=372364138]
+script = ExtResource("6_npp3m")
+metadata/_custom_type_script = "uid://o5e0ealp1d3e"
+
+[node name="cultist" parent="." unique_id=1115433254 instance=ExtResource("8_lcxkx")]
+transform = Transform3D(-0.7, 0, 6.119594e-08, 0, 0.7, 0, -6.119594e-08, 0, -0.7, -1.3892524e-08, 0, -0.00074246526)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1314594796]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.3892524e-08, 0.971, -0.00074246526)
+shape = SubResource("CapsuleShape3D_ca4xg")
+
+[node name="AttackArea" type="Area3D" parent="." unique_id=853703591]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.167757e-08, 1.129, -0.6363902)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea" unique_id=1312497936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09326172, -0.097946405)
+shape = SubResource("BoxShape3D_ajul1")
+
+[node name="InstakillDetector" type="Area3D" parent="." unique_id=334715000]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.3892524e-08, 1.129, -0.00074246526)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InstakillDetector" unique_id=2026960550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0978775, 0)
+shape = SubResource("CapsuleShape3D_xm4fq")
+
+[connection signal="body_entered" from="InstakillDetector" to="." method="_on_instakill_detector_body_entered"]
