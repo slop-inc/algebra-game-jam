@@ -5,6 +5,7 @@ var health = 20
 var is_stunned = false
 var stun_time = 0
 var explode = false
+var is_awake = false
 
 @export var is_ranged = false
 

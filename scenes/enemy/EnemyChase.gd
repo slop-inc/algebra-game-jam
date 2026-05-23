@@ -10,7 +10,7 @@ var speed = 3
 @onready var anim = $"../../cultist"
 
 func Enter():
-	print("Entered Chase")
+	#print("Entered Chase")
 	print(agent)
 	print(nav_agent)
 	anim._run()
@@ -33,9 +33,10 @@ func Physics_Update(delta: float):
 		
 		
 	elif player and agent.is_stunned:
-		print("stunned")
+		#print("stunned")
+		pass
 	elif !player and !agent.is_stunned:
-		print("No player Located")
+		#print("No player Located")
 		Transitioned.emit(self,"idle")
 		
 	if agent.health <= 0:

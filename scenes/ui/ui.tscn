@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://dpe7vmd11xuck" path="res://scenes/ui/vignette.gdshader" id="1_u7n8c"]
 [ext_resource type="Texture2D" uid="uid://gihe1kwkc2dg" path="res://assets/SideEvilBars.png" id="2_0dwhk"]
 [ext_resource type="Texture2D" uid="uid://07q4e0uqdj4y" path="res://assets/TopEvilBar.png" id="2_aac20"]
+[ext_resource type="Texture2D" uid="uid://ccook517n2bv8" path="res://assets/sprite/diddyblud.png" id="2_pfayw"]
 [ext_resource type="Texture2D" uid="uid://cd6ibxr210s2r" path="res://assets/BottomEvilBar.png" id="3_g5kmx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u7n8c"]
@@ -66,6 +67,19 @@ offset_left = 160.32
 offset_top = 592.0
 offset_right = -160.32007
 mouse_filter = 2
+
+[node name="DiddyBlud" type="TextureRect" parent="Control" unique_id=1997254924]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 152.0
+offset_right = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pfayw")
+expand_mode = 1
 
 [node name="Vignette" type="ColorRect" parent="Control" unique_id=1561337620]
 material = SubResource("ShaderMaterial_u7n8c")

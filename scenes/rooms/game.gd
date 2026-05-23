@@ -84,17 +84,17 @@ func _spawn_room(room: PackedScene) -> void:
 	newest_room.reparent(rooms)
 
 func _del_oldest_room():
+	rooms.get_child(1).rocks.visible = true
 	rooms.get_child(0).queue_free()
 
 func advance():
-	if doors_kicked > 2:
-		print("doing the thing")
-		_generate_room()
+	_generate_room()
+	if doors_kicked >= 1:
 		_del_oldest_room()
 	doors_kicked += 1
 
 func _ready() -> void:
-	for i in range(20):
+	for i in range(0):
 		_generate_room()
 
 func _process(_delta: float) -> void:
