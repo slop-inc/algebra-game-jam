@@ -39,6 +39,8 @@ var t_bob = 0.0
 
 @onready var evil_fucking_marker_for_the_purposes_of_launching_the_projectile = $Head/Neck/Camera3D/EvilFuckingMarkerForThePurposesOfLaunchingTheProjectile
 
+@onready var hand = $Head/Neck/Camera3D/hand4
+
 @onready var timer = $Health
 @onready var time_label = $Head/Neck/Camera3D/Label
 @onready var ui = $Head/Neck/Camera3D/UI
@@ -105,6 +107,7 @@ func _slam():
 	velocity.y = -slam_strength
 	
 func _punch():
+	hand._punch()
 	var hit = hit_ray.get_collider()
 	var sway = randf_range(0,10)
 	
@@ -122,6 +125,7 @@ func _punch():
 				ui.bloody()
 
 func _shoot():
+	hand._orb()
 	var projectile = PROJECTILE.instantiate()
 	projectile.is_from_player = true
 	get_tree().root.get_child(0).add_child(projectile)
@@ -139,6 +143,7 @@ func _heal(amount: float) -> void:
 	timer.set_wait_time(current_time + amount)
 
 func _kick():
+	hand._attack()
 	var hit = hit_ray.get_collider()
 	var sway = randf_range(0,10)
 	

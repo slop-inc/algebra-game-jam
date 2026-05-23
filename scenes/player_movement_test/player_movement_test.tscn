@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnjgt52dldwdb"]
 
 [ext_resource type="PackedScene" uid="uid://dhqh4lhawx71j" path="res://scenes/player_movement_test/player.tscn" id="1_4xogm"]
-[ext_resource type="PackedScene" uid="uid://njf4w6xcqe3f" path="res://scenes/enemy/enemy_melee.tscn" id="2_rmv2p"]
+[ext_resource type="PackedScene" uid="uid://db48dsrgg6x0p" path="res://scenes/enemy/enemy_melee.tscn" id="2_rmv2p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xogm"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
