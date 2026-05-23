@@ -44,6 +44,7 @@ var t_bob = 0.0
 @onready var hand = $Head/Neck/Camera3D/hand4
 
 @onready var timer = $Health
+@onready var max_time = 20.0
 @onready var time_label = $Head/Neck/Camera3D/Label
 @onready var ui = $Head/Neck/Camera3D/UI
 @onready var fader = $Head/Neck/Camera3D/Fader
@@ -143,9 +144,18 @@ func take_damage(amount: float):
 
 func heal(amount: float) -> void:
 	can_dash = true
-	print("will heal")
+	print("about to heal")
 	var current_time = timer.get_time_left()
-	timer.set_wait_time(current_time + amount)
+	print("Time left:")
+	print(timer.get_time_left())
+	timer.stop()
+	if current_time + amount > 20:
+		timer.set_wait_time(max_time)
+	else:
+		timer.set_wait_time(current_time + amount)
+	timer.start()
+	timer.set_wait_time(max_time)
+	print("Will heal for" + str(current_time + amount))
 
 func _kick():
 	hand._attack()
@@ -175,6 +185,7 @@ func _walljump():
 
 var dying = false
 func _process(float) -> void:
+	#print(timer.get_time_left())
 	if !stop_meat:
 		meat_sound.volume_db = -50 + (50 * (1.0 - (timer.get_time_left() / timer.get_wait_time())))
 	ui.set_bar_percentage(timer.get_time_left() / timer.get_wait_time())
