@@ -1,5 +1,7 @@
 extends Node
 
+@export var next_scene_path = "res://path/to/scene.tscn"
+
 @onready var text_container = $Node2D/Control/Control/VBoxContainer
 @onready var texture = $Node2D/Control/Control/TextureRect
 @onready var fader = $CanvasLayer/ColorRect
@@ -14,7 +16,7 @@ func _advance() -> void:
 	if current_text >= amount_of_labels:
 		var tween = get_tree().create_tween()
 		await tween.tween_property(fader, "modulate:a", 1, 2).finished
-		get_tree().change_scene_to_file("res://scenes/rooms/game.tscn")
+		get_tree().change_scene_to_file(next_scene_path)
 		return
 	
 	can_advance = false

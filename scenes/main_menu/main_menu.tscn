@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://mmwdvftot43k" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
 [ext_resource type="PackedScene" uid="uid://jh1j6acxviwf" path="res://scenes/ui/ui.tscn" id="2_0ebjn"]
+[ext_resource type="Texture2D" uid="uid://c6bsp7rst7esy" path="res://assets/textures/menu_button.png" id="3_ob46e"]
+[ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="3_wem23"]
+[ext_resource type="Texture2D" uid="uid://dolgyfrvgj2x" path="res://assets/textures/gruel_logo.png" id="4_3ovsr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vho56"]
 
@@ -31,16 +34,20 @@ anchor_top = 1.0
 anchor_right = 0.504
 anchor_bottom = 1.0
 offset_left = -227.84
-offset_top = -400.0
-offset_right = 228.16
-offset_bottom = -64.0
+offset_top = -392.0
+offset_right = 228.16003
+offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Start" type="Button" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=1223283938]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3372549, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_wem23")
+theme_override_font_sizes/font_size = 32
 text = "START"
+flat = true
 
 [node name="BoxContainer" type="BoxContainer" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=1441489614]
 layout_mode = 2
@@ -50,7 +57,11 @@ size_flags_stretch_ratio = 0.5
 [node name="Options" type="Button" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=184331877]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3372549, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_wem23")
+theme_override_font_sizes/font_size = 32
 text = "OPTIONS"
+flat = true
 
 [node name="BoxContainer2" type="BoxContainer" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=1445831555]
 layout_mode = 2
@@ -60,22 +71,11 @@ size_flags_stretch_ratio = 0.5
 [node name="Quit" type="Button" parent="Camera3D/CanvasLayer/Control/VBoxContainer" unique_id=1168930658]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.3372549, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_wem23")
+theme_override_font_sizes/font_size = 32
 text = "QUIT"
-
-[node name="Label" type="Label" parent="Camera3D/CanvasLayer/Control" unique_id=1757630669]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.504
-anchor_right = 0.504
-offset_left = -227.84
-offset_top = 64.0
-offset_right = 228.16
-offset_bottom = 256.0
-theme_override_font_sizes/font_size = 64
-text = "Gruel
-by Slop"
-horizontal_alignment = 1
-vertical_alignment = 1
+flat = true
 
 [node name="Fade" type="ColorRect" parent="Camera3D/CanvasLayer/Control" unique_id=25500866]
 visible = false
@@ -87,6 +87,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.14901961, 0, 0, 1)
 
+[node name="TextureRect" type="TextureRect" parent="Camera3D/CanvasLayer/Control" unique_id=755286649]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = 32.0
+offset_right = 256.0
+offset_bottom = 288.0
+texture = ExtResource("4_3ovsr")
+
 [node name="Fader" type="ColorRect" parent="Camera3D/CanvasLayer" unique_id=1709085127]
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -96,6 +107,63 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Camera3D" unique_id=1181987096]
+layer = 0
+
+[node name="Control" type="Control" parent="Camera3D/CanvasLayer2" unique_id=938561187]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera3D/CanvasLayer2/Control" unique_id=558549042]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 1.0
+anchor_right = 0.504
+anchor_bottom = 1.0
+offset_left = -227.84
+offset_top = -406.5
+offset_right = 228.16003
+offset_bottom = -57.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Start" type="TextureRect" parent="Camera3D/CanvasLayer2/Control/VBoxContainer" unique_id=1815091770]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("3_ob46e")
+
+[node name="BoxContainer" type="BoxContainer" parent="Camera3D/CanvasLayer2/Control/VBoxContainer" unique_id=740150374]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+mouse_filter = 2
+
+[node name="Options" type="TextureRect" parent="Camera3D/CanvasLayer2/Control/VBoxContainer" unique_id=105017104]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("3_ob46e")
+
+[node name="BoxContainer2" type="BoxContainer" parent="Camera3D/CanvasLayer2/Control/VBoxContainer" unique_id=348185230]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+mouse_filter = 2
+
+[node name="Quit" type="TextureRect" parent="Camera3D/CanvasLayer2/Control/VBoxContainer" unique_id=1111341039]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("3_ob46e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=975434608]
 transform = Transform3D(0.75, -0.5, -0.4330127, 0.4330127, 0.8660254, -0.25, 0.5, 0, 0.8660254, -2.6000001, 0, -4.2000003)

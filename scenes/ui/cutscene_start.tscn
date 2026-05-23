@@ -8,6 +8,7 @@
 
 [node name="Node" type="Node" unique_id=157251814]
 script = ExtResource("1_7a4cy")
+next_scene_path = "res://scenes/rooms/game.tscn"
 
 [node name="Node2D" type="CanvasLayer" parent="." unique_id=1879991073]
 
