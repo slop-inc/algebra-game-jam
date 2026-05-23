@@ -51,6 +51,6 @@ light_color = Color(1.0039997, 0.9211495, 0.74644303, 1)
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=607362072]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.2)
 material_override = SubResource("StandardMaterial3D_5rlfb")
-lifetime = 2.0
+amount = 3
 process_material = SubResource("ParticleProcessMaterial_10bjw")
 draw_pass_1 = SubResource("QuadMesh_01q2i")
