@@ -25,21 +25,14 @@ func _orb():
 	anim.play("Armature|Evil orb")
 	
 func _physics_process(delta: float) -> void:
-	if is_anim:
-		t +=  delta * 1
-		arm.position = current_pos.lerp(target, t)
+	pass
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	target = Vector3(arm.position.z, arm.position.z, t)
-	current_pos = arm.position
+	is_anim = true
 	mesh.visible = false
 
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
-	t = 0.0
-	arm.position = base_pos
-	target = Vector3(arm.position.z, arm.position.z, 1)
-	current_pos = arm.position
 	is_anim = true
 	mesh.visible = true # Replace with function body.

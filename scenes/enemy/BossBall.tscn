@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bifeabhn3q7tf"]
+[gd_scene format=3 uid="uid://cboitsy8ve8ku"]
 
-[ext_resource type="Script" uid="uid://bf7lmwvpgkdgj" path="res://scenes/enemy/Fireball.gd" id="1_wrcx7"]
+[ext_resource type="Script" uid="uid://bf7lmwvpgkdgj" path="res://scenes/enemy/Fireball.gd" id="1_dn7g5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8h6u2"]
 albedo_color = Color(0.921569, 0.290196, 0.180392, 1)
@@ -11,8 +11,7 @@ material = SubResource("StandardMaterial3D_8h6u2")
 [sub_resource type="SphereShape3D" id="SphereShape3D_rv125"]
 
 [node name="Fireball" type="Area3D" unique_id=2072788232]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-script = ExtResource("1_wrcx7")
+script = ExtResource("1_dn7g5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=928683562]
 mesh = SubResource("SphereMesh_xs0xx")

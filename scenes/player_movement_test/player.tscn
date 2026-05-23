@@ -61,7 +61,7 @@ color = Color(0, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.3798156)
 
 [node name="hand4" parent="Head/Neck/Camera3D" unique_id=47045647 instance=ExtResource("5_t3s4j")]
-transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, 0.45798212, -0.31052572, -0.3301183)
+transform = Transform3D(-0.8, 0, 1.2079664e-07, 0, 0.802, 0, -1.2079664e-07, 0, -0.8, 0.3442523, -0.38916606, 0.044888437)
 
 [node name="Health" type="Timer" parent="." unique_id=523939863]
 wait_time = 20.0

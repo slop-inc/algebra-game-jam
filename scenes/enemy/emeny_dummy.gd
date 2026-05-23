@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 var max_health = 20
+var boss_health = 40
 var health = 20
 var is_stunned = false
 var stun_time = 0
@@ -8,13 +9,14 @@ var explode = false
 var is_awake = false
 
 @export var is_ranged = false
-
+@export var is_boss = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
-	health = max_health
-
+	if is_boss:
+		health = boss_health
+	else:
+		health = max_health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 		
