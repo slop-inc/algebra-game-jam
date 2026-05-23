@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhiht8fur5vhc"]
 
 [ext_resource type="Script" uid="uid://c4h0xl877ck6a" path="res://scenes/enemy/blood_explosion.gd" id="1_t0avu"]
-[ext_resource type="Texture2D" uid="uid://o1601es0crrj" path="res://scenes/enemy/blood2.png" id="2_xtvtu"]
+[ext_resource type="Texture2D" uid="uid://o1601es0crrj" path="res://scenes/enemy/materials/blood2.png" id="2_xtvtu"]
 
 [sub_resource type="Curve" id="Curve_xtvtu"]
 _data = [Vector2(0, 0.2959184), 0.0, 4.7733994, 0, 0, Vector2(0.98872185, 0.08163273), 0.0, 0.0, 0, 0]

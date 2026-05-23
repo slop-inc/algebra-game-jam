@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o1601es0crrj"
-path.s3tc="res://.godot/imported/blood2.png-063ccb35c7b28d01c2518e7792b3c8ea.s3tc.ctex"
+path.s3tc="res://.godot/imported/blood2.png-6d223ba527d9376fee5f893f681f0f28.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/enemy/blood2.png"
-dest_files=["res://.godot/imported/blood2.png-063ccb35c7b28d01c2518e7792b3c8ea.s3tc.ctex"]
+source_file="res://scenes/enemy/materials/blood2.png"
+dest_files=["res://.godot/imported/blood2.png-6d223ba527d9376fee5f893f681f0f28.s3tc.ctex"]
 
 [params]
 

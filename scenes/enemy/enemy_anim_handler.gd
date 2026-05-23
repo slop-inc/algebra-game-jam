@@ -1,6 +1,8 @@
 extends Node3D
 
 @onready var anim = $AnimationPlayer
+@onready var texture2 = preload("res://scenes/enemy/materials/guy_fucked.tres")
+@onready var mesh = $Armature/Skeleton3D/Cube
 var attack_is_done = false
 var attacking = false
 var death_is_done = false
@@ -26,6 +28,7 @@ func _attack():
 func _die():
 	death_is_done = false
 	dying = true
+	mesh.set_surface_override_material(0, texture2)
 	anim.play("Armature|death")
 
 
