@@ -35,9 +35,13 @@ func _advance() -> void:
 			await get_tree().create_timer(0.5).timeout
 			continue
 		elif i == "[":
-			pass
+			$DoorOpen.play()
+			$AudioStreamPlayer2D.pitch_scale = 0.10
+			continue
 		elif i == "]":
-			pass
+			$DoorOpen.play()
+			$AudioStreamPlayer2D.pitch_scale = 0.25
+			continue
 		$AudioStreamPlayer2D.play()
 		future_text += i
 		label.set_text(future_text)

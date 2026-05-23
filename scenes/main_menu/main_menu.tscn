@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://ci8pf6v1vlypp" path="res://assets/fonts/DisposableDigiBB_bld.otf" id="3_wem23"]
 [ext_resource type="Texture2D" uid="uid://dolgyfrvgj2x" path="res://assets/textures/gruel_logo.png" id="4_3ovsr"]
 [ext_resource type="PackedScene" uid="uid://c44iiifu0ij7x" path="res://scenes/rooms/special_rooms/start_room.tscn" id="6_3ovsr"]
+[ext_resource type="AudioStream" uid="uid://vj6rkayifgiq" path="res://assets/sounds/main_menu/drone2.wav" id="7_5seab"]
 
 [node name="Root" type="Node3D" unique_id=792507597]
 script = ExtResource("1_fsom3")
@@ -165,6 +166,11 @@ mouse_filter = 2
 texture = ExtResource("3_ob46e")
 
 [node name="StartRoom" parent="." unique_id=1380908902 instance=ExtResource("6_3ovsr")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=554521682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1.8000001)
+stream = ExtResource("7_5seab")
+autoplay = true
 
 [connection signal="pressed" from="Camera3D/CanvasLayer/Control/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Camera3D/CanvasLayer/Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

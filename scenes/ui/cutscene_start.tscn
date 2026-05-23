@@ -80,7 +80,7 @@ visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_l3ckd")
 theme_override_font_sizes/font_size = 28
-text = "\"It is the perfect sacrifice for our Divine Lord's birth^, a holy lamb...\""
+text = "\"It is the perfect sacrifice for our Divine Lord's birth^, a holy lamb.^.^.^\""
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -93,7 +93,7 @@ visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_l3ckd")
 theme_override_font_sizes/font_size = 28
-text = "^^[^^\"The alignment nears.^ Do you subjects have the Vessel ready?^ We didn't spend the last decade finding the blade of the Holy Lance,^ just for the ritual to fail due to your incompetence.\"^^]"
+text = "[^^\"The alignment nears.^ Do you subjects have the Vessel ready?^ We didn't spend the last decade finding the blade of the Holy Lance,^ just for the ritual to fail due to your incompetence.\"^^]"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -145,6 +145,6 @@ autoplay = true
 [node name="DoorOpen" type="AudioStreamPlayer2D" parent="." unique_id=937878637]
 position = Vector2(640, 0)
 stream = ExtResource("6_pwag7")
-autoplay = true
+pitch_scale = 0.75
 
 [connection signal="pressed" from="Node2D/Control/Button" to="." method="_advance"]
