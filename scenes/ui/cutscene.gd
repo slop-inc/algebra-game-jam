@@ -34,6 +34,10 @@ func _advance() -> void:
 		if i == "^":
 			await get_tree().create_timer(0.5).timeout
 			continue
+		elif i == "[":
+			pass
+		elif i == "]":
+			pass
 		$AudioStreamPlayer2D.play()
 		future_text += i
 		label.set_text(future_text)

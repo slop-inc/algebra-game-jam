@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://07q4e0uqdj4y" path="res://assets/TopEvilBar.png" id="2_aac20"]
 [ext_resource type="Texture2D" uid="uid://ccook517n2bv8" path="res://assets/sprite/diddyblud.png" id="2_pfayw"]
 [ext_resource type="Texture2D" uid="uid://cd6ibxr210s2r" path="res://assets/BottomEvilBar.png" id="3_g5kmx"]
+[ext_resource type="Texture2D" uid="uid://c6nv21urawi4n" path="res://assets/textures/Paper_doll_1.png" id="7_7vp6q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u7n8c"]
 shader = ExtResource("1_u7n8c")
@@ -130,4 +131,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0dwhk")
+expand_mode = 1
+
+[node name="Avatar" type="TextureRect" parent="Control" unique_id=1227117007]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 1.0
+anchor_right = 0.125
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -176.0
+offset_right = 16.0
+texture = ExtResource("7_7vp6q")
 expand_mode = 1
