@@ -177,3 +177,5 @@ mesh = SubResource("BoxMesh_4vb1s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floors/MeshInstance3D/StaticBody3D" unique_id=348527815]
 shape = SubResource("ConcavePolygonShape3D_ddtk8")
+
+[connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]
