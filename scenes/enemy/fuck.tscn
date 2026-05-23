@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://uj72xj23hakp" path="res://scenes/rooms/room.gd" id="1_jbmwv"]
 [ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="2_jrqg8"]
 [ext_resource type="Texture2D" uid="uid://dlyoxrvnbxbeu" path="res://assets/FloorTxt.png" id="3_un67y"]
-[ext_resource type="PackedScene" uid="uid://njf4w6xcqe3f" path="res://scenes/enemy/enemy_melee.tscn" id="4_r1nod"]
+[ext_resource type="PackedScene" uid="uid://db48dsrgg6x0p" path="res://scenes/enemy/enemy_melee.tscn" id="4_r1nod"]
 [ext_resource type="PackedScene" uid="uid://2xscwjc0g766" path="res://scenes/enemy/enemy_ranged.tscn" id="5_oj6fi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhneh"]
