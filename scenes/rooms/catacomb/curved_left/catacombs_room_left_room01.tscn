@@ -13,6 +13,7 @@
 [ext_resource type="ArrayMesh" uid="uid://g6oqewijg15s" path="res://assets/MedBed.obj" id="11_3c0qq"]
 [ext_resource type="PackedScene" uid="uid://2xscwjc0g766" path="res://scenes/enemy/enemy_ranged.tscn" id="12_i3fle"]
 [ext_resource type="PackedScene" uid="uid://db48dsrgg6x0p" path="res://scenes/enemy/enemy_melee.tscn" id="13_m40f0"]
+[ext_resource type="PackedScene" uid="uid://ct52ca5jyv1eq" path="res://scenes/building_blocks/torch.tscn" id="14_m40f0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c02sl"]
 size = Vector3(1.9, 3.4, 1)
@@ -454,6 +455,23 @@ shape = SubResource("ConvexPolygonShape3D_wc2ru")
 [node name="CatBascancskaPloca2" type="MeshInstance3D" parent="Room/Decorations" unique_id=1902241858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.858448, 6.381521, -22.734617)
 mesh = ExtResource("6_tu0fn")
+
+[node name="Torches" type="Node3D" parent="Room" unique_id=318659910]
+
+[node name="Torch" parent="Room/Torches" unique_id=683275015 instance=ExtResource("14_m40f0")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -7.8636856, 2, -4.2345743)
+
+[node name="Torch2" parent="Room/Torches" unique_id=458476558 instance=ExtResource("14_m40f0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.8933806, 2, -4.434576)
+
+[node name="Torch3" parent="Room/Torches" unique_id=131306135 instance=ExtResource("14_m40f0")]
+transform = Transform3D(0.49999997, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, 0.49999997, 4.7082624, 1.35, 5.624447)
+
+[node name="Torch5" parent="Room/Torches" unique_id=1362545584 instance=ExtResource("14_m40f0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.891739, 2, -13.825554)
+
+[node name="Torch4" parent="Room/Torches" unique_id=144286916 instance=ExtResource("14_m40f0")]
+transform = Transform3D(-0.9999999, 0, -1.4702741e-07, 0, 1, 0, 1.4702741e-07, 0, -0.9999999, -3.1917381, 2, -17.88262)
 
 [node name="CultPlate" type="MeshInstance3D" parent="." unique_id=1622412325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.900001, 2.2, -16)

@@ -12,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://djf6dfyc7e0xy" path="res://assets/CultPlate.obj" id="8_nmxs1"]
 [ext_resource type="PackedScene" uid="uid://2xscwjc0g766" path="res://scenes/enemy/enemy_ranged.tscn" id="8_p5qe8"]
 [ext_resource type="PackedScene" uid="uid://db48dsrgg6x0p" path="res://scenes/enemy/enemy_melee.tscn" id="9_g1e8n"]
+[ext_resource type="PackedScene" uid="uid://ct52ca5jyv1eq" path="res://scenes/building_blocks/torch.tscn" id="12_g1e8n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bw0n"]
 size = Vector3(1.9, 3.4, 1)
@@ -315,6 +316,26 @@ shape = SubResource("ConcavePolygonShape3D_a2kk7")
 [node name="CultPlate" type="MeshInstance3D" parent="Room/Floors" unique_id=908665609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.900001, 2.2, -16.050001)
 mesh = ExtResource("8_nmxs1")
+
+[node name="Torches" type="Node3D" parent="Room" unique_id=610266495]
+
+[node name="Torch" parent="Room/Torches" unique_id=683275015 instance=ExtResource("12_g1e8n")]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, -1.0136856, 2, -12.134573)
+
+[node name="Torch2" parent="Room/Torches" unique_id=1433283529 instance=ExtResource("12_g1e8n")]
+transform = Transform3D(0.2588191, 0, 0.96592593, 0, 1, 0, -0.96592593, 0, 0.2588191, 7.8933806, 1.4000001, -9.884577)
+
+[node name="Torch6" parent="Room/Torches" unique_id=1653178115 instance=ExtResource("12_g1e8n")]
+transform = Transform3D(-5.9604645e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -5.9604645e-08, 9.94338, 2.8500001, -18.284576)
+
+[node name="Torch3" parent="Room/Torches" unique_id=1572215050 instance=ExtResource("12_g1e8n")]
+transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, 1.5082624, 4.9000006, -23.875553)
+
+[node name="Torch5" parent="Room/Torches" unique_id=881370737 instance=ExtResource("12_g1e8n")]
+transform = Transform3D(-1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, -1, 9.308262, 6.5000005, -23.875553)
+
+[node name="Torch4" parent="Room/Torches" unique_id=2011150010 instance=ExtResource("12_g1e8n")]
+transform = Transform3D(-0.25881886, 0, -0.96592575, 0, 1, 0, 0.96592575, 0, -0.25881886, -8.241738, 2, -15.732619)
 
 [node name="CatStairs" type="MeshInstance3D" parent="." unique_id=1250412316]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.5, 0.7, -22.9)
