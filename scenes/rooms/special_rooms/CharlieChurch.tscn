@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://drvashnbmyti1" path="res://scenes/building_blocks/entrance_area.tscn" id="2_xrrj4"]
 [ext_resource type="ArrayMesh" uid="uid://chef4clg2816l" path="res://assets/RockPile.obj" id="3_civqf"]
 [ext_resource type="PackedScene" uid="uid://xrdjdkok86pc" path="res://scenes/building_blocks/catacombs_door.tscn" id="4_nmyvs"]
+[ext_resource type="PackedScene" uid="uid://dgaljkc5hpgvw" path="res://scenes/enemy/enemy_boss.tscn" id="5_ij3hv"]
 [ext_resource type="Texture2D" uid="uid://ddjfidp64otw2" path="res://assets/CharlieChurchFloorTxt.png" id="5_lnh66"]
 [ext_resource type="Texture2D" uid="uid://ca14d62i1iqy" path="res://assets/CharlieChurchTopWallTxt.png" id="6_bod1i"]
 [ext_resource type="Texture2D" uid="uid://cnudjsi7c1gr0" path="res://assets/CharlieChurchBottomWallTxt.png" id="7_h5mfk"]
@@ -297,6 +298,9 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 
 [node name="Enemies" type="Node3D" parent="." unique_id=419097039]
+
+[node name="EnemyBoss" parent="Enemies" unique_id=1073975167 instance=ExtResource("5_ij3hv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.05, 0.1, -27.05)
 
 [node name="Room" type="Node3D" parent="." unique_id=1918957510]
 

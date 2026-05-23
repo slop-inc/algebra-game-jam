@@ -214,7 +214,7 @@ transform = Transform3D(1.0000001, 0, 9.094947e-13, 0, 1, 0, -5.551115e-17, 0, 1
 shape = SubResource("ConcavePolygonShape3D_svu4m")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Room/Walls" unique_id=1669360574]
-transform = Transform3D(-8.742278e-08, 0, 4, 0, 4.8, 0, -2, 0, -1.7484555e-07, 5.85, 2.6, -22.849998)
+transform = Transform3D(-8.742278e-08, 0, 4, 0, 4.8, 0, -2, 0, -1.7484555e-07, 5.9, 2.6, -22.849998)
 mesh = SubResource("BoxMesh_igb57")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D14" unique_id=1802973080]
@@ -224,7 +224,7 @@ transform = Transform3D(1.0000001, 0, 9.094947e-13, 0, 1, 0, -5.551115e-17, 0, 1
 shape = SubResource("ConcavePolygonShape3D_svu4m")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Room/Walls" unique_id=961572320]
-transform = Transform3D(-2, 0, -2.4159328e-06, 0, 5.2, 0, 3.019916e-07, 0, -16, 8.849999, 2.4, -15.849999)
+transform = Transform3D(-2, 0, -2.4159328e-06, 0, 5.2, 0, 3.019916e-07, 0, -16, 8.9, 2.4, -15.849999)
 mesh = SubResource("BoxMesh_igb57")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Walls/MeshInstance3D13" unique_id=1066532323]
@@ -317,7 +317,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.900001, 2.2, -16.050001)
 mesh = ExtResource("8_nmxs1")
 
 [node name="CatStairs" type="MeshInstance3D" parent="." unique_id=1250412316]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.55, 0.7, -22.9)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.5, 0.7, -22.9)
 mesh = ExtResource("7_2e072")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CatStairs" unique_id=2047773347]
@@ -326,7 +326,7 @@ mesh = ExtResource("7_2e072")
 shape = SubResource("ConvexPolygonShape3D_jyskl")
 
 [node name="CatStairs2" type="MeshInstance3D" parent="." unique_id=1723694921]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.1500001, 2.35, -22.9)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.2, 2.35, -22.9)
 mesh = ExtResource("7_2e072")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CatStairs2" unique_id=1248078156]
@@ -335,7 +335,7 @@ mesh = ExtResource("7_2e072")
 shape = SubResource("ConvexPolygonShape3D_jyskl")
 
 [node name="CatStairs3" type="MeshInstance3D" parent="." unique_id=1882192086]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.8500001, 4, -22.9)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.9, 4, -22.9)
 mesh = ExtResource("7_2e072")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CatStairs3" unique_id=102713319]
