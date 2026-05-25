@@ -66,7 +66,7 @@ visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_g8sa0")
 theme_override_font_sizes/font_size = 28
-text = "\"If I have to die either way^, I refuse to be your vessel.^ See you in hell\""
+text = "\"If I have to die either way^, I refuse to be your vessel.^^ See you in hell\""
 horizontal_alignment = 1
 autowrap_mode = 3
 

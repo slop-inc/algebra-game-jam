@@ -9,8 +9,8 @@ extends Node3D
 # 2. Tutorial room, then:
 var room_generation = [ "tutorial_room01", "tutorial_room02",
 						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb",
-						#"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb",
-						#"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb", 
+						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb",
+						"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb", 
 						#"catacomb", "catacomb", "catacomb", "catacomb", "catacomb", "catacomb",
 						"CharlieChurch"
 						]

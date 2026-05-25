@@ -12,7 +12,7 @@
 script = ExtResource("1_fsom3")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1955861]
-transform = Transform3D(-0.81330395, -0.15059108, 0.56201345, -1.4901161e-08, 0.9659259, 0.2588191, -0.58183914, 0.21049856, -0.7855913, -3.649884, 2.38517, 0.9158006)
+transform = Transform3D(-0.81330395, -1.2340024e-08, 0.5818391, -2.2351742e-08, 1, 4.4703484e-08, -0.58183914, -1.4901161e-08, -0.81330395, -4.049884, 1.5851699, 1.3158005)
 
 [node name="UI" parent="Camera3D" unique_id=1616747875 instance=ExtResource("2_0ebjn")]
 
